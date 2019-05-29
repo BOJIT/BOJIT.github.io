@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="There is a lot of information on the internet that explains how to cross compile software for the Raspberry Pi. But this information is scattered into">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Kevin Sapper">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Cross compiling autotools projects for the Raspberry Pi"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Kevin Sapper"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="kevin_sapper>" />
+    
+
+    <!-- Title -->
+    
+    <title>Cross compiling autotools projects for the Raspberry Pi - Kevin Sapper</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-42836323-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Kevin Sapper</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/sappo">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Cross compiling autotools projects for the Raspberry Pi</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-13
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/pi/">#pi</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>There is a lot of information on the internet that explains how to cross compile software for the Raspberry Pi. But this information is scattered into tiny pieces and a lot of advice is just wrong or cumbersome.</p>
+<p>In this blog post I will explain how to cross compile most autotools projects.</p>
+<h2 id="toolchain">Toolchain</h2>
+<p>At first we need to get a cross compile toolchain and a sysroot environment for the Raspberry Pi. Luckily the Raspberry Pi Foundation does provide both on their github profile. So we’ll can just clone them to our computer.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> --depth 1 https://github.com/raspberrypi/tools rpi-tools</div></pre></td></tr></table></figure>
+<p>Note that I used the attribute <code>--depth 1</code> which tells git only to fetch data from the latest commit. As the tools repository is rather large this minimizes the amount of data we have to download.</p>
+<p>We will use the <code>arm-linux-gnueabihf</code> cross compiler which is at the time of this the latest and seems to support all Raspberry Pi devices. The next step is to get a hold of tools the toolchain provides.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">TOOLCHAIN_HOST=<span class="string">"arm-linux-gnueabihf"</span></div><div class="line">TOOLCHAIN_PATH=<span class="string">"<span class="variable">$PWD</span>/rpi-tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin"</span></div><div class="line">CPP=<span class="string">"<span class="variable">$&#123;TOOLCHAIN_PATH&#125;</span>/<span class="variable">$&#123;TOOLCHAIN_HOST&#125;</span>-cpp"</span></div><div class="line">CC=<span class="string">"<span class="variable">$&#123;TOOLCHAIN_PATH&#125;</span>/<span class="variable">$&#123;TOOLCHAIN_HOST&#125;</span>-gcc"</span></div><div class="line">CXX=<span class="string">"<span class="variable">$&#123;TOOLCHAIN_PATH&#125;</span>/<span class="variable">$&#123;TOOLCHAIN_HOST&#125;</span>-g++"</span></div><div class="line">LD=<span class="string">"<span class="variable">$&#123;TOOLCHAIN_PATH&#125;</span>/<span class="variable">$&#123;TOOLCHAIN_HOST&#125;</span>-ld"</span></div><div class="line">AS=<span class="string">"<span class="variable">$&#123;TOOLCHAIN_PATH&#125;</span>/<span class="variable">$&#123;TOOLCHAIN_HOST&#125;</span>-as"</span></div><div class="line">AR=<span class="string">"<span class="variable">$&#123;TOOLCHAIN_PATH&#125;</span>/<span class="variable">$&#123;TOOLCHAIN_HOST&#125;</span>-ar"</span></div><div class="line">RANLIB=<span class="string">"<span class="variable">$&#123;TOOLCHAIN_PATH&#125;</span>/<span class="variable">$&#123;TOOLCHAIN_HOST&#125;</span>-ranlib"</span></div></pre></td></tr></table></figure>
+<p>There are more but for most projects those are sufficient. Further we need the sysroot environment for this toolchain and add it to our compiler flags.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SYSROOT=<span class="variable">$PWD</span>/rpi-tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/arm-linux-gnueabihf/sysroot</div><div class="line">CFLAGS+=<span class="string">"--sysroot=<span class="variable">$&#123;SYSROOT&#125;</span>"</span></div><div class="line">CPPFLAGS+=<span class="string">"--sysroot=<span class="variable">$&#123;SYSROOT&#125;</span>"</span></div><div class="line">CXXFLAGS+=<span class="string">"--sysroot=<span class="variable">$&#123;SYSROOT&#125;</span>"</span></div></pre></td></tr></table></figure>
+<h2 id="cross-compiling">Cross Compiling</h2>
+<p>Any autotools project is configured with a configure script. Thus we need to provide the configure script with the tools and flags we prepared.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">CONFIG_OPTS=()</div><div class="line">CONFIG_OPTS+=(<span class="string">"CFLAGS=<span class="variable">$&#123;CFLAGS&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"CPPFLAGS=<span class="variable">$&#123;CPPFLAGS&#125;</span>"</span>) CONFIG_OPTS+=(<span class="string">"CXXFLAGS=<span class="variable">$&#123;CXXFLAGS&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"LDFLAGS=<span class="variable">$&#123;LDFLAGS&#125;</span>"</span>) CONFIG_OPTS+=(<span class="string">"PKG_CONFIG_DIR="</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"--host=<span class="variable">$&#123;TOOLCHAIN_HOST&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"CPP=<span class="variable">$&#123;CPP&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"CC=<span class="variable">$&#123;CC&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"CXX=<span class="variable">$&#123;CXX&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"LD=<span class="variable">$&#123;LD&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"AS=<span class="variable">$&#123;AS&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"AR=<span class="variable">$&#123;AR&#125;</span>"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"RANLIB=<span class="variable">$&#123;RANLIB&#125;</span>"</span>)</div></pre></td></tr></table></figure>
+<p>To get the cross compiled resources we need to install them to a location of our choosing.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">BUILD_PREFIX=<span class="variable">$PWD</span>/tmp</div><div class="line">CONFIG_OPTS+=(<span class="string">"--prefix=<span class="variable">$&#123;BUILD_PREFIX&#125;</span>"</span>)</div></pre></td></tr></table></figure>
+<p>A lot of project use pkgconf to find dependencies. Therefore we tell autotools where to find Raspberry Pi specific pkgconf configuartions.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CONFIG_OPTS+=(<span class="string">"PKG_CONFIG_DIR="</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"PKG_CONFIG_LIBDIR=<span class="variable">$&#123;SYSROOT&#125;</span>/usr/lib/arm-linux-gnueabihf/pkgconfig:<span class="variable">$&#123;SYSROOT&#125;</span>/usr/share/pkgconfig"</span>)</div><div class="line">CONFIG_OPTS+=(<span class="string">"PKG_CONFIG_SYSROOT=<span class="variable">$&#123;SYSROOT&#125;</span>"</span>)</div></pre></td></tr></table></figure>
+<p>We might have to cross compile dependencies ourselves. That’s why we let pkgconf look into our install directory for dependencies as well.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CONFIG_OPTS+=(<span class="string">"PKG_CONFIG_PATH=<span class="variable">$&#123;BUILD_PREFIX&#125;</span>/lib/pkgconfig"</span>)</div></pre></td></tr></table></figure>
+<h2 id="building">Building</h2>
+<p>Finally we can start building our project. In this example I will compile ZeroMQ’s <code>libzmq</code> and higher level binding <code>czmq</code> to demonstrate that self compiled dependencies are detected as well. If you’ve used autotools before you should be familar with the build steps. Only difference are the <code>CONFIG_OPTS</code> we supply.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> --depth 1 https://github.com/zeromq/libzmq.git</div><div class="line"><span class="built_in">pushd</span> libzmq</div><div class="line">(</div><div class="line">    ./autogen.sh &amp;&amp;</div><div class="line">    ./configure <span class="string">"<span class="variable">$&#123;CONFIG_OPTS[@]&#125;</span>"</span> &amp;&amp;</div><div class="line">    make -j4 &amp;&amp;</div><div class="line">    make install</div><div class="line">) || <span class="built_in">exit</span> 1</div><div class="line"><span class="built_in">popd</span></div><div class="line"></div><div class="line">git <span class="built_in">clone</span> --depth 1 https://github.com/zeromq/czmq.git</div><div class="line"><span class="built_in">pushd</span> czmq</div><div class="line">(</div><div class="line">    ./autogen.sh &amp;&amp;</div><div class="line">    ./configure <span class="string">"<span class="variable">$&#123;CONFIG_OPTS[@]&#125;</span>"</span> &amp;&amp;</div><div class="line">    make -j4</div><div class="line">    make install</div><div class="line">) || <span class="built_in">exit</span> 1</div><div class="line"><span class="built_in">popd</span></div></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Kommentare:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/kevin_sapper" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/sappo" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'sappos-blog';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
