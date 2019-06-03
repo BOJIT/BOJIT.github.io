@@ -39,7 +39,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="css/driveway.min.css">
     <link rel="stylesheet" href="/css/w3.css">
 
     <!-- Custom Fonts -->
@@ -60,14 +59,12 @@
         p {
             font-family: 'Comfortaa', cursive;
         }
-        img.dw-panel__content, img.dw-flip__panel {
+        img.blog_panel {
             padding: 0;
             -moz-border-radius: 0px;
             -webkit-border-radius: 0px;
             border-radius: 0px;
-        }
-        img.dw-flip__panel {
-            max-height: 100%;
+            width: 100%;
         }
         .navbar.navbar-default {
             background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0));
@@ -204,39 +201,45 @@
         </div>
     </header>
 
+
+
     <!-- Main Content -->
     <div class="w3-container w3-center">
         <h2 class="heading" style="color:black"><b>PROJECTS and TUTORIALS:</b></h2>
     </div>
-    <div class="dw">
-        <div class="dw-panel dw-panel--pulse">
-            <div class="w3-teal w3-container">
-                <p>Panel content 1.</p>
+
+    <div class="w3-cell-row">
+        <div class="w3-container w3-cell w3-mobile" style="width:33.3%">
+            <div>
+                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/guitar.png" placeholder="DIY Guitar"></img>
+            </div>
+            <div>
+                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/Reflow.png" placeholder="Reflow Oven"></img>
             </div>
         </div>
-
-        <div class="dw-panel dw-panel--pulse">
-            <div class="w3-container w3-red">
-                <div class="col-lg-8 col-lg-offset-2 col-md-1 col-md-offset-1">
-                    <div class="post-preview">
-                        <a href="/tutorials/2019/05/29/hello_world/">
-                        <h2 class="post-title">Hello World!</h2></a>
-                        <p class="post-meta">29-05-19</p>
-                    </div>
-                    <hr>
-                    <ul class="pager">
-                    </ul>
+        <div class="w3-container w3-cell w3-mobile" style="width:33.4%">
+            <div>
+                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/Reflow.png" placeholder="Reflow Oven"></img>
+            </div>
+            <div>
+                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/guitar.png" placeholder="DIY Guitar"></img>
+            </div>
+        </div>
+        <div class="w3-container w3-cell w3-mobile" style="width:33.3%">
+            <div>
+                <div class = "w3-panel w3-padding w3-light-blue blog_panel">
+                    <h2>Single Title</h2>
                 </div>
             </div>
-        </div>
-        
-        <div class="dw-panel dw-panel--pulse">
-            <div class="w3-container w3-blue">
-                <div class="row">
+            <div>
+                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/background2-bg.jpg" placeholder="DIY Guitar"></img>
+            </div>
+            <div>
+                <div class = "w3-panel w3-padding w3-gray blog_panel">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-preview">
                             <a href="/tutorials/2019/05/29/hello_world/">
-                            <h2 class="post-title">Hella World!</h2></a>
+                            <h2 class="post-title">Hello World!</h2></a>
                             <p class="post-meta">29-05-19</p>
                         </div>
                         <hr>
@@ -246,51 +249,7 @@
                 </div>
             </div>
         </div>
-        
-        <div class="dw-panel dw-panel--pulse">
-            <img src="img/tile/guitar.png" class="dw-panel__content" placeholder="DIY Guitar"></img>
-        </div>
-
-        <div class="dw-panel dw-panel--pulse">
-            <div class="w3-container w3-gray">
-                <p>Panel content 6.</p>
-                <p>Panel content 6.</p>
-                <p>Panel content 6.</p>
-                <p>Panel content 6.</p>
-            </div>
-        </div>
-
-        <div class="dw-panel">
-            <img src="img/background-bg.jpg" class="dw-panel__content" placeholder="BOJIT"></img>
-        </div>
-
-        <div class="dw-panel dw-panel--pulse">
-            <img src="img/tile/Reflow.png" class="dw-panel__content" placeholder="Reflow Oven"></img>
-        </div>
-
-        <div class="dw-panel dw-panel--pulse">
-            <img src="img/background2-bg.jpg" class="dw-panel__content" placeholder="BOJIT"></img>
-        </div>
-
-        <div class="dw-panel dw-panel--pulse">
-                <div class="w3-container w3-gray">
-                    <p>Panel content 7.</p>
-                    <p>Panel content 7.</p>
-                    <p>Panel content 7.</p>
-                </div>
-            </div>
-
-        <div class="dw-panel dw-panel--pulse">
-            <img src="img/tile/PCB.jpg" class="dw-panel__content" placeholder="PCB"></img>
-        </div>
-
-        <div class="dw-panel dw-panel--pulse">
-            <div class="w3-container w3-red">
-                <p>Panel content 9.</p>
-            </div>
-        </div>
-
-    </div>
+    </div>   
 
     <!-- Footer -->
     <hr />
@@ -348,7 +307,10 @@
     </footer>
 
     <!-- After footer scripts -->
-        
+    
+    <!-- Tiler -->
+    <script src="tiler.js"></script>
+    
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 

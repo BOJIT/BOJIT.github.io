@@ -9,6 +9,3 @@ http://www.codeblocq.com/
 
 https://www.w3schools.com/w3css/4/w3.css
 
-Container Arrangements:
-
-https://github.com/jh3y/driveway
