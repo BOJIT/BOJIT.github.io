@@ -59,6 +59,9 @@
         p {
             font-family: 'Comfortaa', cursive;
         }
+        h2.link:hover {
+            filter: invert(100%);
+        }
         img.blog_panel {
             padding: 0;
             -moz-border-radius: 0px;
@@ -84,6 +87,30 @@
             font-family: 'Amatic SC', cursive;
             font-family: 'Kalam', cursive;
             font-family: 'Gochi Hand', cursive;
+        }
+        .tile {
+            position: relative;
+            text-align: center;
+            color: black;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: .25s ease;
+            display: none;
+            pointer-events: none;
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: calc(6vw * var(--fontMultiplier));
+        }
+        @media (max-width: 600px) {
+            .text {
+                font-size: calc(20vw * var(--fontMultiplier));
+            }
+        }
+        img.blog_panel:hover + .text {
+            display: block;
         }
     </style>
 
@@ -207,34 +234,56 @@
     <div class="w3-container w3-center">
         <h2 class="heading" style="color:black"><b>PROJECTS and TUTORIALS:</b></h2>
     </div>
-
+    <!-- Tiles -->
     <div class="w3-cell-row">
+        <!-- Column 1 -->
         <div class="w3-container w3-cell w3-mobile" style="width:33.3%">
-            <div>
+            <div class="tile">
                 <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/guitar.png" placeholder="DIY Guitar"></img>
+                <div class="text" style="--fontMultiplier:1">DIY Electric Guitar</div>
             </div>
-            <div>
+            <div class="tile">
                 <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/Reflow.png" placeholder="Reflow Oven"></img>
+                <div class="text" style="--fontMultiplier:1">Reflow Oven</div>
             </div>
         </div>
+        <!-- Column 2 -->
         <div class="w3-container w3-cell w3-mobile" style="width:33.4%">
-            <div>
+            <div class="tile">
                 <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/Reflow.png" placeholder="Reflow Oven"></img>
+                <div class="text" style="--fontMultiplier:1">Reflow Oven</div>
             </div>
-            <div>
-                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/guitar.png" placeholder="DIY Guitar"></img>
-            </div>
-        </div>
-        <div class="w3-container w3-cell w3-mobile" style="width:33.3%">
-            <div>
+            <div class="tile">
                 <div class = "w3-panel w3-padding w3-light-blue blog_panel">
-                    <h2>Single Title</h2>
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-preview">
+                            <a href="/tutorials/2019/05/29/hello_world/">
+                            <h2 class="post-title">Touchdesigner Image->DMX</h2></a>
+                            <hr>
+                            <p class="post-meta">31-03-19</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/background2-bg.jpg" placeholder="DIY Guitar"></img>
+            <div class="tile">
+                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/Greenpower.png" placeholder="F24 Car"></img>
+                <div class="text" style="--fontMultiplier:0.7">Greenpower Competition</div>
             </div>
-            <div>
+        </div>
+        <!-- Column 3 -->
+        <div class="w3-container w3-cell w3-mobile" style="width:33.3%">
+            <div class="tile">
+                <a href="/tutorials/2019/05/29/hello_world/" style="text-decoration:none">
+                <div class = "w3-panel w3-center w3-padding w3-teal blog_panel w3-hover-opacity">
+                    <h2 class="link">About Page:</h2>
+                </div>
+                </a>
+            </div>
+            <div class="tile">
+                <img class = "w3-panel blog_panel w3-hover-opacity" src="img/tile/Artnet Node.jpg" placeholder="Artnet Node"></img>
+                <div class="text" style="--fontMultiplier:1">Artnet Node</div>
+            </div>
+            <div class="tile">
                 <div class = "w3-panel w3-padding w3-gray blog_panel">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-preview">
@@ -309,7 +358,7 @@
     <!-- After footer scripts -->
     
     <!-- Tiler -->
-    <script src="tiler.js"></script>
+    <script src="js/display.js"></script>
     
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
