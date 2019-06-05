@@ -3,29 +3,35 @@
 
 <!-- Head tag -->
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Description-->
-    
+    <meta name="description" content="BOJIT Projects, tutorials and ramblings.">
+    <meta name="keywords" content="BOJIT,Github,James Bennion-Pedley,engineering,
+    programming,Raspberry Pi,Linux,C++,MagicQ,lighting,theatre,electronics">
+
     <!--Author-->
     <meta name="author" content="James B-P">
+    
 
     <!--Open Graph Title-->
     <meta property="og:title" content="BOJIT"/>
-
+    
     <!--Open Graph Site Name-->
     <meta property="og:site_name" content="BOJIT"/>
 
     <!--Type page-->
     <meta property="og:type" content="website" />
+    
 
     <!--Page Cover-->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="BOJIT>" />
-
-    <!-- Title -->
+    
+    <!-- Title -->  
     <title>Hello World!</title>
 
     <!-- Bootstrap Core CSS -->
@@ -33,18 +39,80 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/w3.css">
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Gloria+Hallelujah|Gochi+Hand|Kalam|Shadows+Into+Light&display=swap" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Styles -->
+    <style> 
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            font-family: 'Gloria Hallelujah', cursive;
+        }
+        p {
+            font-family: 'Comfortaa', cursive;
+        }
+        h2.link:hover {
+            filter: invert(100%);
+        }
+        img.blog_panel {
+            padding: 0;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            width: 100%;
+        }
+        .navbar.navbar-default {
+            background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0));
+            border: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        @media (max-width: 768px) {
+            .navbar.navbar-default {
+                background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,1));
+            }
+        }
+        #null {
+            font-family: 'Comfortaa', cursive;
+            font-family: 'Gloria Hallelujah', cursive;
+            font-family: 'Shadows Into Light', cursive;
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Kalam', cursive;
+            font-family: 'Gochi Hand', cursive;
+        }
+        .tile {
+            position: relative;
+            text-align: center;
+            color: black;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: .25s ease;
+            display: none;
+            pointer-events: none;
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: calc(6vw * var(--fontMultiplier));
+        }
+        @media (max-width: 768px) {
+            .text {
+                font-size: calc(20vw * var(--fontMultiplier));
+            }
+        }
+        img.blog_panel:hover + .text {
+            display: block;
+        }
+    </style>
 
     <!-- Gallery -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
@@ -62,19 +130,62 @@
 
 <body>
     <!-- Menu -->
-
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button style="padding:15px" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">BOJIT</a>
+                <!-- Socials -->
+                <div style="padding:10px">
+                <ul class="list-inline navbar-left">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCR7zc0TblvkjPy9DhAWUkvA" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/james-bennion-pedley-bab14a146/" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/BOJIT" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/James.BOJIT" target="_blank">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://soundcloud.com/james-bojit" target="_blank">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </a>
+                    </li>
+                </ul>
+                </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,67 +195,56 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/posts">Posts</a>
+                        <a href="/projects">Projects</a>
                     </li>
                     <li>
-                        <a href="https://github.com/BOJIT">
-                        <i class="fa fa-github fa-stack-2x"></i></a>
-                    </li> 
+                        <a href="/tutorials">Tutorials</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
                 </ul>
             </div>
-        <!-- /.navbar-collapse -->
+            <!-- /.navbar-collapse -->
         </div>
-    <!-- /.container -->
+        <!-- /.container -->
     </nav>
 
     <!-- Main Content -->
-        
+
     <!-- Page Header -->
     <!-- Set your background image for this header in the theme's configuration: index_cover -->
-    <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('/img/BannerSmall.jpg');padding:0px">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Hello World!</h1>
+                    <div class="w3-center w3-padding-32">
+                        <br>
+                        <br>
+                        <br>
+                        <img src="/img/BOJIT_Logo_Alias_Small.png" placeholder="BOJIT"></img>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="dw">
-        <div class="dw-panel ">
-            <div class="dw-panel__content">
-                <p>Panel content 1.</p>
-            </div>
+    <!-- Main Content -->
+    <div class="w3-container w3-center">
+        <h2 class="heading" style="color:black"><b>Hello World!</b></h2>
+    </div>
+    <div class="w3-container">
+        <div class="w3-container">
+    <p>The standard Lorem Ipsum passage, used since the 1500s
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            
+            Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    </p>
         </div>
-
-        <div class="dw-panel ">
-            <div class="dw-panel__content">
-                <p>Panel content 2.</p>
-            </div>
-        </div>
-        
-        <!-- Main Content -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">  
-                    <div class="post-preview">
-                        <a href="/posts/2019/05/29/hello_world/">
-                        <h1 class="post-title archive">Hella World!</h1></a>
-                        <p class="post-meta archive">29-05-19</p>
-                    </div>  
-                    <div class="archive-before-pagination"></div>
-                    <ul class="pager">
-                    </ul>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <!-- Footer Break -->
+    <!-- Footer -->
     <hr />
 
     <!-- Footer -->
@@ -155,18 +255,26 @@
                     <ul class="list-inline text-center">
                         <li>
                             <a href="https://www.youtube.com/channel/UCR7zc0TblvkjPy9DhAWUkvA" target="_blank">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
-                            </span>
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/james-bennion-pedley-bab14a146/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/BOJIT" target="_blank">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
                             </a>
                         </li>
                         <li>
@@ -177,6 +285,14 @@
                             </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="https://soundcloud.com/james-bojit" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                            </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -184,7 +300,10 @@
     </footer>
 
     <!-- After footer scripts -->
-        
+    
+    <!-- Tiler -->
+    <script src="js/display.js"></script>
+    
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
@@ -197,7 +316,6 @@
     <!-- Disqus Comments -->
     <script type="text/javascript">
         var disqus_shortname = 'BOJIT-blog';
-
         (function(){
             var dsq = document.createElement('script');
             dsq.type = 'text/javascript';
