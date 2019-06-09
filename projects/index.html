@@ -92,6 +92,34 @@
             position: relative;
             text-align: center;
             color: black;
+            transition: 0.3s;
+        }
+        .post-title {
+            font-size: 36px;
+            color: #333333;
+            transition: 0.3s;
+        }
+        .post-hr {
+            background-color: gray;
+            border-color: gray;
+            transition: 0.3s;
+        }
+        .tile:hover {
+            background-color: gray;
+            transition: 0.3s;
+        }
+        .tile:hover .post-title {
+            color: white;
+            transition: 0.3s;
+        }
+        .tile:hover .post-meta {
+            color: white;
+            transition: 0.3s;
+        }
+        .tile:hover .post-hr {
+            background-color: white;
+            border-color: white;
+            transition: 0.3s;
         }
         .text {
             position: absolute;
@@ -235,12 +263,104 @@
     </div>
     <div class="w3-container">
         <div class="w3-container">
-    <p>The standard Lorem Ipsum passage, used since the 1500s
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            
-            Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-    </p>
+            <div class="tile">
+                <a href="/projects/2019/06/05/Greenpower/" style="text-decoration:none">
+                <div class = "w3-panel w3-padding w3-border w3-border-gray blog_panel">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-preview">
+                            <br>
+                            <h2 class="post-title">GREENPOWER F24 COMPETITION</h2>
+                            <hr class="post-hr">
+                            <p class="post-meta">05-06-19</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="tile">
+                <a href="/projects/2019/03/10/Kinect_Grid/" style="text-decoration:none">
+                <div class = "w3-panel w3-padding w3-border w3-border-gray blog_panel">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-preview">
+                            <br>
+                            <h2 class="post-title">KINECT INTERACTIVE BULB GRID</h2>
+                            <hr class="post-hr">
+                            <p class="post-meta">03-10-19</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="tile">
+                <a href="/projects/2018/12/10/Stepper_Driver/" style="text-decoration:none">
+                <div class = "w3-panel w3-padding w3-border w3-border-gray blog_panel">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-preview">
+                            <br>
+                            <h2 class="post-title">CLOSED-LOOP STEPPER DRIVER</h2>
+                            <hr class="post-hr">
+                            <p class="post-meta">10-12-18</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="tile">
+                <a href="/projects/2018/04/10/Reflow_Oven/" style="text-decoration:none">
+                <div class = "w3-panel w3-padding w3-border w3-border-gray blog_panel">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-preview">
+                            <br>
+                            <h2 class="post-title">ALDI REFLOW OVEN</h2>
+                            <hr class="post-hr">
+                            <p class="post-meta">10-04-18</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="tile">
+                <a href="/projects/2018/02/18/Artnet_Node/" style="text-decoration:none">
+                <div class = "w3-panel w3-padding w3-border w3-border-gray blog_panel">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-preview">
+                            <br>
+                            <h2 class="post-title">ARTNET NODE</h2>
+                            <hr class="post-hr">
+                            <p class="post-meta">18-02-18</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="tile">
+                <a href="/projects/2017/11/25/MagicQ_Wing/" style="text-decoration:none">
+                <div class = "w3-panel w3-padding w3-border w3-border-gray blog_panel">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-preview">
+                            <br>
+                            <h2 class="post-title">CUSTOM MAGICQ WING</h2>
+                            <hr class="post-hr">
+                            <p class="post-meta">25-11-17</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="tile">
+                <a href="/projects/2017/07/15/DIY_Guitar/" style="text-decoration:none">
+                <div class = "w3-panel w3-padding w3-border w3-border-gray blog_panel">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-preview">
+                            <br>
+                            <h2 class="post-title">DIY ELECTRIC GUITAR</h2>
+                            <hr class="post-hr">
+                            <p class="post-meta">15-07-17</p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>  
         </div>
     </div>
 
