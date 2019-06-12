@@ -58,6 +58,9 @@
         h2 {
             font-family: 'Gloria Hallelujah', cursive;
         }
+        h4 {
+            font-family: 'Gloria Hallelujah', cursive;
+        }
         p {
             font-family: 'Comfortaa', cursive;
         }
@@ -106,10 +109,16 @@
             font-family: 'Gloria Hallelujah', cursive;
             font-size: calc(6vw * var(--fontMultiplier));
         }
+        .blog-item {
+            width: var(--desktopWidth);
+        }
         @media (max-width: 768px) {
             .text {
                 font-size: calc(20vw * var(--fontMultiplier));
             }
+            .blog-item {
+                width: 100%;
+            }   
         }
         img.blog_panel:hover + .text {
             display: block;
@@ -234,11 +243,27 @@
     <!-- Main Content -->
     <div class="w3-container w3-center">
         <h2 class="heading" style="color:black"><b>KINECT INTERACTIVE BULB GRID:</b></h2>
+        <h4 class="heading" style="color:gray">10-03-19</h4>
     </div>
     <div class="w3-container">
         <div class="w3-container">
-            <p>Last Spring 2</p>
-            <div class="w3-container" style="margin:auto;width:60%">
+            <p>
+                This Spring our school hosted a production of Every Brilliant Thing, by Duncan Macmillan.
+                This production was entirely student run, so we had a great deal more artistic freedom than most of our school shows permit.
+                One afternoon, the director approached me with the expression of someone about to double your workload, and then
+                raised the suggestion of making a grid of bulbs that could hang above the performance space (the show is
+                performed in the round). <br>My initial reaction was somewhat dismissive, as the idea of driving nearly 40 incandescent
+                lightbulbs off our school power distribution was frankly laughable. However, this conversation coincided with the arrival
+                of some rather curious bulbs I found on Ebay. These bulbs were theose new COB LED 'filament-style' lamps that are
+                all the rage right now. However, unlike many others I had seen, these were advertised as being DC-12V. Apparently they are
+                intended for caravans and SUVs, but they are surprisingly hard to find. I could not find a single EU distributor of these
+                bulbs, and only a handful of Ebay sellers. Here is the supplier <a href="https://www.ebay.co.uk/itm/S14-Led-E27-2W-Edison
+                -Filament-Bulb-Lamp-Light-Warm-White-2700K-AC220V-DC12V-3V-/273353419840?var=" target="_blank">I used:</a><br>
+                The DC variety are advertised as non-dimmable, but as the bulbs don't contain the same rectification stage that the AC-Variety
+                use, I suspected that they could be dimmed with PWM just like a normal LED strip. This is not entirely true, but they do
+                perform quite well in typical theatre use. Below is a short clip demonstrating the final outcome:
+            </p>
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:60%">
                 <div class="w3-center" style="position:relative;padding-top:56.25%;">
                     <iframe id="ytplayer" type="text/html"
                         src="https://www.youtube.com/embed/1h2riunyS8I?version=3&autoplay=1&loop=1&playlist=1h2riunyS8I&controls=0&modestbranding=1&mute=1"
@@ -246,49 +271,23 @@
                     </iframe>
                 </div>
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                After asking the supplier and doing some digging online, I couldn't find anyone who had managed it successfully, so 
+                decided to order a couple and experiment a bit. As the bulbs are only £1.39 shipped, I felt I could justify it! <br>
+                Below is my test setup for testing the bulbs: essentially it is a cheap PWM dimmer which has been modified with an Arduino
+                Nano to give it DMX input. In the final version I used <a href="https://www.ebay.co.uk/itm/36Channel-36CH-EASY-DMX-LED-RGB-
+                Controller-DMX-Decoder-Driver-RGB-LED-Controrlle/153293163824?hash=item23b0fc0d30:g:wwEAAOSwmOBb6SKL:rk:6:pf:0" target="_blank">
+                this 36 channel dimmer</a>, but I wanted to make sure that as a last resort I could get the system working with the Arduino's 
+                Default PWM frequency of 490Hz (a good frequency that does not show up on our camcorders). This worked surprisingly well, all
+                the way down to about 5% duty cycle. As with most LED dimmers, the dimming curve is not linear: a change from 0-10% corresponds to 
+                a brightness change of about 50% at the bottom end. This makes very slow fades problematic. Moreover, at approx. 2% duty cycle the
+                bulbs tend to violently flicker, which leads me to believe that there is some sort of constant-current circuitry inside the bulbs 
+                (while tempting to smash one open and check, I only had two bulbs, and I did not fancy waiting another 6 weeks for a replacement).
+                <br>Despite being a bit snappy at low intensity, as well as the very occasional flicker, these bulbs performed very well under
+                theatre lighting, and their low power-consumption and cost made them ideal for large grid installations. The entire 36 bulb grid
+                ended up costing roughly £120 to build, and drew a peak of about 80W (the equivalent of two incandescent bulbs!).
             </p>
-            <div class="w3-container" style="margin:auto;width:50%">
-                <img src="img/bulbs.jpeg" placeholder="bulbs" width="100%">
-            </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            </p>
-            <div class="w3-container" style="margin:auto;width:50%">
-                <img src="img/control.jpg" placeholder="control room" width="100%">
-            </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            </p>
-            <div class="w3-container" style="margin:auto;width:70%">
-                <img src="img/touchdesigner.PNG" placeholder="Touchdesigner" width="100%">
-            </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            </p>
-            <div class="w3-container" style="margin:auto;width:50%">
-                <img src="img/grid.jpg" placeholder="grid" width="100%">
-            </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            </p>
-            <div class="w3-container" style="margin:auto;width:50%">
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/light_test.JPG" placeholder="Bulb Testing" width="100%">
             </div>
             <p>The standard Lorem Ipsum passage, used since the 1500s
@@ -297,7 +296,50 @@
                     Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
                     "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
             </p>
-            <div class="w3-container" style="margin:auto;width:60%">
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
+                <img src="img/bulbs.jpeg" placeholder="bulbs" width="100%">
+            </div>
+            <p>The standard Lorem Ipsum passage, used since the 1500s
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    
+                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </p>
+            
+            <p>The standard Lorem Ipsum passage, used since the 1500s
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                
+                Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </p>
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
+                <img src="img/control.jpg" placeholder="control room" width="100%">
+            </div>
+            <p>The standard Lorem Ipsum passage, used since the 1500s
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    
+                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </p>
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:70%">
+                <img src="img/touchdesigner.PNG" placeholder="Touchdesigner" width="100%">
+            </div>
+            <p>The standard Lorem Ipsum passage, used since the 1500s
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    
+                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </p>
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
+                <img src="img/grid.jpg" placeholder="grid" width="100%">
+            </div>
+            <p>The standard Lorem Ipsum passage, used since the 1500s
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    
+                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </p>
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:60%">
                 <div class="w3-center" style="position:relative;padding-top:56.25%;">
                     <iframe id="ytplayer" type="text/html"
                         src="https://www.youtube.com/embed/KqTWhsiiKgE?version=3&autoplay=1&loop=1&playlist=KqTWhsiiKgE&controls=0&modestbranding=1&mute=1"
@@ -311,7 +353,10 @@
                 Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
             </p>
-            <div class="w3-container" style="margin:auto;width:70%">
+            <a href="https://www.facebook.com/events/291397161524474/" style="text-decoration:none">
+            <div class="w3-panel w3-gray w3-center w3-hover-opacity"><h2>Click Here to go to Original Event Page:</h2></div></a>
+            <br>
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:70%">
                 <img src="img/curtain_call.jpeg" placeholder="Curtain Call" width="100%">
             </div>
         </div>
