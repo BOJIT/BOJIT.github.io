@@ -58,6 +58,9 @@
         h2 {
             font-family: 'Gloria Hallelujah', cursive;
         }
+        h4 {
+            font-family: 'Gloria Hallelujah', cursive;
+        }
         p {
             font-family: 'Comfortaa', cursive;
         }
@@ -106,10 +109,16 @@
             font-family: 'Gloria Hallelujah', cursive;
             font-size: calc(6vw * var(--fontMultiplier));
         }
+        .blog-item {
+            width: var(--desktopWidth);
+        }
         @media (max-width: 768px) {
             .text {
                 font-size: calc(20vw * var(--fontMultiplier));
             }
+            .blog-item {
+                width: 100%;
+            }   
         }
         img.blog_panel:hover + .text {
             display: block;
@@ -234,6 +243,7 @@
     <!-- Main Content -->
     <div class="w3-container w3-center">
         <h2 class="heading" style="color:black"><b>CUSTOM MAGICQ WING:</b></h2>
+        <h4 class="heading" style="color:gray">25-11-17</h4>
     </div>
     <div class="w3-container">
         <div class="w3-container">
@@ -249,43 +259,58 @@
                 the standard HID library, making typing somewhat tricky, it gets a surprising amount of use, and I can be much less precious
                 about this creation than I would be with an MQ60 console.
             </p>
-            <div class="w3-container" style="margin:auto;width:50%">
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Wing.JPG" placeholder="Wing" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                The core of this project was the Arduino Pro Micro. This small board uses the ATMega32u4 chip, which unlike the ATMega328p
+                used on the Arduino Uno and the Nano has an integrated USB core. This means that in contrast to using an onboard USB->Serial
+                converter, the ATMega can communicate directly over USB, so can act as an HID device. By using this board I was able to map
+                all the keys on my wing to 'physical' keys, meaning I do not have to use any software like AutoHotkey.<br>
+                Obviously, the number of pins on the Pro Micro is insufficient for the number of switches on the wing, so I used 
+                74HC595 shift registers to multiplex the keys as a grid, much like a regular computer keyboard.
+                For the keys I used the cheapest mechanical keys I could find on EBay, and wired the entire matrix point-to-point without
+                a PCB. Below you can see the mess that that resulted in, but the construction has been surprisingly reliable so far...
             </p>
-            <div class="w3-container" style="margin:auto;width:50%">
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Wiring.JPG" placeholder="Wiring" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                In the picture above you may also notice the other Arduino Nano hanging precariously on a piece of breadboard. This 
+                was a bit of an experiment in adding Encoder support to my Wing. While MagicQ macros don't really allow for absolute value
+                automation (playback faders, grandmaster, etc...), incremental movements are possible by setting one macro to turn the encoder
+                one turn clockwise, and another to turn it clockwise. The Arduino Nano essentially monitors state changes on all 8 encoders, 
+                then forwards HID values over serial to the Arduino Pro Micro, which subsequently turns them into keyboard commands. This
+                approach is very finnicky, and does not allow encoder velocity control, but the X and Y encoders are just about usable for
+                moving head Pan and Tilt control.<br>For the heart of the controller, I decided to try one of those PCB fabrication services
+                online, and the ordered boards vastly simplified the building and debugging of this project.
             </p>
-            <div class="w3-container" style="margin:auto;width:50%">
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Multiplexer.JPG" placeholder="Multiplexer" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            </p>
-            <div class="w3-container" style="margin:auto;width:50%">
+            <p>
+                I did this project quite a while ago, while I was still quite new to C++, so the code is not very efficient, but I have
+                attached the project sketch <a href="./MQ_Wing.ino" download>here</a>, which could be used as a starting point. Unfortunately MagicQ does not allow the use of the
+                extended USB HID library so all the macros have to be set onto keys that are used for typing and programming. It is therefore
+                advisable to create a button in MagicQ that toggles macros on and off.<br>
+                While this DIY wing is not a substitute for a real desk, it makes a very handy extra set of buttons that can be used for macros.
+                To use it to run a show, I have to change the way I program shows: With no faders as intensity masters, I have to re-map many of
+                the playback keys to control crossfades and change between intensity presets. This makes busking quite difficult, but given enough
+                time to program, I can control quite large,complex shows. Below is a picture of the pre-programming/visualisation for our 'Battle of the Bands'
+                competition, along with a picture of the performance below that. One feature that is invaluable to have as a physical is the 
+                'Preload Cue' button. This feature, paired with the homemade wing, allows me to program in a 'look' from my various stacks, then 
+                trigger them with a single button. Even on the high-end consoles this feature is only operable with a soft-button on the touchscreen.
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Plot.jpg" placeholder="Plot" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                As a quick disclaimer, I am not advocating 'exploiting' MagicQ in this way. Chamsys very generously make the software free to use,
+                and they fund this with sales of their hardware. I would highly encourage buying/renting their hardware for large shows, as this 
+                is what allows them to keep the software free. However, a project like this is very good for getting a deeper understanding of USB HID,
+                and can be used on a slightly smaller scale to add functionality to the Chamsys desks that was not there previously. I do have future plans
+                to make a version 2.0, but this wing still covers all the shows that I have to deal with in a school theatre.
             </p>
-            <div class="w3-container" style="margin:auto;width:50%">
+            <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/In_Concert.jpg" placeholder="In Concert" width="100%">
             </div>
 
