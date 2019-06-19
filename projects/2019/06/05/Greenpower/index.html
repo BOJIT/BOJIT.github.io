@@ -58,6 +58,9 @@
         h2 {
             font-family: 'Gloria Hallelujah', cursive;
         }
+        h4 {
+            font-family: 'Gloria Hallelujah', cursive;
+        }
         p {
             font-family: 'Comfortaa', cursive;
         }
@@ -106,10 +109,16 @@
             font-family: 'Gloria Hallelujah', cursive;
             font-size: calc(6vw * var(--fontMultiplier));
         }
+        .blog-item {
+            width: var(--desktopWidth);
+        }
         @media (max-width: 768px) {
             .text {
                 font-size: calc(20vw * var(--fontMultiplier));
             }
+            .blog-item {
+                width: 100%;
+            }   
         }
         img.blog_panel:hover + .text {
             display: block;
