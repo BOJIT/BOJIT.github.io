@@ -251,7 +251,7 @@
                 Recently, there have been a variety of events where I have needed more than one universe of DMX for a show. Particularly
                 when bringing shows into other venues, often the rig is spread out over multiple DMX universes, and having more than one DMX
                 output is always handy.<br>
-                For most theatre shows, I use MagicQ on PC with the <a href="https://www.enttec.co.uk/product/protocols-gb/dmx512-gb/2-universe-usb-computer-interface-dmx/">
+                For most theatre shows, I use MagicQ on PC with the <a href="https://www.enttec.co.uk/product/protocols-gb/dmx512-gb/2-universe-usb-computer-interface-dmx/" target="_blank">
                 Entecc DMX USB Pro</a>, but MagicQ only allows the use of one single universe of DMX out over a USB interface, meaning I cannot simply use
                 two of them to get two universes of DMX out of the software. However, MagicQ does allow the full <b>64 universes</b> to be output over Artnet/sACN,
                 even in demo mode! Now, you can buy these at an 'affordable' price relative to the cost of professional kit, but they are still a bit on the expensive
@@ -262,11 +262,17 @@
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Artnet Node.JPG" placeholder="Artnet Node" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                The core of this project is based on the DMX library made available by Toni Merino, available <a href="https://blog.deskontrol.net/arduino-based-dmx-artnet-node/"
+                target="_blank">here</a>. This supports one universe of DMX on the Arduino Uno, and up to four on the Arduino Mega (performance starts
+                to suffer at about three universes, so I would not recommend exceeding two).<br>
+                The code is based quite closely on a similar project made by <a href="https://github.com/alfo/artnet" target="_blank">Alex Forey</a>, however both his code and the
+                original library code by Toni Merino will not compile in modern versions of the Arduino IDE. This is because many register names have been changed since the library
+                was written, so much of the old code has been "poisoned". Personally, I can't stand having to use multiple versions of the same software, so I re-wrote the library
+                with the modern register names and syntaxes. This updated library can be found on <a href="https://github.com/BOJIT/Artnet_Node" target="_blank">Github</a>, along with the rest of my source code.
+                <br>Aside from the Arduino Mega, I used a pair of MAX485 ICs to drive the DMX lines ( optical isolation is recommended here, but not mandatory), and a Wiznet W5100 breakout board for Ethernet connectivity.
+                I didn't feel like making a PCB for this project, so I wired it all together on a piece of stripboard and enclosed the entire thing in an old
+                extrusion-style case I had lying about.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/AlexForey.jpg" placeholder="Alex Forey" width="100%">
