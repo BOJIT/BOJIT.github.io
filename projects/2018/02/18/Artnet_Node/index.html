@@ -291,12 +291,12 @@
             <p>
                 ...into this syntax:
             </p>
-            <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">  </span><span style="color:#004a43; ">#</span><span style="color:#004a43; ">if</span><span style="color:#004a43; "> </span><span style="color:#004a43; ">defined</span><span style="color:#0000ff; ">(</span><span style="color:#004a43; ">USE_UART0</span><span style="color:#0000ff; ">)</span>
-                ISR<span style="color:#0000ff; ">(</span>SIG_USART0_TRANS<span style="color:#0000ff; ">)</span>
+            <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">if</span><span style="color:#004a43; "> </span><span style="color:#004a43; ">defined</span><span style="color:#0000ff; ">(</span><span style="color:#004a43; ">USE_UART0</span><span style="color:#0000ff; ">)</span>
+                ISR<span style="color:#0000ff; ">(</span>USART0_TX_vect<span style="color:#0000ff; ">)</span>
                 <span style="color:#0000ff; ">{</span>
                 ArduinoDmx0<span style="color:#0000ff; ">.</span>Process_ISR_TX<span style="color:#0000ff; ">(</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
                 <span style="color:#0000ff; ">}</span>
-            <span style="color:#004a43; ">&nbsp;&nbsp;</span><span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span>
+            <span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span>
             </pre>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Prototype.JPG" placeholder="Prototype" width="100%">
