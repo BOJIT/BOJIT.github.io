@@ -280,28 +280,24 @@
                 It has been a while since I modified the <i>libDMX.cpp</i> library, but as far as I can remember, most of the trouble
                 was caused by the <b>SIG_USART</b> syntax, which has been poisoned since Arduino Version 0023. If you encounter similar 
                 syntax bugs elsewhere, you essentially have to convert this syntax:
-            </p>
-            <code>        
-                <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">if</span><span style="color:#004a43; "> </span><span style="color:#004a43; ">defined</span><span style="color:#0000ff; ">(</span><span style="color:#004a43; ">USE_UART0</span><span style="color:#0000ff; ">)</span>
-                    ISR<span style="color:#0000ff; ">(</span>SIG_USART0_TRANS<span style="color:#0000ff; ">)</span>
-                    <span style="color:#0000ff; ">{</span>
-                    ArduinoDmx0<span style="color:#0000ff; ">.</span>Process_ISR_TX<span style="color:#0000ff; ">(</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
-                    <span style="color:#0000ff; ">}</span>
-                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span>
-                </pre>
-            </code>
+            </p>       
+            <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">if</span><span style="color:#004a43; "> </span><span style="color:#004a43; ">defined</span><span style="color:#0000ff; ">(</span><span style="color:#004a43; ">USE_UART0</span><span style="color:#0000ff; ">)</span>
+                ISR<span style="color:#0000ff; ">(</span>SIG_USART0_TRANS<span style="color:#0000ff; ">)</span>
+                <span style="color:#0000ff; ">{</span>
+                ArduinoDmx0<span style="color:#0000ff; ">.</span>Process_ISR_TX<span style="color:#0000ff; ">(</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+            <span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span>
+            </pre>
             <p>
                 ...into this syntax:
             </p>
-            <code>
-                <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">if</span><span style="color:#004a43; "> </span><span style="color:#004a43; ">defined</span><span style="color:#0000ff; ">(</span><span style="color:#004a43; ">USE_UART0</span><span style="color:#0000ff; ">)</span>
-                    ISR<span style="color:#0000ff; ">(</span>USART0_TX_vect<span style="color:#0000ff; ">)</span>
-                    <span style="color:#0000ff; ">{</span>
-                    ArduinoDmx0<span style="color:#0000ff; ">.</span>Process_ISR_TX<span style="color:#0000ff; ">(</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
-                    <span style="color:#0000ff; ">}</span>
-                <span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span>
-                </pre>
-            </code>
+            <pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">if</span><span style="color:#004a43; "> </span><span style="color:#004a43; ">defined</span><span style="color:#0000ff; ">(</span><span style="color:#004a43; ">USE_UART0</span><span style="color:#0000ff; ">)</span>
+                ISR<span style="color:#0000ff; ">(</span>USART0_TX_vect<span style="color:#0000ff; ">)</span>
+                <span style="color:#0000ff; ">{</span>
+                ArduinoDmx0<span style="color:#0000ff; ">.</span>Process_ISR_TX<span style="color:#0000ff; ">(</span><span style="color:#800000; ">0</span><span style="color:#0000ff; ">)</span><span style="color:#0000ff; ">;</span>
+                <span style="color:#0000ff; ">}</span>
+            <span style="color:#004a43; ">#</span><span style="color:#004a43; ">endif</span>
+            </pre>
             <br>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Prototype.JPG" placeholder="Prototype" width="100%">
@@ -319,20 +315,26 @@
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Test.JPG" placeholder="Test" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                
-                Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                When all tidied up, the unit looks quite smart on the outside (despite being a complete mess inside). 
+                This was also the first project I made with an integrated mains supply. When doing a theatre get-in, the last
+                thing you want to be doing is digging through boxes to find the right wall adapter! When doing this it is very
+                important to make sure the case is properly mounted and everything inside the case is rigidly mounted, so as to
+                prevent any potential shorts between the live AC input and the control circuitry.<br>
+                I also re-wrote the code to use these really cutesy OLED displays you can get on <a href="https://www.ebay.co.uk/itm/IIC-I2C-0-91-128x32-white-OLED-LCD-Display-Module-3-3v-5v-For-Arduino-PIC-PSHN/132893477621?epid=4002658264&hash=item1ef1118af5:g:lKYAAOSwu05bQsUy"
+                target="_blank">EBay</a> for next to nothing. At the moment I have not implemented encoder support for configuring the node
+                IP address, as I was nervous someone would fiddle with the settings midway through our last show, however this is something
+                I am planning to do if I get round to updating this project.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/LCD.JPG" placeholder="LCD" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                In the future I am planning to port this project to a much cheaper ARM development board like the
+                <a href="https://wiki.stm32duino.com/index.php?title=Blue_Pill" target="_blank">STM32 'Blue-Pill'</a>,
+                as well as get remote configuration and discovery working. The target is to make a simple module that can be
+                embedded into projects and cheaper fixtures to add networking capabilities retroactively.<br>
+                However, suffice to say, this is quite a while off, as I have some more exciting projects in the pipeline!
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Node.JPG" placeholder="Node" width="100%">
