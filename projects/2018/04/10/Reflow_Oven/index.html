@@ -279,11 +279,17 @@
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Internals_Original.JPG" placeholder="Original Oven Controller" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                While my controller is not stock, I did not build the entire PID control system from scratch. My firmware is based very closedly
+                on <b>giacu92's</b> <a href="https://github.com/giacu92/Arduino-Reflow-Oven-Controller" target="_blank">reflow oven firmware</a> for the Arduino Nano.
+                My version is very similar, but I have changed the menu structure and interface connections to make it more suitable for my oven's existing controls.
+                One very nice feature of giacu92's firmware is that it is designed to be paired with a control/tuning application, which means I don't need to make
+                a detailed means of tuning the PID and reflow curves through the oven controls.<br>
+                Other than a few firmware adjustments, my main changes to giacu92's project was to the hardware layout. Because I wanted to build the entire controller
+                into the oven housing, I modified the PCB design to fit within the footprint of the LCD screen, and made the layout entirely through hole and single-sided.
+                It is worth noting that the control circuit is simple enough to make on stripboard or even just soldered point-to-point, but as I have the equipment to
+                etch simple single-sided boards on hand, this just neatened everything up. The PCB design is also optimised for keeping the oven heat away from the control
+                circuitry. This probably isn't necessay, as the control cavity is insulated and fan cooled, however I didn't want to take any chances!
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Control_Board.JPG" placeholder="Control_Board" width="100%">
