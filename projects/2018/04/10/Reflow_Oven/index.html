@@ -285,7 +285,7 @@
                 My version is very similar, but I have changed the menu structure and interface connections to make it more suitable for my oven's existing controls.
                 One very nice feature of giacu92's firmware is that it is designed to be paired with a control/tuning application, which means I don't need to make
                 a detailed means of tuning the PID and reflow curves through the oven controls.<br>
-                Other than a few firmware adjustments, my main changes to giacu92's project was to the hardware layout. Because I wanted to build the entire controller
+                Other than a few firmware adjustments, my main changes to giacu92's project were to the hardware layout. Because I wanted to build the entire controller
                 into the oven housing, I modified the PCB design to fit within the footprint of the LCD screen, and made the layout entirely through hole and single-sided.
                 It is worth noting that the control circuit is simple enough to make on stripboard or even just soldered point-to-point, but as I have the equipment to
                 etch simple single-sided boards on hand, this just neatened everything up. The PCB design is also optimised for keeping the oven heat away from the control
@@ -298,7 +298,7 @@
                 To actually control the oven I am using two Solid State Relays, which independently control the top and bottom set of heating elements. This gives me 
                 some control over temperature distribution in the oven, and I have configured the controller to drive the bottom elements slightly hotter than the top
                 elements, to prevent overheating of electronic components when reflowing. It is worth noting that in this oven, there are 4 heating elements, but they
-                are rated at 120V, so must be wired in series pairs. To help with temperature distribution I also added a shrouded air inlet which helps avoid uneven
+                are rated at 120V, so must be wired in series pairs. To help with temperature distribution I also added a shrouded fan inlet which circulates air to avoid uneven
                 reflowing. This fan also helps ramp the temperature down after the peak reflow temperature has been reached.<br>
                 The SSRs I am using are generic <i>'Fotek'</i> models from EBay. As a word of warning, virtually all the <i>'Fotek'</i> SSRs on EBay are fakes. 
                 They still work just fine, but I would not take them anywhere near their 25A rating. As the ALDI toaster oven is rated at 1200W@230VAC, and I am switching
