@@ -294,11 +294,17 @@
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Control_Board.JPG" placeholder="Control_Board" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                To actually control the oven I am using two Solid State Relays, which independently control the top and bottom set of heating elements. This gives me 
+                some control over temperature distribution in the oven, and I have configured the controller to drive the bottom elements slightly hotter than the top
+                elements, to prevent overheating of electronic components when reflowing. It is worth noting that in this oven, there are 4 heating elements, but they
+                are rated at 120V, so must be wired in series pairs. To help with temperature distribution I also added a shrouded air inlet which helps avoid uneven
+                reflowing. This fan also helps ramp the temperature down after the peak reflow temperature has been reached.<br>
+                The SSRs I am using are generic <i>'Fotek'</i> models from EBay. As a word of warning, virtually all the <i>'Fotek'</i> SSRs on EBay are fakes. 
+                They still work just fine, but I would not take them anywhere near their 25A rating. As the ALDI toaster oven is rated at 1200W@230VAC, and I am switching
+                the top and bottom elements separately, the peak current in the SSRs won't exceed 3A. Nevertheless, I didn't want to take any chances, so milled down an old
+                PC heatsink to mount the relays to (see picture below), and oriented the heatsink so that there will be a constant flow of forced air over the relay block.
+                Admittedly, my desire to have the controller entirely enclosed within the oven made me much more nervous about the possibility of thermal runaway. 
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Heatsink.JPG" placeholder="SSR Heatsink" width="100%">
