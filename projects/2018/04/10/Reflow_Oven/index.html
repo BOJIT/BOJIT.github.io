@@ -251,7 +251,7 @@
                 Recently, many of my electronics projects have required the use of components that are only available in SMD form. While I can solder most SMD
                 components by hand, and most components can be bought on break-out boards, I decided that it was time to up my game in the SMD soldering department.
                 After all, SMD is not going away, and I want to be prepared for when and if the through-hole components I need become completely unavailable.
-                The 'breaking point' for me was during the development of my <a href="/projects/2018/12/10/Stepper_Driver/">closed-loop stepper driver</a>, where I had to use a fine-pitched QFN chip for the motor
+                The 'breaking point' for me was during the development of my <a href="/projects/2018/12/10/Stepper_Driver/" target="_blank">closed-loop stepper driver</a>, where I had to use a fine-pitched QFN chip for the motor
                 drive, and was destroying several chips trying to solder them by hand. To prevent further frustration, I decided to make a reflow oven.<br>
                 There are plenty of articles online showing toaster -> reflow oven conversions, however they all tend to be overly complex and tend to be optimised
                 towards buying the components as a kit rather than using the dev boards we already have on hand. Moreover, they tend to be designed as 'add-on'
@@ -265,7 +265,16 @@
                 <img src="img/Ambiano_Red.jpg" placeholder="Ambiano Oven" width="100%">
             </div>
             <p>
-                T
+                The most important aspect of a reflow oven in my opinion is the ability to ramp up the temperature as rapidly as possible. To do this with
+                an oven that is relatively underpowered, I had to insulate the oven as well as possible. For this I used <a href="https://www.ebay.co.uk/itm/THERMAL-CERAMIC-INSULATION-FURNACE-PIZZA-OVEN-HIGH-TEMPERATURE-13mm-WOOL-BLANKET-/222262536663?_trksid=p2385738.m4383.l4275.c10&var=521098600211" target="_blank">
+                ceramic pizza oven insulation</a>, sandwiched between the inner and outer shell. One thing to note when working with this insulation is that
+                it is made up of lots of loose fibres. When working with it, breathing protection must be worn, and work outside to avoid dropping fibres
+                everywhere. To neaten up my insulation, I enclosed the ceramic fibre in an aluminium foil blanket, then covered most of the foil with kapton
+                tape, creating a removable blanket with cutouts for the heating elements.<br>
+                A quick look inside the enclosure (pictured below) reassured me that I would have plenty of space to install the controller. I also suspected 
+                I would be able to re-use the existing dials on the oven to interface with the controlller, meaning I wouldn't have to drill any more ugly holes
+                in the outer enclosure. I stripped out most of the innards straight away, but kept hold of the wires and spade connectors. The original ones are
+                fibreglass high temperature cables, so it seemed sensible to re-use them when wiring in my controller. 
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Internals_Original.JPG" placeholder="Original Oven Controller" width="100%">
