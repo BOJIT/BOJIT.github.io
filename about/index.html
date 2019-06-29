@@ -49,9 +49,6 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Comfortaa|Gloria+Hallelujah|Gochi+Hand|Kalam|Shadows+Into+Light&display=swap" rel="stylesheet">
 
-    <!-- ReCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
     <!-- Styles -->
     <style> 
         body {
@@ -253,7 +250,24 @@
                     <a href="https://github.com/BOJIT" target="_blank">Github</a>.
                 </p>
 
-                <div class="g-recaptcha" data-sitekey="6LcIUasUAAAAALrPIxbpSu7T0zzuMcOqYwARJC0j"></div>
+                <form class="article" method="post" action="https://eu-gb.functions.cloud.ibm.com/api/v1/namespaces/jamesbpjames%40gmail.com_dev/actions/reCAPTCHA_BOJIT">
+                    <div>
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name">
+                    </div>
+                    <div>
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email">
+                    </div>
+                    <div>
+                      <label for="message">Message</label><br>
+                      <textarea id="message" name="message"></textarea>
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LcIUasUAAAAALrPIxbpSu7T0zzuMcOqYwARJC0j"></div>
+                    <div>
+                      <input type="submit" value="Send" />
+                    </div>
+                  </form>
 
                 <a href="./CV James Bennion-Pedley.pdf" style="text-decoration:none" download>
                 <div class="w3-panel w3-gray w3-center w3-hover-opacity"><h2>Download CV</h2></div></a>
