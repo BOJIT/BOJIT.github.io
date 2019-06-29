@@ -73,6 +73,12 @@
             -webkit-border-radius: 0px;
             border-radius: 0px;
             width: 100%;
+            transition: opacity 0.3s;
+        }
+        div.blog_panel {
+            transition: background-color 0.3s ease-in-out;
+            -moz-transition: background-color 0.3s ease-in-out;
+            -webkit-transition: background-color 0.3s ease-in-out;
         }
         .navbar.navbar-default {
             background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0));
@@ -97,14 +103,38 @@
             position: relative;
             text-align: center;
             color: black;
+            transition: 0.3s;
+        }
+        .post-title {
+            font-size: 36px;
+            color: #333333;
+            transition: color 0.3s ease-in-out;
+            -moz-transition: color 0.3s ease-in-out;
+            -webkit-transition: color 0.3s ease-in-out;
+        }
+        .post-meta {
+            transition: color 0.3s ease-in-out;
+            -moz-transition: color 0.3s ease-in-out;
+            -webkit-transition: color 0.3s ease-in-out;
+        }
+        .tile:hover .post-title {
+            color: white;
+            transition: 0.3s;
+        }
+        .tile:hover .blog_panel {
+            background-color: #333333 !important;
+            transition: 0.3s;
         }
         .text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            transition: .25s ease;
-            display: none;
+            transition: 0.3s ease;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            -moz-transition: opacity 0.3s ease-in-out;
+            -webkit-transition: opacity 0.3s ease-in-out;
             pointer-events: none;
             font-family: 'Gloria Hallelujah', cursive;
             font-size: calc(6vw * var(--fontMultiplier));
@@ -121,7 +151,7 @@
             }   
         }
         img.blog_panel:hover + .text {
-            display: block;
+            opacity: 1;
         }
     </style>
 
@@ -248,8 +278,56 @@
     <div class="w3-container">
         <div class="w3-container">
             <p>
-                TODO:
+                During a recent clear-out, I cam across my old art textbook from GCSE. As the book is about to be filed away on a dusty shelf for an
+                indeterminate length of time, I thought I would put some images up here so I can always find them if I need them :)
             </p>
+            <div class="w3-cell-row">
+                <!-- Column 1 -->
+                <div class="w3-container w3-cell w3-mobile" style="width:33.3%">
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/sign.JPG" placeholder="Nearby Street Sign"></img>
+                        <div class="text" style="--fontMultiplier:1">Nearby Street Sign</div>
+                    </div>
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/barn.JPG" placeholder="John Piper- Old Barn"></img>
+                        <div class="text" style="--fontMultiplier:1">John Piper- Old Barn</div>
+                    </div>
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/lowry.JPG" placeholder="Lowry - Pastels"></img>
+                        <div class="text" style="--fontMultiplier:1">Lowry - Pastels</div>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <div class="w3-container w3-cell w3-mobile" style="width:33.3%">
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/ink.JPG" placeholder="Watercolour Street Sign"></img>
+                        <div class="text" style="--fontMultiplier:1">Watercolour Street Sign</div>
+                    </div>
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/lush.JPG" placeholder="LUSH Factory"></img>
+                        <div class="text" style="--fontMultiplier:1">LUSH Factory</div>
+                    </div>
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/kimmeridge.JPG" placeholder="Clavell Tower"></img>
+                        <div class="text" style="--fontMultiplier:1">Clavell Tower</div>
+                    </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="w3-container w3-cell w3-mobile" style="width:33.3%">
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/window.JPG" placeholder="Art Classroom Window"></img>
+                        <div class="text" style="--fontMultiplier:1">Art Classroom Window</div>
+                    </div>
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/baltimore.JPG" placeholder="Study - John Slaiminen"></img>
+                        <div class="text" style="--fontMultiplier:1">Study - John Slaiminen</div>
+                    </div>
+                    <div class="tile">
+                        <img class = "w3-panel blog_panel w3-hover-opacity" src="img/card.JPG" placeholder="Christmas Card"></img>
+                        <div class="text" style="--fontMultiplier:1">Christmas Card</div>
+                    </div>
+                </div>
+            </div>
             <br><br><br>
             <a href="/" style="text-decoration:none">
             <div class="w3-panel w3-white w3-border w3-border-gray w3-center w3-hover-opacity blog-item" 
