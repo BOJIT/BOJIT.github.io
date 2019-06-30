@@ -156,7 +156,9 @@
         $(function() { 
             // bind 'myForm' and provide a simple callback function 
             $('#myForm').ajaxForm(function() { 
-                alert("Thank you for your comment!"); 
+                beforeSubmit: function() {  
+                alert("Thank you for your comment!");
+                }
             }); 
         }); 
     </script> 
@@ -309,9 +311,7 @@
                         </div>
                     </div>
                 </form>
-
-                <p id="response">test2</p>
-                <IFRAME style="display:block" id="form_response" name="hidden-form"></IFRAME>     
+                <p id="response">test2</p> 
                 <hr>
                 <div>
                     <a href="./CV James Bennion-Pedley.pdf" style="text-decoration:none" download>
