@@ -147,8 +147,9 @@
     gtag('config', 'UA-141105755-1');
     </script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 
     <script> 
         // wait for the DOM to be loaded 
@@ -282,7 +283,7 @@
                     <a href="https://github.com/BOJIT" target="_blank">Github</a>.
                 </p>
                 <b>CONTACT:</b>
-                <form id="myForm" method="post" enctype='application/json' 
+                <form id="myForm" method="post"
                 action="https://eu-gb.functions.cloud.ibm.com/api/v1/web/jamesbpjames%40gmail.com_dev/default/reCAPTCHA%20PHP.json">
                     <div>
                     <label for="name">Name</label>
@@ -309,15 +310,7 @@
                     </div>
                 </form>
 
-                <script>
-                    function Check_Status() {
-                        var x = document.getElementById("form_response");
-                        y = x.querySelector('pre').innerHTML;
-                        alert(String(x));
-                    }
-                </script>
-
-                <p id="response">test1</p>
+                <p id="response">test2</p>
                 <IFRAME style="display:block" id="form_response" name="hidden-form"></IFRAME>     
                 <hr>
                 <div>
