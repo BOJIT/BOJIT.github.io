@@ -114,6 +114,21 @@
         img.blog_panel:hover + .text {
             display: block;
         }
+        .submit-button {
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 30px;
+            color: black;
+            background-color: white;
+            border-style: solid;
+            transition: 0.3s;
+            border-color: rgb(200, 200, 200);
+            border-width: 1px;
+        }
+        .submit-button:hover {
+            background-color: gray;
+            color: white;
+            transition: 0.3s;
+        }
     </style>
 
     <!-- Gallery -->
@@ -240,7 +255,7 @@
     </div>
     <div class="w3-container">
         <div class="w3-container w3-cell-row">
-            <div class="w3-cell w3-cell-middle w3-mobile w3-padding" style="width:25%">
+            <div class="w3-cell w3-cell-middle w3-mobile w3-padding" style="width:35%">
                 <img src="./img/Theatre.jpg" class="w3-padding" placeholder="Theatre" width="100%">   
             </div>
             <div class="w3-cell w3-mobile w3-cell-top">
@@ -252,34 +267,38 @@
                     Many of the projects here are open source, with source code and schematics available on 
                     <a href="https://github.com/BOJIT" target="_blank">Github</a>.
                 </p>
-                <div class="w3-card">
-                    <p>
-                        <b>CONTACT:</b>
-                    </p>
-                    <hr>
-                    <form method="post" enctype='application/json' action="https://eu-gb.functions.cloud.ibm.com/api/v1/web/jamesbpjames%40gmail.com_dev/default/reCAPTCHA%20PHP.json">
-                        <div>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name">
+                <hr>
+                <b>CONTACT:</b>
+                <form method="post" enctype='application/json' action="https://eu-gb.functions.cloud.ibm.com/api/v1/web/jamesbpjames%40gmail.com_dev/default/reCAPTCHA%20PHP.json">
+                    <div>
+                    <label for="name">Name</label>
+                    <input class="w3-input" type="text" id="name" name="name">
+                    </div>
+                    <div>
+                    <label for="email">Email</label>
+                    <input class="w3-input" type="email" id="email" name="email">
+                    </div>
+                    <div>
+                    <label for="message">Message</label><br>
+                    <textarea class="w3-input" id="message" name="message"></textarea>
+                    </div>
+                    <br>
+                    <div class="w3-cell-row">
+                        <div class="w3-cell w3-container">
+                            <div class="g-recaptcha" data-sitekey="6LfLUasUAAAAALCP2p7trZZktdQ-q2xEpevE1yRb"></div>
                         </div>
-                        <div>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email">
+                        <div class="w3-cell" style="width:100%">
+                            <div class="w3-container">
+                                <input type="submit"  name="Action" class="submit-button" style="height:75px; width:100%">
+                            </div>
                         </div>
-                        <div>
-                        <label for="message">Message</label><br>
-                        <textarea id="message" name="message"></textarea>
-                        </div>
-                        <div class="g-recaptcha" data-sitekey="6LfLUasUAAAAALCP2p7trZZktdQ-q2xEpevE1yRb"></div>
-                        <div class="childDiv w3-padding-large w3-block">
-                            <input type="submit"  name="Action" value="Default"
-                            class="w3-button w3-block w3-section w3-teal w3-ripple">
-                        </div>
-                    </form>
-                </div>         
-
-                <a href="./CV James Bennion-Pedley.pdf" style="text-decoration:none" download>
-                <div class="w3-panel w3-gray w3-center w3-hover-opacity"><h2>Download CV</h2></div></a>
+                    </div>
+                </form>   
+                <hr>
+                <div>
+                    <a href="./CV James Bennion-Pedley.pdf" style="text-decoration:none" download>
+                    <div class="w3-panel submit-button w3-center w3-padding-0"><h2>Download CV</h2></div></a>
+                </div>
             </div>
         </div>
     </div>
