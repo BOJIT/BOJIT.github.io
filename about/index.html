@@ -296,10 +296,11 @@
                 </form>
                 <script>
                     function Check_Status() {
-                    alert('Form submitted!');
+                        var x = document.getElementById("form_response").textContent;
+                        alert(x);
                     }
                 </script>
-                <IFRAME style="display:block" name="hidden-form"></IFRAME>     
+                <IFRAME style="display:block" id="form_response" name="hidden-form"></IFRAME>     
                 <hr>
                 <div>
                     <a href="./CV James Bennion-Pedley.pdf" style="text-decoration:none" download>
