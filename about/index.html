@@ -177,11 +177,17 @@
                 .done(function(data) {
 
                     // log data to the console so we can see
-                    console.log(data); 
-                    alert(data.body);
-                    document.getElementById("response").innerHTML = "TestMe";
-                    
-                    // here we will handle errors and validation messages
+                    console.log(data);
+
+                    if(data.body == "failure")  {
+                        document.getElementById("response").innerHTML = "Form validation failed - please ensure you are not a robot before retrying.";
+                        document.getElementById("response").style.color = "red"; 
+                    }
+                    if(data.body == "success")  {
+                        document.getElementById("response").innerHTML = "Thank you for submitting a message. I will try to respond as soon as I can.";
+                        document.getElementById("response").style.color = "green"; 
+                    }   
+
                 });
 
             // stop the form from submitting the normal way and refreshing the page
@@ -338,7 +344,7 @@
                         </div>
                     </div>
                 </form>
-                <p id="response" style="color:red"></p> 
+                <p id="response" class="w3-center"></p> 
                 <hr>
                 <div>
                     <a href="./CV James Bennion-Pedley.pdf" style="text-decoration:none" download>
