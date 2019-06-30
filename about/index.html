@@ -148,22 +148,15 @@
     </script>
 
     <!-- JQuery Forms -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-    <script> 
-        // wait for the DOM to be loaded #
-        $(document).ready(function() { 
-            var options = { 
-                url: "https://eu-gb.functions.cloud.ibm.com/api/v1/web/jamesbpjames%40gmail.com_dev/default/reCAPTCHA%20PHP.json"
-            };
-            // bind 'myForm' and provide a simple callback function 
-            $('#myForm').ajaxForm({  
-                delegation: true,
-                target: '#output'
-            }); 
-        }); 
-    </script> 
+    <script>
+        $(document).ready(function(){
+            $("#submitBtn").click(function(){        
+                $("#myForm").submit(); // Submit the form
+            });
+        });
+    </script>
 
 </head>
 
@@ -309,6 +302,7 @@
                         <div class="w3-cell" style="width:100%">
                             <div class="w3-container">
                                 <input type="submit"  name="Action" class="submit-button" style="height:75px; width:100%">
+                                <button type="button" id="submitBtn">Submit Form</button>
                             </div>
                         </div>
                     </div>
