@@ -151,11 +151,51 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $("#submitBtn").click(function(){        
-                $("#myForm").submit(); // Submit the form
+          $(function() {
+            $('.error').hide();
+            $(".button").click(function() {
+            // validate and process form here
+            
+            $('.error').hide();
+            var name = $("input#name").val();
+                if (name == "") {
+                $("label#name_error").show();
+                $("input#name").focus();
+                return false;
+            }
+                var email = $("input#email").val();
+                if (email == "") {
+                $("label#email_error").show();
+                $("input#email").focus();
+                return false;
+            }
+                var message = $("input#message").val();
+                if (message == "") {
+                $("label#message_error").show();
+                $("input#message").focus();
+                return false;
+            }
+            
             });
         });
+
+        var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
+        //alert (dataString);return false;
+        $.ajax({
+            type: "POST",
+            url: "https://eu-gb.functions.cloud.ibm.com/api/v1/web/jamesbpjames%40gmail.com_dev/default/reCAPTCHA%20PHP.json",
+            data: dataString,
+            success: function() {
+            $('#contact_form').html("<div id='message'></div>");
+            $('#message').html("<h2>Contact Form Submitted!</h2>")
+            .append("<p>We will be in touch soon.</p>")
+            .hide()
+            .fadeIn(1500, function() {
+                $('#message').append("<img id='checkmark' src='images/check.png' />");
+            });
+            }
+        });
+        return false;
     </script>
 
 </head>
@@ -280,8 +320,9 @@
                     <a href="https://github.com/BOJIT" target="_blank">Github</a>.
                 </p>
                 <b>CONTACT:</b>
+                <div id="contact_form">
                 <form id="myForm" method="post"
-                action="https://eu-gb.functions.cloud.ibm.com/api/v1/web/jamesbpjames%40gmail.com_dev/default/reCAPTCHA%20PHP.json">
+                action="">
                     <div>
                     <label for="name">Name</label>
                     <input class="w3-input" type="text" id="name" name="name">
@@ -301,13 +342,13 @@
                         </div>
                         <div class="w3-cell" style="width:100%">
                             <div class="w3-container">
-                                <input type="submit"  name="Action" class="submit-button" style="height:75px; width:100%">
-                                <button type="button" id="submitBtn">Submit Form</button>
+                                <input type="submit"  name="Action" class="submit-button button" style="height:75px; width:100%">
                             </div>
                         </div>
                     </div>
                 </form>
-                <p id="response">test3</p> 
+                </div>
+                <p id="response">test4</p> 
                 <hr>
                 <div>
                     <a href="./CV James Bennion-Pedley.pdf" style="text-decoration:none" download>
