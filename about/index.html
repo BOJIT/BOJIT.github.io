@@ -161,7 +161,7 @@
             var formData = {
                 'name'              : $('input[name=name]').val(),
                 'email'             : $('input[name=email]').val(),
-                'message'           : $('input[name=message]').val(),
+                'message'           : $('input[name=message]').text(),
                 'g-recaptcha-response'        : grecaptcha.getResponse()
             };
 
