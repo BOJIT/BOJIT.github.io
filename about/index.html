@@ -154,6 +154,9 @@
     <script> 
         // wait for the DOM to be loaded #
         $(document).ready(function() { 
+            var options = { 
+                url: "https://eu-gb.functions.cloud.ibm.com/api/v1/web/jamesbpjames%40gmail.com_dev/default/reCAPTCHA%20PHP.json"
+            };
             // bind 'myForm' and provide a simple callback function 
             $('#myForm').ajaxForm({  
                 delegation: true,
@@ -285,7 +288,7 @@
                 </p>
                 <b>CONTACT:</b>
                 <form id="myForm" method="post"
-                action="https://eu-gb.functions.cloud.ibm.com/api/v1/web/jamesbpjames%40gmail.com_dev/default/reCAPTCHA%20PHP.json">
+                action="">
                     <div>
                     <label for="name">Name</label>
                     <input class="w3-input" type="text" id="name" name="name">
