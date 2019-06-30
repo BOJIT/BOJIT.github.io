@@ -179,6 +179,8 @@
                     // log data to the console so we can see
                     console.log(data); 
                     alert(data.body);
+                    document.getElementById("response").innerHTML = "TestMe";
+                    
                     // here we will handle errors and validation messages
                 });
 
@@ -336,7 +338,7 @@
                         </div>
                     </div>
                 </form>
-                <p id="response"></p> 
+                <p id="response" style="color:red"></p> 
                 <hr>
                 <div>
                     <a href="./CV James Bennion-Pedley.pdf" style="text-decoration:none" download>
