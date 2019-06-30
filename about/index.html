@@ -148,7 +148,7 @@
     </script>
 
     <!-- JQuery Forms -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -161,7 +161,8 @@
             var formData = {
                 'name'              : $('input[name=name]').val(),
                 'email'             : $('input[name=email]').val(),
-                'message'           : $('input[name=message]').val()
+                'message'           : $('input[name=message]').val(),
+                'grecaptcha'        : grecaptcha.getResponse()
             };
 
             // process the form
