@@ -297,9 +297,10 @@
                 <script>
                     function Check_Status() {
                         var x = document.getElementById("form_response").textContent;
-                        alert(x);
+                        document.getElementById("response").innerHTML = x;
                     }
                 </script>
+                <p id="response"></p>
                 <IFRAME style="display:block" id="form_response" name="hidden-form"></IFRAME>     
                 <hr>
                 <div>
