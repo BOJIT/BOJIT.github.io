@@ -311,11 +311,14 @@
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Solder Paste.JPG" placeholder="Solder Stencil" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                The next major problem was communication. I designed each motor controller with full-duplex RS485 over twisted-pair ethernet cables,
+                with the intention of sending all motor controllers G-code as serial strings, then multiplexing throughthe receive lines to record 
+                the returned co-ordinates. The fact that the motors can transmit a message without being polled by the master means that I would need some
+                sort of FIFO buffer, and would have to switch through the motor channels fast enough to receive any error/emergency stop messages.
+                Half-way through designing the master controller, after looking at the BOM, I have decided that my approach was not particularly efficient or scalable.
+                Unfortunately, by the time I had decided to completely redesign my motor controller, most of the I components I needed had arrived!<br>
+                Determined not to waste the time and money I had put into the design so far, I decided to use these boards to hone my solder reflowing skills...
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Place_Components.JPG" placeholder="Pick and Place" width="100%">
