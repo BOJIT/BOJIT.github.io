@@ -248,21 +248,25 @@
     <div class="w3-container">
         <div class="w3-container">
             <p>
-                The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                For a while I have wanted to try making my own guitar pickups, but always thought it would be too expensive to get started.
+                Sites like Stewart Macdonald sell pre-built pickup winders, but they are eye-wateringly expensive! Lots of people online have
+                shown it's possible to wind pickups consistently with nothing more than a metal rod and a hand-drill, but this felt a little too
+                crude for my liking. Consequently, I decided to build my own custom pickup winder.<br>
+                In fact I ended up building two pickup winders: the white one pictured below was Version 1, and thanks to poor research on my part, 
+                had a variety of design flaws. The machine was usable, but it was clunky and a pain to use. Version 2 (the black and red machine
+                pictured at the bottom of this page) built upon the design of version 1, but corrected many of the original winder's design flaws.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:60%">
                 <img src="img/Yr 10 - Pickup Winder Mk.1.JPG" placeholder="Pickup Winder" width="100%">
             </div>
             <p>
-                The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    
-                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                Version 1 was relatively simple: the main enclosure housed a DC motor that drove a shaft that mounted the pickup bobbin. It has been
+                a long time since I saw version 1 (it was dismantled long ago as an organ donor for Version 2) however I seem to recall that in my 14-year old wisdom
+                I didn't even use bearings for the drive shaft. I also designed a ridiculous cam-based oscillator mechanism into the casing to distribute the coil windings automatically, 
+                but thankfully decided against actually implementing it. The only major feature of Version 1 which I kept on was the control system.
+                This essentially consists of an Arduino Nano, an LCD, some push-switches, an opto-reflector sensor and a MOSFET to switch the motor.
+                All the circuit does is keep count of the number of rotations the bobbin has turned through, by triggering the opto-reflector off the edge of a black and white
+                strip on the drive shaft. It worked reasonably well in the first pickup winder, so there was no real need to replace it.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/First_Winder.JPG" placeholder="First Pickup Winder" width="100%">
