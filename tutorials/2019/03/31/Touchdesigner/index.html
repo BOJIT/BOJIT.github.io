@@ -290,29 +290,50 @@
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Input Filtering.PNG" placeholder="Input Processing + Grandmaster" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                
-                Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                Following this pre-processing, the video is scaled to the desired resolution of the pixel grid, then a <i>TOPto->CHOP</i> 
+                operator is used to turn each scan-line of the image into data channel. Following this conversion a <i>Select</i> operator is
+                used to filter all the red channels (using the r* wildcard) from the image. If required, this CHOP can be directly manipulated
+                to give the image data in a format that can be output over DMX, however we can deal with the data more intuitively by using a
+                <i>CHOPto->DAT</i> operator to map every pixel value to a table. This table visually corresponds to the position of elements in
+                the pixel grid, starting from top left and ending in the bottom right-hand corner. Note that for my project my pixel grid was made up
+                of incandescent-style bulbs, so I only cared about the luminance of each pixel in the video feed, meaning it did not matter whether I
+                looked at the R,G or B channel of the data. However if working with RGB fixtures we would need to have 3 separate tables for each colour channel.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/TOPtoCHOP.png" placeholder="TOP to CHOP image mapping" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            <p>
+                Now that we have a nice grid of all our pixel values, we need to turn them into a format that our <i>DMX</i> operator can understand.
+                In my case I was using an Entecc DMX-USB Pro as the physical DMX interface, but the operator also supports output over ArtNet. We need
+                to map our data to a stream of 512 channels with values between 0 and 255. If you are working in 24 bit-per-pixel colour space (8 bits per channel)
+                , you probably already have the right range of values per DMX channel, so all we really need to do is map the value of each table cell to one of the
+                512 output channels. With the image data in DAT form this is relatively straightforward.<br>
+                The first step is to generate 512 empty channels. In <i>Touchdesigner</i> there is a special syntax for doing this with a <i>Constant</i> operator.
+                Simply type <b>chan[1-512]</b> into the first entry of the operator, and you're done! It is worth noting that while both Touchdesigner and standard 
+                DMX work with DMX channels label DMX addresses 1-512, many computer processes and older lighting hardware work with addresses 0-511, so if you experience
+                an 'out by one' error when doing fixture addressing, this may be why.
                 
-                Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/output_processing.png" placeholder="Output to DMX interface" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                
-                Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                To extract the pixel values in a logical order, we can use the <i>DATto->CHOP</i> operator, using the settings pictured above. This
+                will create channel names that start from 1, up to the number of cells in the table, with the numbers ascending left to right, top to bottom in the table.
+                For monochrome grid systems, this is all the processing required, but for RGB systems all 3 tables must have their channel <i>names</i> multiplied
+                by 3 then offset by a specific amount. This data is in a format that can be fed directly into the <i>DMX</i> operator, but there is one 
+                remaining problem. The pixel grid we are using is not necessarily patched at address 1, so the channels need to be offset to the correct address.
+                Note we are not adding an offset to the channel value, but to the channel names themselves. This is done with the <i>Rename</i> and <i>Replace</i>
+                CHOPs. Say we wanted to patch a 6x6 grid starting at address 301, we would use the <i>Rename</i> CHOP to map '<b>*</b>' to <b>chan[301-336]</b>, then
+                replace the constant channels with our image pixel values in the main channel output. This arrangement is shown above.<br>
+                This is the part of the pixel engine I am least pleased with, as the start address cannot be set with an external CHOP, and the <i>Rename</i> CHOP does
+                not adapt to changes in the grid resolution. When I first made this system I was up against a show deadline, so left this annoyance in. If in the future
+                I design a better system, I will update this page and post the module as a .tox file.<br><br>
+                Below is a picture of the the core pixel mapping Touchdesigner network, and I have attached my sample touch files <a href="/projects/2019/03/10/Kinect_Grid/Kinect_Grid.toe">here</a>,
+                in case anyone finds them useful. There are numerous ways to enhance this system, but hopefully the information provided here will be useful if you
+                are doing any projects with similar elements to this. Do check out the <a href="https://bojit.github.io/projects/2019/03/10/Kinect_Grid/">project I used this 
+                pixel-mapper for</a>, which combines this with lots of hanging light-bulbs and an Xbox Kinect!
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:70%">
                 <img src="img/touchdesigner.PNG" placeholder="Overall Node Structure" width="100%">
