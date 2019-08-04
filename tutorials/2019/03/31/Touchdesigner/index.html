@@ -251,8 +251,8 @@
                 For a recent theatre production I was involved in,
                 I had to do some complex DMX pixel mapping as part of our lighting set. Normally I tackle most lighting programming with a program
                 called MagicQ. The software is free and identical to the software used on professional Chamsys desks, but it does have its limitations. 
-                For one, the internal pixel mapping engine (pictured below) is not the best. It is usable for simple eye-candy effects with Sunstrips and LED
-                battens, but for anything more exacting than this it is a pain to use. While you can get slightly more functionality by hooking the console up to
+                For one, the internal pixel mapping engine (pictured below) is not the greatest. It is usable for simple eye-candy effects with Sunstrips and LED
+                battens, but for anything more exacting than that it is a pain to use. While you can get slightly more functionality by hooking MagicQ up to
                 a media server, but in my opinion, it is better to completely bypass MagicQ and use something else as the pixel mapping engine.<br>
                 In my search for that 'something else', I came across <i>Touchdesigner</i>. While it is primarily a video manipulation tool, the sheer number
                 of IO options in the software make it very flexible for all kinds of scripting/automation tasks. For the show I was working on, I used 
@@ -310,7 +310,7 @@
                 , you probably already have the right range of values per DMX channel, so all we really need to do is map the value of each table cell to one of the
                 512 output channels. With the image data in DAT form this is relatively straightforward.<br>
                 The first step is to generate 512 empty channels. In <i>Touchdesigner</i> there is a special syntax for doing this with a <i>Constant</i> operator.
-                Simply type <b>chan[1-512]</b> into the first entry of the operator, and you're done! It is worth noting that while both Touchdesigner and standard 
+                Simply type <b>chan[1-512]</b> into the first entry of the operator, and you're done! It is worth noting that while both <i>Touchdesigner</i> and standard 
                 DMX work with DMX channels label DMX addresses 1-512, many computer processes and older lighting hardware work with addresses 0-511, so if you experience
                 an 'out by one' error when doing fixture addressing, this may be why.
                 
@@ -333,7 +333,7 @@
                 Below is a picture of the the core pixel mapping Touchdesigner network, and I have attached my sample touch files <a href="/projects/2019/03/10/Kinect_Grid/Kinect_Grid.toe">here</a>,
                 in case anyone finds them useful. There are numerous ways to enhance this system, but hopefully the information provided here will be useful if you
                 are doing any projects with similar elements to this. Do check out the <a href="https://bojit.github.io/projects/2019/03/10/Kinect_Grid/">project I used this 
-                pixel-mapper for</a>, which combines this with lots of hanging light-bulbs and an Xbox Kinect!
+                pixel-mapper for</a>, which combines this pixel engine with lots of hanging light-bulbs and an Xbox Kinect!
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:70%">
                 <img src="img/touchdesigner.PNG" placeholder="Overall Node Structure" width="100%">
