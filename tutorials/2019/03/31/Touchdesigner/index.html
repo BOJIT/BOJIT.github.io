@@ -248,7 +248,7 @@
     <div class="w3-container">
         <div class="w3-container">
             <p>
-                For a <a href="https://bojit.github.io/projects/2019/03/10/Kinect_Grid/" target="_blank">recent theatre production</a> I was involved in,
+                For a recent theatre production I was involved in,
                 I had to do some complex DMX pixel mapping as part of our lighting set. Normally I tackle most lighting programming with a program
                 called MagicQ. The software is free and identical to the software used on professional Chamsys desks, but it does have its limitations. 
                 For one, the internal pixel mapping engine (pictured below) is not the best. It is usable for simple eye-candy effects with Sunstrips and LED
@@ -257,25 +257,35 @@
                 In my search for that 'something else', I came across <i>Touchdesigner</i>. While it is primarily a video manipulation tool, the sheer number
                 of IO options in the software make it very flexible for all kinds of scripting/automation tasks. For the show I was working on, I used 
                 <i>Touchdesigner</i> for more than just pixel-mapping, but in this article I will focus solely on how to create a simple Image->DMX pixel mapper
-                in <i>Touchdesigner</i> To see what else I did with the software, read <a href="https://bojit.github.io/projects/2019/03/10/Kinect_Grid/">this article</a>.
+                in <i>Touchdesigner</i>. To see what else I did with the software, read <a href="https://bojit.github.io/projects/2019/03/10/Kinect_Grid/">this article</a>.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/MagicQ.png" placeholder="MagicQ Pixel Mapping" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                
-                Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                The method outlined here is far from the only way of pixel mapping in <i>Touchdesigner</i>. I have seen some very
+                sophisticated 3D rendering engines and complex node systems for efficient GPU utilisation, and I would highly recommend 
+                taking a look at them, but this method is relatively simple to understand and modify, if you are a newbie like me. :)
+                If you are looking for more information on how to make more complex rendering systems, I would encourage you to check
+                out <a href="https://matthewragan.com/teaching-resources/touchdesigner/">Matthew Wragan's website.</a><br>
+                To make <i>Touchdesigner</i> networks easier to follow, I like to put all operators associated with one task in their own
+                container. Not only does this neaten things up, it also makes it easier to share processing modules with other people as .tox files
+                Below you can see the inputs and outputs my pixel mapping engine takes: for inputs the container takes a video feed, an intensity
+                slider and a washout/white slider; the outputs are the DMX channels and a preview of the pixel-mapped content. Only one
+                input and output are really required, but having the preview window and the controls broken out makes troubleshooting and mapping
+                controls to MIDI much easier.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Input_Module.JPG" placeholder="Pixel Engine Component" width="100%">
             </div>
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                
-                Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                Inside the container, the first group of operators simply handle video pre-processing. The video input is scaled
+                to the aspect ratio of the pixel grid, then is <i>multiplied</i> by the alpha value of a constant colour. The opacity of the constant colour
+                is controlled by the 'intensity' slider input. This is a simple way of controlling the 'brightness' of the video input 
+                without changing the alpha values of the input, which is important later on. A similar operation is done with the 
+                <i>addition</i> of a constant colour, controlled by the 'washout/white' slider input. This is an equivalent of controlling
+                the 'tint' of the image. Any other processing can be done after these operators, but if working with simple dimmers or RGB fixtures,
+                it makes life easier to only apply effects to the RGB channels only and leave the Alpha channel alone.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/Input Filtering.PNG" placeholder="Input Processing + Grandmaster" width="100%">
