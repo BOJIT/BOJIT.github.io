@@ -247,11 +247,17 @@
     </div>
     <div class="w3-container">
         <div class="w3-container">
-            <p>The standard Lorem Ipsum passage, used since the 1500s
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                
-                Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            <p>
+                For a <a href="https://bojit.github.io/projects/2019/03/10/Kinect_Grid/" target="_blank">recent theatre production</a> I was involved in,
+                I had to do some complex DMX pixel mapping as part of our lighting set. Normally I tackle most lighting programming with a program
+                called MagicQ. The software is free and identical to the software used on professional Chamsys desks, but it does have its limitations. 
+                For one, the internal pixel mapping engine (pictured below) is not the best. It is usable for simple eye-candy effects with Sunstrips and LED
+                battens, but for anything more exacting than this it is a pain to use. While you can get slightly more functionality by hooking the console up to
+                a media server, but in my opinion, it is better to completely bypass MagicQ and use something else as the pixel mapping engine.<br>
+                In my search for that 'something else', I came across <i>Touchdesigner</i>. While it is primarily a video manipulation tool, the sheer number
+                of IO options in the software make it very flexible for all kinds of scripting/automation tasks. For the show I was working on, I used 
+                <i>Touchdesigner</i> for more than just pixel-mapping, but in this article I will focus solely on how to create a simple Image->DMX pixel mapper
+                in <i>Touchdesigner</i> To see what else I did with the software, read <a href="https://bojit.github.io/projects/2019/03/10/Kinect_Grid/">this article</a>.
             </p>
             <div class="w3-container blog-item" style="margin:auto;--desktopWidth:50%">
                 <img src="img/MagicQ.png" placeholder="MagicQ Pixel Mapping" width="100%">
