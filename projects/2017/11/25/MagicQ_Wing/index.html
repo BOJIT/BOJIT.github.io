@@ -265,7 +265,7 @@
             <p>
                 The core of this project was the Arduino Pro Micro. This small board uses the ATMega32u4 chip, which unlike the ATMega328p
                 used on the Arduino Uno and the Nano has an integrated USB core. This means that in contrast to using an onboard USB->Serial
-                converter, the ATMega can communicate directly over USB, so can act as an HID device. By using this board I was able to map
+                converter, the ATMega32u4 can communicate directly over USB, so can act as an HID device. By using this board I was able to map
                 all the keys on my wing to 'physical' keys, meaning I do not have to use any software like AutoHotkey.<br>
                 Obviously, the number of pins on the Pro Micro is insufficient for the number of switches on the wing, so I used 
                 74HC595 shift registers to multiplex the keys as a grid, much like a regular computer keyboard.
@@ -279,7 +279,7 @@
                 In the picture above you may also notice the other Arduino Nano hanging precariously on a piece of breadboard. This 
                 was a bit of an experiment in adding Encoder support to my Wing. While MagicQ macros don't really allow for absolute value
                 automation (playback faders, grandmaster, etc...), incremental movements are possible by setting one macro to turn the encoder
-                one turn clockwise, and another to turn it clockwise. The Arduino Nano essentially monitors state changes on all 8 encoders, 
+                one turn clockwise, and another to turn it anticlockwise. The Arduino Nano essentially monitors state changes on all 8 encoders, 
                 then forwards HID values over serial to the Arduino Pro Micro, which subsequently turns them into keyboard commands. This
                 approach is very finnicky, and does not allow encoder velocity control, but the X and Y encoders are just about usable for
                 moving head Pan and Tilt control.<br>For the heart of the controller, I decided to try one of those PCB fabrication services
