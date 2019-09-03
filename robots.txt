@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /about/CV_James_Bennion-Pedley_02.09.19.pdf
+
+Noindex: /about/CV_James_Bennion-Pedley_02.09.19.pdf
