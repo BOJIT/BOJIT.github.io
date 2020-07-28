@@ -1,0 +1,36 @@
+<div layout="meta">
+	<!-- Browser Config -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Description -->
+	<meta name="description" content="BOJIT Projects, tutorials and ramblings.">
+	<meta name="keywords" content="BOJIT,Github,James Bennion-Pedley,engineering,
+	programming,Raspberry Pi,Linux,C++,MagicQ,lighting,theatre,electronics">
+
+	<!-- Author -->
+	<meta name="author" content="{{ site.author }}">
+
+	<!-- Open Graph Info -->
+	<meta property="og:title" content="{{ site.name }}">
+	<meta property="og:site_name" content="{{ site.name }}">
+	<meta property="og:type" content="website">
+	<meta name="twitter:site" content="{{ site.name }}">
+
+	<!-- Robots -->
+	{% if page.categories contains "unlisted" %}
+		<meta name="robots" content="noindex" />
+	{% endif %}
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico"
+		type="image/x-icon">
+	<link rel="icon" href="{{ site.baseurl }}/favicon.ico"
+		type="image/x-icon">
+
+	<!-- Internet Explorer 9 Backwards Compatibility -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</div>

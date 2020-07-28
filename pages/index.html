@@ -1,0 +1,27 @@
+---
+layout: page
+title: Page Index
+permalink: /index/
+
+tile:
+  type: text
+  text: Index Page
+  colour: --BOJIT-teal
+---
+
+{% for category in site.categories %}
+
+{% capture category_name %}{{ category | first }}{% endcapture %}
+	<h4>{{ category_name | upcase }}</h4>
+	<hr>
+	{% for post in site.categories[category_name] %}
+		<button><a href="{{ site.baseurl }}{{ post.url }}">
+			<h2>{{post.title | upcase }}</h2>
+		</a></button>
+	{% endfor %}
+	<br>
+{% endfor %}
+<h4>GLOBAL</h4>
+<hr>
+<button><a href="{{ site.baseurl }}/About/"><h2>ABOUT</h2></a></button>
+<button><a href="{{ site.baseurl }}/"><h2>HOME</h2></a></button>

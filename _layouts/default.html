@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include analytics.html %}
+	{% include meta.html %}
+	{% include cdn_pre.html %}
+	
+	<title>{% if page.title %}{{ page.title }}{% endif %}</title>
+
+	<link href="{{ site.baseurl }}/css/colours.css" rel="stylesheet">
+	<link href="{{ site.baseurl }}/css/theme.css" rel="stylesheet">
+	<link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="page-content">
+		{{ content }}
+		<div id="page-push"></div>
+	</div>
+
+	{% include footer.html %}
+
+	{% include cdn_post.html %}
+
+	<script src="{{ site.baseurl }}/js/functions.js"></script>
+	<script src="{{ site.baseurl }}/js/liquid.js"></script>
+</body>
+</html>
