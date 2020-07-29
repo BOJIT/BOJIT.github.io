@@ -187,10 +187,12 @@ button:hover h2 {
 
 /*--------------------------------- Gallery ----------------------------------*/
 
-/* Add half-margins to the gallery edges */
+/* Add half-margins to the gallery edges + initialise hidden while loading */
 .gallery {
 	margin-left: 10px;
 	margin-right: 10px;
+	display: none;
+	visibility: hidden;
 }
 
 /* Formatting applied to all gallery tiles */

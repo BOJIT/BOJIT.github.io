@@ -11,10 +11,12 @@ OBJECT STRUCTURE:
 
 - using the link type requires a page object to be passed as well
 
+data-aos-once="true"
+	data-aos="fade-up" data-aos-delay="50" data-aos-duration="500"
+
 {%- endcomment -%}
 
-<div layout="tile" class="gallery-tile" data-aos-once="true"
-	data-aos="fade-up" data-aos-delay="50" data-aos-duration="500">
+<div layout="tile" class="gallery-tile">
 	{% if include.page %}
 		{% assign caption = include.page.title %}
 		<a href="{{ site.baseurl }}{{ include.page.url }}"

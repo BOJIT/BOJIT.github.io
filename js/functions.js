@@ -1,6 +1,10 @@
 /*----------------------------------- Global ---------------------------------*/
 
+/* Set up media query trigger for mobile websites */
 const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+/* Initialise the Animate on Scroll Library */
+// AOS.init();
 
 /*-------------------------- Generate Random Article -------------------------*/
 
@@ -57,7 +61,7 @@ function pushTiles(masonry) {
 			}
 		}
 	/* Reinitialise AOS after any shuffling */
-	AOS.refresh();
+	// AOS.refresh();
 	}
 }
 
@@ -66,32 +70,35 @@ var galleries = document.querySelectorAll('.gallery');
 
 var masonries = [];
 
-for(let gallery of galleries) {
-	/* Initialise masonry object */
-	masonries.push(new Masonry(gallery, {
-		itemSelector: '.gallery-tile',
-		percentPosition: true,
-		gutter: margin
-	}));
+for(let i = 0; i < galleries.length; i++) {
+	/* Initialise once all the images have loaded */
+	imagesLoaded(galleries[i], function() {
 
-	/* Callback for filler generation after any rearrangement */
-	masonries[masonries.length - 1].on('layoutComplete', function(){
-		pushTiles(masonries[masonries.length - 1]);
-	});
+		galleries[i].style.display = "block";
 
-	/* Call layout every time a new image reloads */
-	imagesLoaded(gallery).on('progress', function(){
-		/* layout Masonry after each image loads */
-		masonries[masonries.length - 1].layout();
+		/* Initialise masonry object */
+		masonries[i] = new Masonry(galleries[i], {
+			itemSelector: '.gallery-tile',
+			percentPosition: true,
+			gutter: margin
+		});
+	
+		/* Callback for filler generation after any rearrangement */
+		masonries[i].on('layoutComplete', function() {
+			pushTiles(masonries[i]);
+			galleries[i].style.visibility = "visible";
+			// AOS.refresh();
+		});
+
+		/* Actually fire the layout */
+		masonries[i].layout();
 	});
 }
 
 /*------------------------------ Window Events -------------------------------*/
 
-window.onload = function() {
-	/* Initialise the Animate on Scroll Library */
-	AOS.init();
-}
+// window.onload = function() {
+// }
 
 window.onresize = function() {
 	/* Reset the pushes to collapsed and hidden */
