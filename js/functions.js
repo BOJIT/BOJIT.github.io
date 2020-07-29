@@ -3,10 +3,6 @@
 /* Set up media query trigger for mobile websites */
 const mediaQuery = window.matchMedia("(min-width: 768px)");
 
-/* Initialise the Animate on Scroll Library */
-console.log("AOS.initiated");
-AOS.init();
-
 /*-------------------------- Generate Random Article -------------------------*/
 
 function generateArticle(currentUrl) {
@@ -81,12 +77,14 @@ for(let i = 0; i < galleries.length; i++) {
 			percentPosition: true,
 			gutter: margin
 		});
+
+		/* Initialise AOS after images have loaded onto the page */
+		AOS.init();
 	
 		/* Callback for filler generation after any rearrangement */
 		masonries[i].on('layoutComplete', function() {
 			pushTiles(masonries[i]);
-			//galleries[i].style.visibility = "visible";
-			console.log("Hello");
+			galleries[i].style.visibility = "visible";
 			AOS.refresh();
 		});
 

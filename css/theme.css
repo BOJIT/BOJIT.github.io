@@ -192,7 +192,7 @@ button:hover h2 {
 	margin-left: 10px;
 	margin-right: 10px;
 	display: none;
-	/* visibility: hidden; */
+	visibility: hidden;
 }
 
 /* Formatting applied to all gallery tiles */
