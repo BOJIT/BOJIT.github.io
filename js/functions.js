@@ -4,7 +4,8 @@
 const mediaQuery = window.matchMedia("(min-width: 768px)");
 
 /* Initialise the Animate on Scroll Library */
-// AOS.init();
+console.log("AOS.initiated");
+AOS.init();
 
 /*-------------------------- Generate Random Article -------------------------*/
 
@@ -60,8 +61,6 @@ function pushTiles(masonry) {
 				push.style.opacity = 1;
 			}
 		}
-	/* Reinitialise AOS after any shuffling */
-	// AOS.refresh();
 	}
 }
 
@@ -86,8 +85,9 @@ for(let i = 0; i < galleries.length; i++) {
 		/* Callback for filler generation after any rearrangement */
 		masonries[i].on('layoutComplete', function() {
 			pushTiles(masonries[i]);
-			galleries[i].style.visibility = "visible";
-			// AOS.refresh();
+			//galleries[i].style.visibility = "visible";
+			console.log("Hello");
+			AOS.refresh();
 		});
 
 		/* Actually fire the layout */
