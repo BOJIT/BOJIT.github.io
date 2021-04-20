@@ -15,10 +15,10 @@ url: https://bojit.dev
 baseurl: ""
 
 # File URL (for external assets)
-fileurl: https://assets.bojit.dev/files
+fileurl: https://cdn.bojit.dev/files
 
 # Image URL (for external assets)
-imgurl: https://assets.bojit.dev/img
+imgurl: https://cdn.bojit.dev/img
 
 # Page Generic URL format
 permalink: /:categories/:title/
