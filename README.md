@@ -1,3 +1,3 @@
 # BOJIT.github.io
 
-My Personal Website: [https://bojit.dev]
+My Personal Website: [https://bojit.org]
