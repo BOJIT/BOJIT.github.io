@@ -7,7 +7,7 @@ name: BOJIT
 author: James Bennion-Pedley
 
 # Hosting URL
-url: https://bojit.dev
+url: https://bojit.org
 
 # Git Remote: git@github.com:BOJIT/BOJIT.github.io.git
 
@@ -15,10 +15,10 @@ url: https://bojit.dev
 baseurl: ""
 
 # File URL (for external assets)
-fileurl: https://cdn.bojit.dev/files
+fileurl: https://cdn.bojit.org/files
 
 # Image URL (for external assets)
-imgurl: https://cdn.bojit.dev/img
+imgurl: https://cdn.bojit.org/img
 
 # Page Generic URL format
 permalink: /:categories/:title/
