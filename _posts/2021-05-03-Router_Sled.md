@@ -1,6 +1,6 @@
 ---
 layout: page
-title: DIY Router Table
+title: Compact Router Sled
 categories: projects
 
 tile:
