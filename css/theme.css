@@ -425,8 +425,15 @@ article .aspect-ratio iframe {
 
 /* Image offset within banner */
 .page-banner img {
-	position: relative; 
+	position: relative;
 	right:-50%;
+	/* width:100vw; */
+}
+
+@media (min-width: 1919px) {
+	.page-banner img {
+		width:100vw;
+	}
 }
 
 /* Overlay over span that sits on top of a banner - centre aligned */
