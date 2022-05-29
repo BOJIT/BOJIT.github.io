@@ -2,7 +2,8 @@
 layout: gallery
 title: Art Coursework
 categories: galleries
-date: 2017-05-15
+date: "2017-05-15"
+published: true
 
 tile:
   type: image
@@ -87,5 +88,5 @@ gallery:
     fontsize: 0.7
 ---
 
-During a recent clear-out, I cam across my old art textbook from GCSE. As the book is about to be filed away on a dusty shelf for an indeterminate length of time, I thought I would put some images up here so I can always find them if I need them :)
+During a recent clear-out, I came across my old art textbook from GCSE. As the book is about to be filed away on a dusty shelf for an indeterminate length of time, I thought I would put some images up here so I can always find them if I need them :)
 

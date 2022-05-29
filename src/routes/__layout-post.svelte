@@ -8,9 +8,6 @@
     import NavBar from "@bojit/svelte-components/layout/NavBar/NavBar.svelte";
     import type { NavItem } from "@bojit/svelte-components/layout/NavBar/NavBar.svelte";
 
-    // Assets
-    import logo from "$lib/assets/img/Logo.png";
-
     function toggleTheme() {
         if($mode == 'light')
             $mode = 'dark';
@@ -33,3 +30,4 @@
 <Content>
     <slot />
 </Content>
+``
