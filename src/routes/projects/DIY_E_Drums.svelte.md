@@ -2,6 +2,7 @@
 layout: page
 title: DIY E-Drums
 categories: projects
+date: 2020-05-16
 
 tile:
   type: image

@@ -2,6 +2,7 @@
 layout: page
 title: BluePill Macro Keypad
 categories: projects
+date: 2019-08-17
 
 tile:
   type: image

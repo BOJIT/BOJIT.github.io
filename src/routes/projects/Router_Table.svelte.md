@@ -2,6 +2,7 @@
 layout: page
 title: DIY Router Table
 categories: projects
+date: 2021-04-17
 
 tile:
   type: image

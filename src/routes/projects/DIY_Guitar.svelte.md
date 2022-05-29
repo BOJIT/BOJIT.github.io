@@ -2,6 +2,7 @@
 layout: page
 title: DIY Electric Guitar
 categories: projects
+date: 2017-07-15
 
 tile:
   type: image

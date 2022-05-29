@@ -2,6 +2,7 @@
 layout: page
 title: PowerMac G5 Hackintosh
 categories: projects
+date: 2020-08-01
 
 tile:
   type: image
@@ -11,7 +12,7 @@ tile:
 
 This will be a brief article: I have had a few people enquire about the 'Mac Pro' that's sitting under my desk, and I thought I could give some of the technical details here. It is by no means a particularly powerful computer (the original PC build was done in 2013), but it does have a few unique features that set it apart from most computers.
 
-My primary aim when building the Hackintosh was to make it look as much like an original *PowerMac G5* as possible. The original front panel buttons and headphone jack are used, but the firewire ports have been neatly replaced with USB 3.0. I also made a custom sheet metal ATX conversion plate to sit in the back, which leaves most of the back casing intact. This was considerably more effort those [conversion kits](https://www.thelaserhive.com/product/g5-atx-kit-psu-holder/) you can get online, but is much prettier in my opinion. The internals are significantly different to the original *PowerMac G5*, but I am still using the perspex cover and the original fan shroud, just to maintain the aesthetic. 
+My primary aim when building the Hackintosh was to make it look as much like an original *PowerMac G5* as possible. The original front panel buttons and headphone jack are used, but the firewire ports have been neatly replaced with USB 3.0. I also made a custom sheet metal ATX conversion plate to sit in the back, which leaves most of the back casing intact. This was considerably more effort those [conversion kits](https://www.thelaserhive.com/product/g5-atx-kit-psu-holder/) you can get online, but is much prettier in my opinion. The internals are significantly different to the original *PowerMac G5*, but I am still using the perspex cover and the original fan shroud, just to maintain the aesthetic.
 
 ![Hackintosh-Case_Open.JPG]({{ site.imgurl }}/posts/Hackintosh-Case_Open.JPG)
 

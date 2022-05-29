@@ -2,6 +2,7 @@
 layout: page
 title: Greenpower F24 Competition
 categories: projects
+date: 2019-06-05
 
 tile:
   type: image

@@ -2,6 +2,7 @@
 layout: page
 title: Pickup Winder
 categories: projects
+date: 2016-06-20
 
 tile:
   type: image

@@ -2,6 +2,7 @@
 layout: page
 title: "Touchdesigner: Image -> DMX"
 categories: tutorials
+date: 2019-03-31
 
 tile:
   type: link

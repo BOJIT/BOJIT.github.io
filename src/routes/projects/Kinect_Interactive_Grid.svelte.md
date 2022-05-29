@@ -2,6 +2,7 @@
 layout: page
 title: Kinect Interactive Bulb Grid
 categories: projects
+date: 2019-03-10
 
 tile:
   type: image

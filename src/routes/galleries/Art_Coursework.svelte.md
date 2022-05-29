@@ -2,6 +2,7 @@
 layout: gallery
 title: Art Coursework
 categories: galleries
+date: 2017-05-15
 
 tile:
   type: image

@@ -2,6 +2,7 @@
 layout: page
 title: Reflow Oven
 categories: projects
+date: 2018-04-10
 
 tile:
   type: image
@@ -16,7 +17,7 @@ For the oven I used the cheapest one I could find: the *'Ambiano Mini toaster ov
 ![Reflow_Oven-Ambiano_Red.JPG]({{ site.imgurl }}/posts/Reflow_Oven-Ambiano_Red.JPG)
 
 The most important aspect of a reflow oven in my opinion is the ability to ramp up the temperature as rapidly as possible. To do this with an oven that is relatively underpowered, I had to insulate the oven as well as possible. For this I used [ceramic pizza oven insulation](https://www.ebay.co.uk/itm/Superwool-25mm-x-96kg-Pizza-Oven-Kiln-Forge-fire-proof-insulation/303551929705?hash=item46ad1add69:g:nOEAAOSwYK1bFQUQ), sandwiched between the inner and outer shell. One thing to note when working with this insulation is that it is made up of lots of loose fibres. When working with it, breathing protection must be worn, and work outside to avoid dropping fibres everywhere. To neaten up my insulation, I enclosed the ceramic fibre in an aluminium foil blanket, then covered most of the foil with kapton tape, creating a removable blanket with cutouts for the heating elements.
-A quick look inside the enclosure (pictured below) reassured me that I would have plenty of space to install the controller. I also suspected I would be able to re-use the existing dials on the oven to interface with the controlller, meaning I wouldn't have to drill any more ugly holes in the outer enclosure. I stripped out most of the innards straight away, but kept hold of the wires and spade connectors. The original ones are fibreglass high temperature cables, so it seemed sensible to re-use them when wiring in my controller. 
+A quick look inside the enclosure (pictured below) reassured me that I would have plenty of space to install the controller. I also suspected I would be able to re-use the existing dials on the oven to interface with the controlller, meaning I wouldn't have to drill any more ugly holes in the outer enclosure. I stripped out most of the innards straight away, but kept hold of the wires and spade connectors. The original ones are fibreglass high temperature cables, so it seemed sensible to re-use them when wiring in my controller.
 
 ![Reflow_Oven-Internals_Original.JPG]({{ site.imgurl }}/posts/Reflow_Oven-Internals_Original.JPG)
 

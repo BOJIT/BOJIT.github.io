@@ -2,6 +2,7 @@
 layout: page
 title: Closed-Loop Stepper Driver
 categories: projects
+date: 2018-12-10
 
 tile:
   type: image

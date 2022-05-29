@@ -2,6 +2,7 @@
 layout: page
 title: Compact Router Sled
 categories: projects
+date: 2021-05-03
 
 tile:
   type: image

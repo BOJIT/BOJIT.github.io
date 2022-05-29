@@ -2,6 +2,7 @@
 layout: page
 title: LED Hammock Room
 categories: projects
+date: 2020-02-15
 
 tile:
   type: image

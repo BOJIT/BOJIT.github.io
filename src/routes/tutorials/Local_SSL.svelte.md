@@ -2,6 +2,7 @@
 layout: page
 title: SSL over a Local Network
 categories: tutorials
+date: 2021-08-22
 
 tile:
   type: link

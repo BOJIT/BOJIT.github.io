@@ -2,6 +2,7 @@
 layout: page
 title: BluePill MIDI Footswitch
 categories: projects
+date: 2020-05-14
 
 tile:
   type: link

@@ -2,6 +2,7 @@
 layout: page
 title: Custom MagicQ Wing
 categories: projects
+date: 2017-11-25
 
 tile:
   type: image

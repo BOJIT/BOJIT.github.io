@@ -2,6 +2,7 @@
 layout: page
 title: Artnet Node
 categories: projects
+date: 2018-02-18
 
 tile:
   type: image
@@ -19,7 +20,7 @@ Aside from the Arduino Mega, I used a pair of MAX485 ICs to drive the DMX lines 
 
 ![Artnet_Node-Alex_Forey.JPG]({{ site.imgurl }}/posts/Artnet_Node-Alex_Forey.JPG)
 
-It has been a while since I modified the *libDMX.cpp* library, but as far as I can remember, most of the trouble was caused by the ```SIG_USART``` syntax, which has been poisoned since Arduino Version *0023*. If you encounter similar 
+It has been a while since I modified the *libDMX.cpp* library, but as far as I can remember, most of the trouble was caused by the ```SIG_USART``` syntax, which has been poisoned since Arduino Version *0023*. If you encounter similar
 syntax bugs elsewhere, you essentially have to convert this syntax:
 
 ```c++
