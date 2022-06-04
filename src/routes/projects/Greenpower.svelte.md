@@ -35,7 +35,7 @@ Fastening to composite is not always straightforward and we had experienced many
 ![Greenpower-Bodywork.JPG]({import.meta.env.VITE_IMAGE_BASE}/posts/Greenpower-Bodywork.JPG)
 
 <div class="aspect-ratio">
-    <iframe type="text/html" src="https://www.youtube.com/embed/ybe3tVkQRCo?modestbranding=1" frameborder="0"></iframe>
+    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/ybe3tVkQRCo?modestbranding=1" frameborder="0"></iframe>
 </div>
 
 Since completely finishing the shells, we have slowly been working on the rest of the framing and drive mechanisms. This has been taking longer than expected, in part due to regulation changes during manufacture of the new car. One such setback was the regulation change stipulating that all roll-bars must be made from steel tubing. By the time the regulation was announced, we had already welded up all the framing in aluminium!

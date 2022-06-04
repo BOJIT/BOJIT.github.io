@@ -88,5 +88,5 @@ Below is a quick video of the finished pads in action. I use both Hot Rods and r
 These pads are by no means a substitute for a real *SPD SX*, but for a hobbyist like me, they are great fun and can be built at a fraction of the price of the real deal!
 
 <div class="aspect-ratio">
-    <iframe type="text/html" src="https://www.youtube.com/embed/Yf2NzRww4Mk?modestbranding=1" frameborder="0"></iframe>
+    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/Yf2NzRww4Mk?modestbranding=1" frameborder="0"></iframe>
 </div>

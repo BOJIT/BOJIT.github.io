@@ -42,7 +42,7 @@ The second feature is a bit more haphazard, and it is for an operation that I on
 Below is some shaky footage of the follower jig in action - I have only used the lift for binding channels, but I imagine it could be quite useful for cutting blind mortices.
 
 <div class="aspect-ratio">
-    <iframe type="text/html" src="https://www.youtube.com/embed/rJnqyoF_4G4?version=3&loop=1=&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
+    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/rJnqyoF_4G4?version=3&loop=1=&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
 </div>
 
 This table wasn't that much effort to make, but it has proved itself to be unbelievably useful as a 'jack of all trades' tool that I can use to act as a stand-in for the various bits of woodworking equipment that I can't justify owning!

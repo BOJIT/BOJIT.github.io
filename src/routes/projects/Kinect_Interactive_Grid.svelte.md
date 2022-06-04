@@ -13,7 +13,7 @@ My initial reaction was somewhat dismissive, as the idea of driving nearly 40 in
 The DC variety are advertised as non-dimmable, but as the bulbs don't contain the same rectification stage that the AC-Variety use, I suspected that they could be dimmed with PWM just like a normal LED strip. This is not entirely true, but they do perform quite well in typical theatre use. Below is a short clip demonstrating the final outcome:
 
 <div class="aspect-ratio">
-    <iframe type="text/html" src="https://www.youtube.com/embed/1h2riunyS8I?version=3&autoplay=1&loop=1&playlist=1h2riunyS8I&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
+    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/1h2riunyS8I?version=3&autoplay=1&loop=1&playlist=1h2riunyS8I&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
 </div>
 
 After asking the supplier and doing some digging online, I couldn't find anyone who had managed it successfully, so decided to order a couple and experiment a bit. As the bulbs are only £1.39 shipped, I felt I could justify it!
@@ -41,7 +41,7 @@ This setup was very fun to play with once we got it up and running, and I was pe
 ![Kinect_Interactive_Grid-Grid.JPG]({import.meta.env.VITE_IMAGE_BASE}/posts/Kinect_Interactive_Grid-Grid.JPG)
 
 <div class="aspect-ratio">
-    <iframe type="text/html" src="https://www.youtube.com/embed/KqTWhsiiKgE?version=3&autoplay=1&loop=1&playlist=KqTWhsiiKgE&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
+    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/KqTWhsiiKgE?version=3&autoplay=1&loop=1&playlist=KqTWhsiiKgE&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
 </div>
 
 As for the show itself, in contrast to previous student productions, it was a resounding succes! I would highly reccomend looking up the original play by Duncan Macmillan. While our director modified the play to be performed by an ensemble, it is originally a monologue, performed without any stage lighting or effects at all.

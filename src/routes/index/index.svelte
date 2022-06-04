@@ -3,37 +3,27 @@
      * @type {import('@sveltejs/kit').Load}
      */
     export async function load({ url, fetch }) {
-        const post = await fetch(`${url.pathname}.json`).then(res => res.json());
-        if (!post || !post.published) {
-            return {
-                status: 404,
-                error: new Error('Post could not be found')
-            };
-        }
+        const posts = await fetch(`/posts.json`).then(res => res.json());
         return {
             props: {
-                post
+                posts
             }
         };
     }
 </script>
 
 <script lang="ts">
-    export let post: any;
+    export let posts: any;
+
+    console.log(posts);
 
     // Components
     import Header from "$lib/components/Header.svelte";
     import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
 </script>
 
-<svelte:head>
-    <title>{post.title}</title>
-</svelte:head>
-
 <Header />
 
 <Content>
-    <h1>{post.title}</h1>
-    <h2>{post.date}</h2>
-    <slot />
+    <h1>Index</h1>
 </Content>
