@@ -1,6 +1,7 @@
 ---
 title: Closed-Loop Stepper Driver
 date: "2018-12-10"
+published: true
 
 tile:
   type: image
