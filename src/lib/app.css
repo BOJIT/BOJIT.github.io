@@ -1,3 +1,7 @@
 @import "@fontsource/gloria-hallelujah";
 @import "@fontsource/nunito";
 @import "@fontsource/syne-mono";
+
+.mode-dark article img {
+    filter: brightness(0.7);
+}

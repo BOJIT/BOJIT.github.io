@@ -1,13 +1,19 @@
 ---
-layout: page
 title: SSL over a Local Network
-categories: tutorials
-date: 2021-08-22
+date: "2021-08-22"
+published: true
 
 tile:
   type: link
   colour: --BOJIT-pink
 ---
+
+<script>
+    import CopyButton from "@bojit/svelte-components/widgets/CodeEditor/CopyButton.svelte";
+
+    import "prismjs/prism.js";
+    import "prismjs/components/prism-bash.js";
+</script>
 
 Lately I've been playing about with *Progressive Web Apps* and some of the [cool things you can do now entirely in a Browser](https://plotty.bojit.org). Most of my software experience is in the realm of embedded systems, where you don't really have to worry about maintaining a codebase for multiple platforms/architectures. The prospect of having to make/maintain a program for multiple operating systems intimidates me, so I'm pleased that I can now make and distribute a cross-platform app in pretty much the same way that I deploy my website.
 
@@ -19,7 +25,7 @@ So what do you need to get a secure connection without a self-signed certificate
 
 My first thought to fix this issue was to set up my own [local certificate authority](https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/). This would work, but is not ideal, as I would have to add that Certificate Authority's root certificate to every device I wanted to use the PWA on, and I would have to host that Certificate Authority on any network I wanted to use the PWA on. Ideally I wanted to use a public Certificate Authority to sign certificates for a device on a private network. Hence this project.
 
-![Local_SSL-Cover.PNG]({{ site.imgurl }}/posts/Local_SSL-Cover.PNG)
+![Local_SSL-Cover.PNG]({import.meta.env.VITE_IMAGE_BASE}/posts/Local_SSL-Cover.PNG)
 
 [My project](https://github.com/BOJIT/local_ssl) works by taking advantage of something called a `DNS-01` challenge, and the only thing you need to use it is a domain name, proxied through *Cloudflare*. It uses a tool called `certbot` to generate a certificate through *LetsEncrypt* and the Cloudflare API to verify this certificate automatically. It's a neat way of getting out-of-the box SSL working on a Raspberry Pi or other Debian-based machines.
 
@@ -27,7 +33,7 @@ So how does it work? To get an understanding of what 'challenges' are and why th
 
 To set up this yourself, all you need to do is create an `A` record on your domain through *Cloudflare's* DNS tools *(see image below)*. The address doesn't really matter, as The Pi will keep it updated as it's local IP address changes. I set mine to `0.0.0.0` initially.
 
-![Local_SSL-DNS.PNG]({{ site.imgurl }}/posts/Local_SSL-DNS.PNG)
+![Local_SSL-DNS.PNG]({import.meta.env.VITE_IMAGE_BASE}/posts/Local_SSL-DNS.PNG)
 
 Once this is done, you need to generate an [API Token](https://developers.cloudflare.com/api/tokens/create) and note it down along with your *zone identifier*.
 
