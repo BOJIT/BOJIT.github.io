@@ -9,6 +9,10 @@ tile:
   fontsize: 0.7
 ---
 
+<script>
+    import YouTube from "$lib/components/YouTube.svelte";
+</script>
+
 This post is a bit of a hodge-podge mix of projects, as I am trying to cover my activities over the last six years of involvement with the [Greenpower F24 Competition](https://www.greenpower.co.uk/). A lot has happened in that time, so the information here is a very small selection of what I have been doing for the competition while I have been involved.
 Our school's Greenpower club, [Poole Grammar Racing](https://poolegrammarracing.webs.com/), typically races 2 cars: one is a modified kit car, named *Green Dolphin*, pictured below. The other was a custom-made carbon fibre vehicle, nicknamed *Uncle Bulgaria*. This vehicle was very small, and had a few issues with turning circles, but was otherwise the faster of the two cars.
 By this point you have probably picked up on my use of the past tense with reference to the second car. This is because a student (not naming any names!) managed to write off that car by crashing it into the back of our neighbouring school's vehicle back in 2015. With that car out of the running, the daunting task of creating a new car loomed...
@@ -34,9 +38,7 @@ Fastening to composite is not always straightforward and we had experienced many
 
 ![Greenpower-Bodywork.JPG]({import.meta.env.VITE_IMAGE_BASE}/posts/Greenpower-Bodywork.JPG)
 
-<div class="aspect-ratio">
-    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/ybe3tVkQRCo?modestbranding=1" frameborder="0"></iframe>
-</div>
+<YouTube src="https://www.youtube.com/embed/ybe3tVkQRCo"/>
 
 Since completely finishing the shells, we have slowly been working on the rest of the framing and drive mechanisms. This has been taking longer than expected, in part due to regulation changes during manufacture of the new car. One such setback was the regulation change stipulating that all roll-bars must be made from steel tubing. By the time the regulation was announced, we had already welded up all the framing in aluminium!
 This is not the sole reason for delay, however. The usual issues of lack of team willingness, time constraints and management bureaucracy also have taken their toll. With only a year left in school, I decided to turn my attention towards the car's electronics and data-logging system, as this was a task manageable enough in size that I could tackle the bulk of it on my own. I won't go into extensive detail here, as the system is overly complex and still under development, but the core arrangement of the system is a master board, with a series of slave boards that receive instructions and relay data over a half-duplex RS-485 bus. The system regularly logs voltage, current, temperature, RPM and GPS co-ordinates to an SD card, then displays selected data on an LCD screen. I have included a picture of the fully working prototype below, and all of the code and schematics are up on [GitHub](https://github.com/BOJIT/Greenpower-Datalogging-System) if anyone is interested.

@@ -8,13 +8,15 @@ tile:
   image: /tiles/2019-03-10-Kinect_Interactive_Grid.JPG
 ---
 
+<script>
+    import YouTube from "$lib/components/YouTube.svelte";
+</script>
+
 This Spring our school hosted a production of Every Brilliant Thing, by Duncan Macmillan. This production was entirely student run, so we had a great deal more artistic freedom than most of our school shows permit. One afternoon, the director approached me with the expression of someone about to double your workload, and then raised the suggestion of making a grid of bulbs that could hang above the performance space (the show is performed in the round).
 My initial reaction was somewhat dismissive, as the idea of driving nearly 40 incandescent lightbulbs off our school power distribution was frankly laughable. However, this conversation coincided with the arrival of some rather curious bulbs I found on Ebay. These bulbs were theose new COB LED 'filament-style' lamps that are all the rage right now. However, unlike many others I had seen, these were advertised as being DC-12V. Apparently they are intended for caravans and SUVs, but they are surprisingly hard to find. I could not find a single EU distributor of these bulbs, and only a handful of Ebay sellers. Here is the supplier [I used](https://www.ebay.co.uk/itm/S14-Led-E27-2W-Edison-Filament-Bulb-Lamp-Light-Warm-White-2700K-AC220V-DC12V-3V-/273353419840?var=).
 The DC variety are advertised as non-dimmable, but as the bulbs don't contain the same rectification stage that the AC-Variety use, I suspected that they could be dimmed with PWM just like a normal LED strip. This is not entirely true, but they do perform quite well in typical theatre use. Below is a short clip demonstrating the final outcome:
 
-<div class="aspect-ratio">
-    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/1h2riunyS8I?version=3&autoplay=1&loop=1&playlist=1h2riunyS8I&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
-</div>
+<YouTube src="https://www.youtube.com/embed/1h2riunyS8I" autoplay playlist="1h2riunyS8I"/>
 
 After asking the supplier and doing some digging online, I couldn't find anyone who had managed it successfully, so decided to order a couple and experiment a bit. As the bulbs are only £1.39 shipped, I felt I could justify it!
 Below is my test setup for testing the bulbs: essentially it is a cheap PWM dimmer which has been modified with an Arduino Nano to give it DMX input. In the final version I used [this 36 channel dimmer](https://www.aliexpress.com/item/4000911151027.html), but I wanted to make sure that as a last resort I could get the system working with the Arduino's Default PWM frequency of 490Hz (a good frequency that does not show up on our camcorders). This worked surprisingly well, all the way down to about 5% duty cycle. As with most LED dimmers, the dimming curve is not linear: a change from 0-10% corresponds to a brightness change of about 50% at the bottom end. This makes very slow fades problematic. Moreover, at approx. 2% duty cycle the bulbs tend to violently flicker, which leads me to believe that there is some sort of constant-current circuitry inside the bulbs (while tempting to smash one open and check, I only had two bulbs, and I did not fancy waiting another 6 weeks for a replacement).
@@ -40,9 +42,7 @@ This setup was very fun to play with once we got it up and running, and I was pe
 
 ![Kinect_Interactive_Grid-Grid.JPG]({import.meta.env.VITE_IMAGE_BASE}/posts/Kinect_Interactive_Grid-Grid.JPG)
 
-<div class="aspect-ratio">
-    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/KqTWhsiiKgE?version=3&autoplay=1&loop=1&playlist=KqTWhsiiKgE&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
-</div>
+<YouTube src="https://www.youtube.com/embed/KqTWhsiiKgE" autoplay playlist="KqTWhsiiKgE"/>
 
 As for the show itself, in contrast to previous student productions, it was a resounding succes! I would highly reccomend looking up the original play by Duncan Macmillan. While our director modified the play to be performed by an ensemble, it is originally a monologue, performed without any stage lighting or effects at all.
 

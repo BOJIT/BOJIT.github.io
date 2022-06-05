@@ -9,6 +9,10 @@ tile:
   fontsize: 1
 ---
 
+<script>
+    import YouTube from "$lib/components/YouTube.svelte";
+</script>
+
 This project and the accompanying [router sled]({import.meta.env.VITE_BASE_URL}/projects/Router_Sled) are part of the gearing up for the next guitar build. There are plenty of router table designs on the internet, so this article isn't intended as a how-to. This is more of a reflection on some of the design decisions I made, as well as some things that I would do differently next time.
 
 The first thing I should point out is that I didn't build the entire enclosure - the base bit of furniture is actually an old chest/bedside unit picked up from a local jumble sale. It was missing a drawer when I bought it, and when having a look round it caught my eye as ideal for being able to quickly access the router without having to cut a large hole in the front of the table. As I'm still using the living room as my workshop, keeping the router table looking as much like furniture as possible helps appease my housemates!
@@ -41,9 +45,7 @@ The second feature is a bit more haphazard, and it is for an operation that I on
 
 Below is some shaky footage of the follower jig in action - I have only used the lift for binding channels, but I imagine it could be quite useful for cutting blind mortices.
 
-<div class="aspect-ratio">
-    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/rJnqyoF_4G4?version=3&loop=1=&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
-</div>
+<YouTube src="https://www.youtube.com/embed/rJnqyoF_4G4" autoplay/>
 
 This table wasn't that much effort to make, but it has proved itself to be unbelievably useful as a 'jack of all trades' tool that I can use to act as a stand-in for the various bits of woodworking equipment that I can't justify owning!
 

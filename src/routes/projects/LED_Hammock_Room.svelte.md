@@ -9,13 +9,15 @@ tile:
   fontsize: 1.2
 ---
 
+<script>
+    import YouTube from "$lib/components/YouTube.svelte";
+</script>
+
 Our student accommodation block has a completely empty room in one of the communal spaces. I think on the original site plans it was meant to be a bathroom, but when we moved in it was just an empty windowless box.
 
 We wanted to re-purpose the room and make it into a relaxation/chill space. We couldn't make any permanent changes to the room, but it just so happens that the room is an almost perfect cuboid, so I decided to construct a frame inside the room and make a free-standing dual hammock stand. However, as the room is completely pitched-black when the door is closed, we thought it would be quite fun to put some LED strips around the frame of the room. As it so happened, I had 15m of WS2812b addressable LED tape left over from a previous project, and wanted to try something akin to [Four Tet's 2018 tour light rig](https://www.youtube.com/watch?v=Ca6pjR2TLns). I didn't want to buy any more LEDs, as I had set myself a strict £100 budget for the project, but to give the illusion of lots of LEDs, I used some heavy-duty [mylar foil](https://www.amazon.co.uk/Silver-Lightite-Strong-Reflective-Sheeting/dp/B01138KKKW/ref=asc_df_B01138KKKW/?tag=googshopuk-21&linkCode=df0&hvadid=269126795226&hvpos=&hvnetw=g&hvrand=16350266725274799922&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1006909&hvtargid=pla-719122985648&psc=1) to create an 'infinity mirror' effect. It didn't quite work out as an infinity room - the mylar isn't that reflective, and getting sheets that large to remain taut and flat without attaching it to the wall was a nigh on impossible. However, the effect is still pretty cool: a video of the light-show in action is embedded below:
 
-<div class="aspect-ratio">
-    <iframe title="youtube-video" type="text/html" src="https://www.youtube.com/embed/BzbhOj6v1EI?version=3&autoplay=1&loop=1&playlist=BzbhOj6v1EI&controls=0&modestbranding=1&mute=1" frameborder="0"></iframe>
-</div>
+<YouTube src="https://www.youtube.com/embed/BzbhOj6v1EI" autoplay/>
 
 I tried to conduct most of the construction in secret, so I took some very detailed measurements of the room and constructed all of the frames outside of the room and assembled it on a quiet weekend. As it turns out, the room is actually slightly trapezoidal top to bottom, but undersized the frame by a bit anyway to allow for some expansion and contraction of the timber. The most critical part of the frame design was making the entire thing rigid enough to hold two hammocks, while ensuring that each 'panel' of the frame could be constructed outside and still fit through the door when it came to the final assembly. I cut it fine on a couple of occasions, but all of the parts did just about fit into the room!
 
