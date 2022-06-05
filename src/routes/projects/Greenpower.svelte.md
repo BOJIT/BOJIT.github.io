@@ -1,6 +1,6 @@
 ---
 title: Greenpower F24 Competition
-date: "2019-06-05"
+date: "05-06-2019"
 published: true
 
 tile:

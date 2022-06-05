@@ -1,6 +1,6 @@
 ---
 title: DIY Electric Guitar
-date: "2017-07-15"
+date: "15-07-2017"
 published: true
 
 tile:

@@ -1,6 +1,6 @@
 ---
 title: BluePill MIDI Footswitch
-date: "2020-05-14"
+date: "14-05-2020"
 published: true
 
 tile:

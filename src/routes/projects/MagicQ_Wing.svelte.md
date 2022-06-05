@@ -1,6 +1,6 @@
 ---
 title: Custom MagicQ Wing
-date: "2017-11-25"
+date: "25-11-2017"
 published: true
 
 tile:

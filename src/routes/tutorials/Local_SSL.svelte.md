@@ -1,6 +1,6 @@
 ---
 title: SSL over a Local Network
-date: "2021-08-22"
+date: "22-08-2021"
 published: true
 
 tile:

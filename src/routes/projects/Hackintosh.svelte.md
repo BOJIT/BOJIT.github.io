@@ -1,6 +1,6 @@
 ---
 title: PowerMac G5 Hackintosh
-date: "2020-08-01"
+date: "01-08-2020"
 published: true
 
 tile:

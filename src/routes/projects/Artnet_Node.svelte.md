@@ -1,6 +1,6 @@
 ---
 title: Artnet Node
-date: "2018-02-18"
+date: "18-02-2018"
 published: true
 
 tile:

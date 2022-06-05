@@ -13,7 +13,7 @@
     export let title;
     export let status;
 
-    let img = import.meta.env.VITE_IMAGE_BASE + "/general/404.PNG";
+    const img = import.meta.env.VITE_IMAGE_BASE + "/general/404.PNG";
 </script>
 
 {#if status === 404}

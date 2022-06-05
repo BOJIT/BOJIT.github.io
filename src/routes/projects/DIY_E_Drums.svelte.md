@@ -1,6 +1,6 @@
 ---
 title: DIY E-Drums
-date: "2020-05-16"
+date: "16-05-2020"
 published: true
 
 tile:

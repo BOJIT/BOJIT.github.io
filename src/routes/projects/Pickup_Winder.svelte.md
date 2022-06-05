@@ -1,6 +1,6 @@
 ---
 title: Pickup Winder
-date: "2016-06-20"
+date: "20-06-2016"
 published: true
 
 tile:

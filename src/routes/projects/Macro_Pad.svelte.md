@@ -1,6 +1,6 @@
 ---
 title: BluePill Macro Keypad
-date: "2019-08-17"
+date: "17-08-2019"
 published: true
 
 tile:

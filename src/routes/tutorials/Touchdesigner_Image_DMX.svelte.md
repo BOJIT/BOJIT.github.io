@@ -1,6 +1,6 @@
 ---
 title: "Touchdesigner: Image -> DMX"
-date: "2019-03-31"
+date: "31-03-2019"
 published: true
 
 tile:

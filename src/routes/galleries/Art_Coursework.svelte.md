@@ -1,13 +1,16 @@
 ---
 title: Art Coursework
-date: "2017-05-15"
+date: "15-05-2017"
 published: true
 
 tile:
   type: image
   image: /tiles/2017-05-15-Art_Coursework.JPG
+---
 
-gallery:
+During a recent clear-out, I came across my old art textbook from GCSE. As the book is about to be filed away on a dusty shelf for an indeterminate length of time, I thought I would put some images up here so I can always find them if I need them :)
+
+<!-- gallery:
   - type: image
     image: /posts/Art_Coursework-Sign.JPG
     text: Nearby Street Sign
@@ -83,8 +86,4 @@ gallery:
   - type: image
     image: /posts/Art_Coursework-Skull.JPG
     text: Cezanne - Pyramid of Skulls
-    fontsize: 0.7
----
-
-During a recent clear-out, I came across my old art textbook from GCSE. As the book is about to be filed away on a dusty shelf for an indeterminate length of time, I thought I would put some images up here so I can always find them if I need them :)
-
+    fontsize: 0.7 -->

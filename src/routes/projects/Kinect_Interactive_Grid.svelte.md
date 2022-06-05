@@ -1,6 +1,6 @@
 ---
 title: Kinect Interactive Bulb Grid
-date: "2019-03-10"
+date: "10-03-2019"
 published: true
 
 tile:
