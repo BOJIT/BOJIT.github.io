@@ -4,11 +4,20 @@
     const img = import.meta.env.VITE_IMAGE_BASE + "/general/footer.JPG";
 
     let footerImg: HTMLImageElement;
-    let float = false;
+    let fill = false;
+
+    const height = 12; // rem
+
+    function remToPx(rem) {
+        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    }
 
     function calculateFooterHeight() {
         if(typeof window !== 'undefined') {
-            float = (window.innerWidth <= footerImg.naturalWidth);
+            let ratio = footerImg.naturalWidth/footerImg.naturalHeight;
+            fill = (window.innerWidth > remToPx(height)*ratio);
+            console.log(window.innerWidth);
+            console.log(remToPx(height)*ratio);
         }
     }
 
@@ -20,7 +29,7 @@
     });
 </script>
 
-<footer class:float>
+<footer class:fill>
     <img bind:this={footerImg} src={img} alt="Page Footer">
 </footer>
 
@@ -30,14 +39,13 @@
         flex: 0 0 auto;
         align-self: end;
         width: 100%;
-        background-color: red;
     }
 
-    footer.float {
-        height: 30vh;
+    footer:not(.fill) {
+        height: 12rem;
     }
 
-    footer:not(.float) img {
+    footer.fill img {
         width: 100%;
     }
 
