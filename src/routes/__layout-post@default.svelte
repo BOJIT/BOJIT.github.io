@@ -36,6 +36,7 @@
     <h1>{post.title}</h1>
     <h3><b>{post.date}</b></h3>
     <slot />
+    <hr>
 </Content>
 
 <style>
