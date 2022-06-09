@@ -47,10 +47,17 @@
                 event.preventDefault();
                 active = false;
             }
-        } else if(event.key === 'Tab') {
+        } else if(event.key === 'Tab' || event.key === 'ArrowRight') {
             if(active) {
                 event.preventDefault();
                 let i = (idx === themes.length - 1) ? 0 : idx + 1;
+                $mode = themes[i].theme;
+                idx = i;
+            }
+        } else if(event.key === 'ArrowLeft') {
+            if(active) {
+                event.preventDefault();
+                let i = (idx === 0) ? (themes.length - 1) : idx - 1;
                 $mode = themes[i].theme;
                 idx = i;
             }
