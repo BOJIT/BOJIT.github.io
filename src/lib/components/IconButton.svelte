@@ -1,6 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
-    import type { SvelteComponent, SvelteComponentTyped } from 'svelte/internal';
+    import type { SvelteComponent } from 'svelte/internal';
     // import createRipple from "@bojit/svelte-components/smelte/components/Ripple/ripple.js";
 
     const dispatch = createEventDispatcher();

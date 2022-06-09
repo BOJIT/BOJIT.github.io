@@ -1,36 +1,61 @@
 <script lang="ts">
+    import type { SvelteComponent } from 'svelte/internal';
+
     import Dialog from "@bojit/svelte-components/smelte/components/Dialog/Dialog.svelte";
     import IconButton from "./IconButton.svelte";
 
     import Theme, { palette } from "@bojit/svelte-components/theme";
     const mode = Theme.Mode;
 
-    export let active = false;
-
-    function handleKeydown(event: KeyboardEvent) {
-        if((event.ctrlKey || event.metaKey) && event.key === 'k') {
-            event.preventDefault();
-            active = true;
-        } else if(event.key === 'Escape') {
-            if(active) {
-                event.preventDefault();
-                active = false;
-            }
-        }
-    }
-
     // Icons
     import SunnyOutline from "@svicons/ionicons-outline/sunny.svelte";
     import MoonOutline from "@svicons/ionicons-outline/moon.svelte";
     import ContrastOutline from "@svicons/ionicons-outline/contrast.svelte";
 
-    function setTheme(target) {
-
+    type Theme = {
+        "theme": 'light' | 'dark' | 'auto',
+        "logo": SvelteComponent
     }
+
+    const themes: Theme[] = [
+        {
+            "theme": 'light',
+            "logo": SunnyOutline,
+        },
+        {
+            "theme": 'dark',
+            "logo": MoonOutline,
+        },
+        {
+            "theme": 'auto',
+            "logo": ContrastOutline,
+        },
+    ]
 
     const col = "rgba(120, 120, 120, 0.5)";
     const col_focus = "rgba(180, 180, 180, 0.5)";
 
+    export let active = false;
+    let idx = 0;
+
+    function handleKeydown(event: KeyboardEvent) {
+        if((event.ctrlKey || event.metaKey) && event.key === 'k') {
+            event.preventDefault();
+            active = true;
+        } else if(event.key === 'Escape' || event.key === 'Enter') {
+            if(active) {
+                event.preventDefault();
+                active = false;
+            }
+        } else if(event.key === 'Tab') {
+            if(active) {
+                event.preventDefault();
+                let i = (idx === themes.length - 1) ? 0 : idx + 1;
+                $mode = themes[i].theme;
+                idx = i;
+            }
+        }
+    }
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>
@@ -38,18 +63,13 @@
 <Dialog bind:value={active}>
     <!-- <h6 slot="title">Select Theme</h6> -->
     <div class="option">
-        <IconButton logo={SunnyOutline} color={$mode === 'light' ? col_focus : col}
-        size="5em" disabled={$mode === 'light'} on:click={() => {
-            $mode = "light";
-        }}/>
-        <IconButton logo={MoonOutline} color={$mode === 'dark' ? col_focus : col}
-        size="5em" disabled={$mode === 'dark'} on:click={() => {
-            $mode = "dark";
-        }}/>
-        <IconButton logo={ContrastOutline} color={$mode === 'auto' ? col_focus : col}
-        size="5em" disabled={$mode === 'auto'} on:click={() => {
-            $mode = "auto";
-        }}/>
+        {#each themes as t, i}
+            <IconButton logo={t.logo} color={$mode === t.theme ? col_focus : col}
+            size="5em" disabled={$mode === t.theme} on:click={() => {
+                $mode = t.theme;
+                idx = i;
+            }}/>
+        {/each}
     </div>
 </Dialog>
 
