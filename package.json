@@ -29,6 +29,8 @@
     "@fontsource/gloria-hallelujah": "^4.5.6",
     "@fontsource/nunito": "^4.5.8",
     "@fontsource/syne-mono": "^4.5.4",
+    "@svicons/ionicons-outline": "^0.1.11",
+    "@svicons/ionicons-solid": "^0.1.11",
     "localforage": "^1.10.0"
   }
 }

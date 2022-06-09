@@ -1,3 +1,10 @@
 @import "@fontsource/gloria-hallelujah";
 @import "@fontsource/nunito";
 @import "@fontsource/syne-mono";
+
+/* Custom Overrides */
+
+main {
+    -webkit-transition-duration: 0s !important;
+    transition-duration: 0s !important;
+}

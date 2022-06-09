@@ -1,31 +1,44 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    import { onMount, SvelteComponent } from "svelte";
     import Button from "@bojit/svelte-components/smelte/components/Button/Button.svelte";
     import Theme from "@bojit/svelte-components/theme/theme";
+    import IconButton from "./IconButton.svelte";
+
+    // Logos
+    import LogoYoutube from "@svicons/ionicons-solid/logo-youtube.svelte";
+    import LogoLinkedin from "@svicons/ionicons-solid/logo-linkedin.svelte";
+    import LogoGithub from "@svicons/ionicons-solid/logo-github.svelte";
+    import LogoFacebook from "@svicons/ionicons-solid/logo-facebook.svelte";
+    import LogoSoundcloud from "@svicons/ionicons-solid/logo-soundcloud.svelte";
 
     const img = import.meta.env.VITE_IMAGE_BASE + "/general/footer.JPG";
     const height = 12; // rem
 
     type Social = {
-        "icon": string,
-        "link"?: string,
+        "icon": SvelteComponent,
+        "link": string,
     }
 
     const socials: Social[] = [
         {
-            "icon": "settings"
+            "icon": LogoYoutube,
+            "link": "https://www.youtube.com/channel/UCR7zc0TblvkjPy9DhAWUkvA"
         },
         {
-            "icon": "settings"
+            "icon": LogoLinkedin,
+            "link": "https://www.linkedin.com/in/james-bennion-pedley-bab14a146/"
         },
         {
-            "icon": "settings"
+            "icon": LogoGithub,
+            "link": "https://github.com/BOJIT"
         },
         {
-            "icon": "settings"
+            "icon": LogoFacebook,
+            "link": "https://www.facebook.com/James.BOJIT"
         },
         {
-            "icon": "settings"
+            "icon": LogoSoundcloud,
+            "link": "https://soundcloud.com/james-bojit"
         },
     ]
 
@@ -52,12 +65,12 @@
     });
 </script>
 
-
 <footer class:fill>
     <div class="footer-action">
         <div class="socials">
             {#each socials as s}
-                <Button icon='settings' circle color={$Theme === 'dark' ? 'primary' : 'black'}/>
+                <IconButton logo={s.icon} shape="circle" size="2.2em" href={s.link} newTab
+                    color={$Theme === 'light' ? "var(--color-dark-700)" : "#474c54"} />
             {/each}
         </div>
         <h6>&copy; BOJIT {new Date().getFullYear()}</h6>
@@ -86,7 +99,7 @@
         object-fit: cover;
         height: 100%;
         margin: 0 auto;
-        margin-top: 1.5rem;
+        margin-top: 2rem;
     }
 
     :global(.mode-dark) img {
@@ -106,7 +119,7 @@
     .socials {
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        gap: 2.5rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
