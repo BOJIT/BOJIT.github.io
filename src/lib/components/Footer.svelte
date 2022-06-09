@@ -1,10 +1,9 @@
 <script lang="ts">
     import { onMount, SvelteComponent } from "svelte";
-    import Button from "@bojit/svelte-components/smelte/components/Button/Button.svelte";
     import Theme from "@bojit/svelte-components/theme/theme";
     import IconButton from "./IconButton.svelte";
 
-    // Logos
+    // Icons
     import LogoYoutube from "@svicons/ionicons-solid/logo-youtube.svelte";
     import LogoLinkedin from "@svicons/ionicons-solid/logo-linkedin.svelte";
     import LogoGithub from "@svicons/ionicons-solid/logo-github.svelte";

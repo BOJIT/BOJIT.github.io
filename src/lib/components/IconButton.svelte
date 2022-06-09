@@ -8,6 +8,7 @@
     export let logo: SvelteComponent;
     export let href: string = null;
     export let newTab = false;
+    export let disabled = false;
 
     // Style
     export let size: string = "2.5em";
@@ -18,13 +19,13 @@
 
 {#if href}
 <a {href} target={newTab ? "_blank" : ""}>
-    <button class="{shape}" style="background-color: {color}"
+    <button disabled={disabled} class="{shape}" class:hoverable={!disabled} style="background-color: {color}"
         on:click={() => {dispatch('click');}}>
         <svelte:component this={logo} height={size} color={iconColor}/>
     </button>
 </a>
 {:else}
-<button class="{shape}" style="background-color: {color}"
+<button disabled={disabled} class="{shape}" class:hoverable={!disabled} style="background-color: {color}"
     on:click={() => {dispatch('click');}}>
     <svelte:component this={logo} height={size} color={iconColor}/>
 </button>
@@ -36,7 +37,7 @@
         transition: filter 0.2s;
     }
 
-    button:hover {
+    button.hoverable:hover {
         filter: brightness(160%);
     }
 
