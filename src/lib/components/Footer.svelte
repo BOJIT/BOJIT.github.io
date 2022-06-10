@@ -84,6 +84,7 @@
         align-self: end;
         width: 100%;
         position: relative;
+        margin-top: 2rem;
     }
 
     footer:not(.fill) {
@@ -98,7 +99,6 @@
         object-fit: cover;
         height: 100%;
         margin: 0 auto;
-        margin-top: 2rem;
     }
 
     :global(.mode-dark) img {
@@ -126,6 +126,7 @@
     .footer-action {
         width: 100%;
         position: absolute;
+        top: -2rem;
         z-index: 2;
     }
 </style>
