@@ -15,7 +15,11 @@ export const get = async () => {
     )
 
     const sortedPosts = allPosts.sort((a, b) => {
-        return new Date(b.meta.date) - new Date(a.meta.date)
+        let a_split = a.meta.date.split("-");
+        let a_date = new Date(a_split[2], a_split[1] - 1, a_split[0]);
+        let b_split = b.meta.date.split("-");
+        let b_date = new Date(b_split[2], b_split[1] - 1, b_split[0]);
+        return b_date.getTime() - a_date.getTime()
     })
 
     return {
