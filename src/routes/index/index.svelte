@@ -30,12 +30,12 @@
 <Header />
 
 <Content>
-    <h1>Index</h1>
+    <h1>PAGE INDEX</h1>
     {#each categories.sort((a, b) => a < b ? -1 : 1) as c}
         <h3>{c.toUpperCase()}</h3>
         <hr>
         {#each posts.filter(p => p.path.startsWith(c)) as p}
-            <NavButton href={p.path.slice(0, -".svelte".length)}>{p.meta.title}</NavButton>
+            <NavButton href={p.path.slice(0, -".svelte".length)}>{p.meta.title.toUpperCase()}</NavButton>
         {/each}
     {/each}
 

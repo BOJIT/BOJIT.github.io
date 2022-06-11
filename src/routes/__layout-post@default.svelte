@@ -3,6 +3,7 @@
      * @type {import('@sveltejs/kit').Load}
      */
     export async function load({ url, fetch }) {
+        const posts = await fetch(`/posts.json`).then(res => res.json());
         const post = await fetch(`${url.pathname}.json`).then(res => res.json());
         if (!post || !post.published) {
             return {
@@ -12,7 +13,8 @@
         }
         return {
             props: {
-                post
+                post,
+                posts
             }
         };
     }
@@ -20,9 +22,11 @@
 
 <script lang="ts">
     export let post: any;
+    export let posts: any;
 
     // Components
     import Header from "$lib/components/Header.svelte";
+    import NavigationFooter from "$lib/components/NavigationFooter.svelte";
     import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
 </script>
 
@@ -36,6 +40,7 @@
     <h1>{post.title}</h1>
     <h3><b>{post.date}</b></h3>
     <slot />
+    <NavigationFooter posts={posts} post={post}/>
     <hr>
 </Content>
 
@@ -81,4 +86,6 @@
             width: 100%;
         }
     }
+
+    /* FIXME make hrs more elegant and slightly larger p text */
 </style>
