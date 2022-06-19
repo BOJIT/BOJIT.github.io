@@ -9,7 +9,7 @@ tile:
 ---
 
 <script>
-    import YouTube from "$lib/components/YouTube.svelte";
+    import YouTube from "@bojit/svelte-components/widgets/YouTube/YouTube.svelte";
 </script>
 
 This Spring our school hosted a production of Every Brilliant Thing, by Duncan Macmillan. This production was entirely student run, so we had a great deal more artistic freedom than most of our school shows permit. One afternoon, the director approached me with the expression of someone about to double your workload, and then raised the suggestion of making a grid of bulbs that could hang above the performance space (the show is performed in the round).

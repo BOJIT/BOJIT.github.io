@@ -11,7 +11,7 @@ tile:
 
 <script>
     import CopyButton from "@bojit/svelte-components/widgets/CodeEditor/CopyButton.svelte";
-    import YouTube from "$lib/components/YouTube.svelte";
+    import YouTube from "@bojit/svelte-components/widgets/YouTube/YouTube.svelte";
 
     import "prismjs/prism.js";
     import "prismjs/components/prism-c.js";

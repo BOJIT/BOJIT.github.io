@@ -1,3 +1,5 @@
+<!-- TODO fix the ripple issue before deleting this file! -->
+
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
     import type { SvelteComponent } from 'svelte/internal';

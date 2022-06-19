@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount, SvelteComponent } from "svelte";
     import Theme from "@bojit/svelte-components/theme/theme";
-    import IconButton from "./IconButton.svelte";
+    import IconButton from "@bojit/svelte-components/form/IconButton/IconButton.svelte";
 
     // Icons
     import LogoYoutube from "@svicons/ionicons-solid/logo-youtube.svelte";

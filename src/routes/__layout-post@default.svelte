@@ -54,38 +54,4 @@
         text-align: center;
         color: var(--color-gray-600);
     }
-
-    /* TODO move image styling to library */
-    :global(article) :global(img) {
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        display: block;
-    }
-
-    @media (max-width: 768px) {
-        :global(article) :global(img) {
-            width: 100%;
-        }
-    }
-
-    :global(.mode-dark) :global(article) :global(img) {
-        filter: brightness(0.8);
-    }
-
-    :global(article) :global(.youtube-container) {
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    @media (max-width: 768px) {
-        :global(article) :global(.youtube-container) {
-            width: 100%;
-        }
-    }
-
-    /* FIXME make hrs more elegant and slightly larger p text */
 </style>

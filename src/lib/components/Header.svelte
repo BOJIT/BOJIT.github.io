@@ -3,7 +3,7 @@
     import Theme from "@bojit/svelte-components/theme/theme";
 
     import ThemeSelector from "$lib/components/ThemeSelector.svelte";
-    import IconButton from "./IconButton.svelte";
+    import IconButton from "@bojit/svelte-components/form/IconButton/IconButton.svelte";
 
     import LogoHome from "@svicons/ionicons-outline/home.svelte";
     import LogoOptions from "@svicons/ionicons-outline/options.svelte";
