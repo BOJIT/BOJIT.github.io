@@ -79,32 +79,6 @@ label {
 
 /*------------------------------- Site Elements ------------------------------*/
 
-/* Bullet point list style */
-ul {
-	list-style-type: circle;
-}
-
-/* List entry style */
-li {
-	font-family: 'Comfortaa', cursive;
-	font-size: 16px;
-	text-align: left;
-	margin: 6px 0;
-}
-
-/* Ruled line break style */
-hr {
-	border: 0;
-	border-top: 1px solid #eee;
-	margin: 20px 0;
-}
-
-/* Default website link styling */
-a {
-	color: var(--BOJIT-medium);
-	text-decoration: underline;
-}
-
 /* Remove link styling from links directly within buttons */
 button > a {
 	text-decoration: none;

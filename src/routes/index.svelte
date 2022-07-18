@@ -24,7 +24,8 @@
         image: import.meta.env.VITE_IMAGE_BASE + p.meta.tile.image,
         caption: p.meta.title,
         subcaption: p.meta.date,
-        colour: p.meta.tile.colour
+        colour: p.meta.tile.colour,
+        link: p.path.slice(0, -".svelte".length)
     }));
 </script>
 
