@@ -16,3 +16,6 @@ node_modules
 # VSCode
 .vscode/settings.json
 .vscode/javascript.code-snippets
+
+.vscode/svelte.code-snippets
+.vscode/cpp.code-snippets

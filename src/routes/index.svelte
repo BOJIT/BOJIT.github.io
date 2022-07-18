@@ -15,9 +15,14 @@
 <script lang="ts">
     export let posts: any;
 
-    import PhotoGallery from '$lib/components/PhotoGallery/PhotoGallery.svelte';
-
+    import Gallery from "$lib/components/Gallery.svelte";
     console.log(posts);
+
+    $: tiles = posts.map((p) => ({
+        type: p.meta.tile.type,
+        image: import.meta.env.VITE_IMAGE_BASE + p.meta.tile.image,
+        caption: p.title
+    }));
 </script>
 
 
@@ -27,6 +32,4 @@
 
 
 <!-- Main Navigation -->
-<h3>I am the homepage!</h3>
-
-<PhotoGallery />
+<Gallery tiles={tiles}/>
