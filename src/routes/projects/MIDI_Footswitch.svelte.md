@@ -5,7 +5,7 @@ published: true
 
 tile:
   type: link
-  colour: --BOJIT-amber
+  colour: "#ffc107"
 ---
 
 The current COVID-19 situation has made it much harder to get raid scrap heaps for supplies surreptitiously, so the quality of this MIDI footswitch is not much to write home about. I do plan to remake this footswitch again with a metal housing and a slightly more 'Tour-Ready' feel, but considering I am currently stuck self-isolating in my room I want to finally get around to learning the basics of live-looping in *Ableton*. This footswitch (pictured below in front of the *Zoom G5*) gives me 10 buttons that output MIDI CC over USB, meaning they can be mapped to virtually any attribute in *Ableton*.

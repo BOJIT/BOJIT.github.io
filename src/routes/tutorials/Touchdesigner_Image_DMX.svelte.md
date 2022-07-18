@@ -5,7 +5,7 @@ published: true
 
 tile:
   type: link
-  colour: --BOJIT-light-blue
+  colour: "#87CEEB"
 ---
 
 For a recent theatre production I was involved in, I had to do some complex DMX pixel mapping as part of our lighting set. Normally I tackle most lighting programming with a program called MagicQ. The software is free and identical to the software used on professional Chamsys desks, but it does have its limitations. For one, the internal pixel mapping engine (pictured below) is not the greatest. It is usable for simple eye-candy effects with Sunstrips and LED battens, but for anything more exacting than that it is a pain to use. While you can get slightly more functionality by hooking MagicQ up to a media server, but in my opinion, it is better to completely bypass MagicQ and use something else as the pixel mapping engine. In my search for that 'something else', I came across *Touchdesigner*. While it is primarily a video manipulation tool, the sheer number of IO options in the software make it very flexible for all kinds of scripting/automation tasks. For the show I was working on, I used *Touchdesigner* for more than just pixel-mapping, but in this article I will focus solely on how to create a simple Image->DMX pixel mapper in *Touchdesigner*. To see what else I did with the software, read [this article]({import.meta.env.VITE_BASE_URL}/projects/Kinect_Interactive_Grid).

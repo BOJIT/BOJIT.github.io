@@ -17,43 +17,52 @@
         "type": "image" | "link" | "text",
         "image": string,
         "caption": string,
-        "link?": string
+        "subcaption"?: string
+        "link"?: string,
+        "colour"?: string,
     };
 
     export let columns = 3;
     export let tiles: Tile[] = [];
 
     let gallery: HTMLElement;
+    let colcade: any = null;
+
+    $: colcade?.reload();
 
     onMount(() => {
-        const colcade = new Colcade(gallery, {
+        colcade = new Colcade(gallery, {
             columns: '.column',
             items: '.tile'
         });
+
+        setTimeout(() => {
+            colcade.reload();
+        }, 100)
     });
 </script>
 
 
 <div bind:this={gallery} class="gallery">
     {#each {length: columns} as _, i}
-        <div class="column"></div>
+        <div class="column" class:first={i == 0}></div>
     {/each}
 
     {#each tiles as t}
         <div class="tile">
             {#if t.type === "image"}
-                <div>
-                    <img src={t.image} alt={t.caption}/>
-                </div>
-            {:else if t.type === "link"}
-            <div>
-                <h2>LINK</h2>
+            <div class="image-holder">
+                <img src={t.image} alt={t.caption}/>
             </div>
             {:else if t.type === "text"}
-            <div>
-                <h2>TEST</h2>
+            <div style:background-color={t.colour} class="text">
+                <h2>{t.caption}</h2>
+            </div>
+            {:else if t.type === "link"}
+            <div style:background-color={t.colour} class="text">
+                <h2>{t.caption}</h2>
                 <hr>
-                <h4>DATE</h4>
+                <h4>{t.subcaption}</h4>
             </div>
             {/if}
         </div>
@@ -64,8 +73,51 @@
 <style>
     .gallery {
         display: flex;
+        gap: 1rem;
     }
+
     .column {
         flex-grow: 1;
+    }
+
+    @media (max-width: 768px) {
+        .column:not(.first) {
+            display: none;
+        }
+    }
+
+    .tile {
+        margin-bottom: 1rem;
+    }
+
+    .tile img {
+        width: 100%;
+    }
+
+    .tile .text {
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
+    }
+
+    .tile h2, h4 {
+        text-align: center;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .tile h2 {
+        font-size: 1.8rem;
+        color: black;
+    }
+
+    .tile h4 {
+        font-size: 1.3rem;
+        color: var(--color-gray-600);
+    }
+
+    .tile hr {
+        margin: 0;
+        border-color: white;
+        height: 1px;
     }
 </style>

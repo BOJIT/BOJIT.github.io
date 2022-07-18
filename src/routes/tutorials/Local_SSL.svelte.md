@@ -5,7 +5,7 @@ published: true
 
 tile:
   type: link
-  colour: --BOJIT-pink
+  colour: "#efa2af"
 ---
 
 <script>

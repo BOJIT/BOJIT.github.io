@@ -1,12 +1,2 @@
-/* Global website colour palette */
-:root {
-	--BOJIT-dark: black;
-	--BOJIT-medium: #323232;
-	--BOJIT-light: lightgray;
-
-	--BOJIT-light-blue: #87CEEB;
-	--BOJIT-amber: #ffc107;
-	--BOJIT-cyan: #00bcd4;
-	--BOJIT-teal: #009688;
-	--BOJIT-pink: #efa2af;;
-}
+--BOJIT-cyan: #00bcd4;
+--BOJIT-teal: #009688;
