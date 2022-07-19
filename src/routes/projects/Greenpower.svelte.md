@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2019-06-05-Greenpower.PNG
-  fontsize: 0.7
 ---
 
 <script>

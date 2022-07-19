@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2021-04-17-Router_Table.PNG
-  fontsize: 1
 ---
 
 <script>

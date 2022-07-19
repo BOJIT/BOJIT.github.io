@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2017-11-25-MagicQ_Wing.PNG
-  fontsize: 0.8
 ---
 
 For most of my lighting programming, I use a program called [MagicQ](https://chamsyslighting.com/pages/magicq-downloads). It is very powerful software, and you can get 64 universes of DMX out over Artnet for free. The software that you can download from their website is exactly the same as the software that runs on their consoles, the only difference is the hardware. Their consoles are great for busking in clubs and festivals, but for school shows I could not really justify hiring one in. Chamsys do sell hardware wings to work with the PC software, but the free version also has a useful tool for creating keyboard macros.

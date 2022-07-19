@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2018-02-18-Artnet_Node.JPG
-  fontsize: 1.3
 ---
 
 <script>

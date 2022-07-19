@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2020-05-16-DIY_E_Drums.PNG
-  fontsize: 0.8
 ---
 
 <script>

@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2017-07-15-DIY_Guitar.PNG
-  fontsize: 1.3
 ---
 
 Of all the things I have built so far, my home-made electric guitar gets by far the most use day to day. I have dabbled with home-made instruments before (the picture below shows some of them), but this was the first time that I built a guitar entirely from scratch. The design is a hollow-body loosely based on a Telecaster, with a few significant design changes, which I will outline below.

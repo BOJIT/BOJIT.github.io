@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2021-05-03-Router_Sled.PNG
-  fontsize: 1
 ---
 
 There are a plethora of router sled designs on the internet, but they all tend to be designed for the purpose of levelling large slabs and surfacing heavy ornamental items. I don't do many of these types of projects myself, so my main motivation for building this router sled was to have something that can do the smaller, more accurate work that would normally be done with a jointer and thicknesser planer. I don't really have space for these bigger woodworking tools in my living-room workshop, but I stil need to square up large flat bits of wood for building guitars.

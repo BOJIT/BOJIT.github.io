@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2018-04-10-Reflow_Oven.PNG
-  fontsize: 1.2
 ---
 
 Recently, many of my electronics projects have required the use of components that are only available in SMD form. While I can solder most SMD components by hand, and most components can be bought on break-out boards, I decided that it was time to up my game in the SMD soldering department. After all, SMD is not going away, and I want to be prepared for when and if the through-hole components I need become completely unavailable. The 'breaking point' for me was during the development of my [closed-loop stepper driver]({import.meta.env.VITE_BASE_URL}/projects/Stepper_Driver), where I had to use a fine-pitched QFN chip for the motor drive, and was destroying several chips trying to solder them by hand. To prevent further frustration, I decided to make a reflow oven.

@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2018-12-10-Stepper_Driver.JPG
-  fontsize: 0.7
 ---
 
 When designing the control system for my portable CNC machine, I found that none of the control systems on the market really satisfied all of my requirements. As my machine is modular and uses 2 motors to drive each axis in opposite directions, most GRBL-based motion controllers would not work with my setup. Moreover, as I intend to do quite heavy machining and do not want each pair of motors to ever go out of sync with one another, I wanted my control system to be **closed-loop** (i.e. incorporate positional feedback). Now, there are plenty of closed-loop CNC controllers out there, however they are all rather expensive and quite bulky, making them less than ideal for a portable machine. The systems are also not very expandable. Taking all of this into account, I decided to design my own controller!

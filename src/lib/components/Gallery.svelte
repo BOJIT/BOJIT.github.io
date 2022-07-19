@@ -12,7 +12,8 @@
     import { onMount } from "svelte";
 
     import Link from "$lib/components/Link.svelte";
-    import Colcade from "$lib/components/colcade/colcade";
+    import Colcade from "$lib/components/utils/colcade";
+    import textFit from "$lib/components/utils/textFit";
 
     type Tile = {
         "type": "image" | "link" | "text",
@@ -30,6 +31,14 @@
     let colcade: any = null;
 
     $: colcade?.reload();
+    $: textFit(gallery?.getElementsByClassName('textfit'), {multiline: true});
+
+    function resizeHandler() {
+        colcade?.reload();
+        if(gallery) {
+            textFit(gallery?.getElementsByClassName('textfit'), {multiline: true});
+        }
+    }
 
     onMount(() => {
         colcade = new Colcade(gallery, {
@@ -37,8 +46,12 @@
             items: '.tile'
         });
 
+        window.addEventListener("resize", resizeHandler);
+
+        // HACK remove!
         setTimeout(() => {
             colcade.reload();
+            textFit(gallery?.getElementsByClassName('textfit'), {multiline: true});
         }, 100)
     });
 </script>
@@ -55,7 +68,7 @@
                 {#if t.type === "image"}
                 <div class="image-holder">
                     <img src={t.image} alt={t.caption}/>
-                    <h1>{t.caption}</h1>
+                    <div class="textfit">{t.caption}</div>
                 </div>
                 {:else if t.type === "text"}
                 <div style:background-color={t.colour} class="text">
@@ -94,26 +107,51 @@
         margin-bottom: 1rem;
     }
 
-    .tile img {
-        width: 100%;
-    }
-
+    /* Image Tiles */
     .tile .image-holder {
         position: relative;
+    }
+
+    .tile .image-holder img {
+        width: 100%;
         transition: opacity 0.2s ease-in;
         -moz-transition: opacity 0.2s ease-in;
         -webkit-transition: opacity 0.2s ease-in;
         -o-transition: opacity 0.2s ease-in;
     }
 
-    .tile .image-holder:hover {
+    .tile .image-holder .textfit {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        text-align: center;
+        font-family: var(--font-headings);
+        white-space: normal !important;
+        overflow-wrap: normal;
+
+        opacity: 0;
+        transition: opacity 0.2s ease-in;
+        -moz-transition: opacity 0.2s ease-in;
+        -webkit-transition: opacity 0.2s ease-in;
+        -o-transition: opacity 0.2s ease-in;
+    }
+
+    .tile .image-holder:hover img {
         opacity: 0.5;
     }
 
-    .tile .image-holder h1 {
-        position: absolute;
+    .tile .image-holder:hover .textfit {
+        opacity: 1;
     }
 
+    /* Text and Link Tiles */
     .tile .text {
         padding-left: 1.8rem;
         padding-right: 1.8rem;

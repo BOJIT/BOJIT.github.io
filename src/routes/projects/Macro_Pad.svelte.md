@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2019-08-17-Macro_Pad.PNG
-  fontsize: 0.9
 ---
 
 <script>

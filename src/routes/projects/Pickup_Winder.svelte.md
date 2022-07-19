@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2016-06-20-Pickup_Winder.PNG
-  fontsize: 1.4
 ---
 
 For a while I have wanted to try making my own guitar pickups, but always thought it would be too expensive to get started. Sites like Stewart Macdonald sell pre-built pickup winders, but they are eye-wateringly expensive! Lots of people online have shown it's possible to wind pickups consistently with nothing more than a metal rod and a hand-drill, but this felt a little too crude for my liking. Consequently, I decided to build my own custom pickup winder.

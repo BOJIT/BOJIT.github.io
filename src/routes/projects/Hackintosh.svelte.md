@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2020-08-01-Hackintosh.PNG
-  fontsize: 0.8
 ---
 
 This will be a brief article: I have had a few people enquire about the 'Mac Pro' that's sitting under my desk, and I thought I could give some of the technical details here. It is by no means a particularly powerful computer (the original PC build was done in 2013), but it does have a few unique features that set it apart from most computers.

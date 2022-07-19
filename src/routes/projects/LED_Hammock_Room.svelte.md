@@ -6,7 +6,6 @@ published: true
 tile:
   type: image
   image: /tiles/2020-02-15-LED_Hammock_Room.JPG
-  fontsize: 1.2
 ---
 
 <script>
