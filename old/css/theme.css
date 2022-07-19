@@ -22,18 +22,3 @@ input, textarea {
 	font-family: 'Comfortaa', cursive;
 	font-size: 16px;
 }
-
-/*------------------------------ Caption Layout ------------------------------*/
-
-/* Flex container for 2-div layout */
-.caption-circle {
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
-}
-
-/* Contents div - should contain the text (wider content) */
-.caption-circle > div:first-child {
-	flex: 70%;
-	padding: 20px;
-}

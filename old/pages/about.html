@@ -1,28 +1,5 @@
----
-layout: page
-title: About Me
-permalink: /about/
 
-tile:
-  type: link
-  colour: --BOJIT-cyan
----
-<p>
-	Hi, I am James Bennion-Pedley. I'm an Electronics and Software Hobbyist,
-	and a CNC enthusiast. When not working on my various DIY creations I am
-	an undergraduate at the <i>Dyson Institute of Engineering and Technology</i>.
-	In my spare time I work as a Theatre Technician, though often my projects
-	end up working themselves onto the stage in some shape or form!
-	This website shows a selection of projects I have been working on, 
-	along with a few tutorials as well. Many of the projects here are 
-	open-source, with source code and schematics available on GitHub.
-</p>
-
-<div class="caption-circle">
-	<div>
-		<h2>CONTACT:</h2>
-		<hr>
-		<form action="https://j44dcj0sn7.execute-api.eu-west-2.amazonaws.com
+	<form action="https://j44dcj0sn7.execute-api.eu-west-2.amazonaws.com
 			/prod/bojit-github-io-contact-form" method="POST">
 			<label for="name">Name:</label>
 			<input type="text" name="name" required>
@@ -31,17 +8,7 @@ tile:
 			<label for="message">Message:</label><br>
 			<textarea name="message" required></textarea>
 			<button type="submit"><h2>SUBMIT</h2></button>
-		</form>
+	</form>
 		<!-- AJAX Handler -->
 		<script src="{{ site.baseurl }}/js/ajax.js"></script>
 	</div>
-	<div>
-		<img src="{{ site.imgurl }}/general/headshot_small.JPG">
-	</div>
-</div>
-
-<hr>
-
-<button><a href="{{ site.fileurl }}/CV_James_Bennion-Pedley_02.09.19.pdf">
-	<h2>Download CV</h2>
-</a></button>
