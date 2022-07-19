@@ -57,10 +57,15 @@
     }
 
     onMount(() => {
-        if(typeof window !== 'undefined') {
-            calculateFooterHeight();
-            window.addEventListener('resize', calculateFooterHeight);
-        }
+        window?.addEventListener('resize', calculateFooterHeight);
+
+        const loadCheck = setInterval(() => {
+            // onLoad hook for image is unreliable with SSR
+            if(footerImg.complete) {
+                clearInterval(loadCheck);
+                calculateFooterHeight();
+            }
+        }, 50);
     });
 </script>
 

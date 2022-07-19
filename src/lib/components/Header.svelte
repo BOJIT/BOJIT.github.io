@@ -27,10 +27,15 @@
     }
 
     onMount(() => {
-        if(typeof window !== 'undefined') {
-            calculateHeaderHeight();
-            window.addEventListener('resize', calculateHeaderHeight);
-        }
+        window?.addEventListener('resize', calculateHeaderHeight);
+
+        const loadCheck = setInterval(() => {
+            // onLoad hook for image is unreliable with SSR
+            if(headerImg.complete) {
+                clearInterval(loadCheck);
+                calculateHeaderHeight();
+            }
+        }, 50);
     });
 </script>
 

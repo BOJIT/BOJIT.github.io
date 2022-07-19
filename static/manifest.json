@@ -1,7 +1,7 @@
 {
     "short_name": "BOJIT",
     "name": "BOJIT Website",
-    "start_url": "/",
+    "start_url": "./",
     "icons": [
         {
             "src": "/favicon/icon_x48.png",
@@ -104,7 +104,7 @@
     ],
     "background_color": "#021312",
     "display": "standalone",
-    "scope": "/",
+    "scope": ".",
     "theme_color": "#021312",
     "description": "BOJIT personal website: download for offline access :)"
 }
