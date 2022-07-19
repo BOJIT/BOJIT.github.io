@@ -93,6 +93,11 @@
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         height: 65vh;
+
+        /* Fade in */
+        animation: fade-in ease 0.7s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
     }
 
     .gallery {
@@ -110,6 +115,16 @@
         .logo {
             height: auto;
             width: 80vw;
+        }
+    }
+
+    /* Logo Animation */
+    @keyframes -global-fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 </style>
