@@ -10,6 +10,7 @@
 
 <script lang='ts'>
     import { onMount } from "svelte";
+    import Saos from "saos";
 
     import Link from "$lib/components/Link.svelte";
     import Colcade from "$lib/components/utils/colcade";
@@ -27,6 +28,7 @@
     export let columns = 3;
     export let tiles: Tile[] = [];
     export let gap = "1rem";
+    export let animate = false;
 
     let gallery: HTMLElement;
     let colcade: any = null;
@@ -98,7 +100,9 @@
 <div bind:this={gallery} class="gallery" style:gap={gap}>
     {#each {length: columns} as _, i}
         <div class="column" class:first={i == 0}>
-            <div class="push" style:margin-bottom={gap}></div>
+            <div class="push" style:margin-bottom={gap}>
+                <div class="push-tile"></div>
+            </div>
         </div>
     {/each}
 
@@ -248,16 +252,33 @@
 
     /* Push block */
     .push {
-        background-color: var(--color-gray-trans-dark);
+        position: relative;
     }
 
-    :global(.mode-dark) .push {
+    .push-tile {
+        background-color: var(--color-gray-trans-dark);
+        width: 100%;
+        height: 100%;
+    }
+
+    :global(.mode-dark) .push-tile {
         background-color: var(--color-gray-trans-light);
     }
 
     @media (max-width: 768px) {
         .push {
             display: none;
+        }
+    }
+
+    @keyframes -global-float-up {
+        0% {
+        transform: translateY(500px);
+        opacity: 0;
+        }
+        100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
         }
     }
 </style>

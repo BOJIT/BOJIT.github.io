@@ -65,7 +65,7 @@ import Error from "./__error.svelte";
 
 <!-- Main Navigation -->
 <div class="gallery">
-    <Gallery tiles={[...specialTiles.concat(tiles)]} columns={4} gap="0.5rem"/>
+    <Gallery tiles={[...specialTiles.concat(tiles)]} animate={true}/>
 </div>
 
 <Content>
