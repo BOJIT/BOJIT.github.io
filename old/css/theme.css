@@ -1,48 +1,3 @@
-/*-------------------------------- Site Fonts --------------------------------*/
-
-/* Headings */
-h1, h2, h4, h6 {
-	text-align: center;
-	margin: 10px 0;
-	font-weight: 400;
-}
-
-/* Tile text */
-h1 {
-	font-family: 'Gloria Hallelujah', cursive;
-	color: black;
-	font-size: 36px;
-}
-
-/* Page titles */
-h2 {
-	font-family: 'Gloria Hallelujah', cursive;
-	color: black;
-	font-size: 30px;
-}
-
-/* Page subtitles/dates */
-h4 {
-	font-family: 'Gloria Hallelujah', cursive;
-	color: gray;
-	font-size: 20px;
-}
-
-/* Footnotes */
-h6 {
-	font-family: 'Gloria Hallelujah', cursive;
-	color: lightgray;
-	font-size: 16px;
-}
-
-/* Main body text */
-p {
-	font-family: 'Comfortaa', cursive;
-	color: black;
-	font-size: 16px;
-	text-align: left;
-}
-
 label {
 	font-family: 'Comfortaa', cursive;
 	color: black;
@@ -81,28 +36,4 @@ input, textarea {
 .caption-circle > div:first-child {
 	flex: 70%;
 	padding: 20px;
-}
-
-/* Image div - should contain an image tag */
-.caption-circle > div:last-child {
-	flex: 30%;
-	padding: 20px;
-	margin: 0 auto;
-}
-
-/* Image to be circularly cropped */
-.caption-circle > div:last-child > img {
-	width: 100%;
-	border-radius: 50%;
-}
-
-/* Stack columns when in mobile view */
-@media (max-width: 768px) {
-	.caption-circle {
-		display: block;
-	}
-
-	.caption-circle > div:last-child {
-		width: 60%;
-	}
 }
