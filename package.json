@@ -29,6 +29,7 @@
     "@fontsource/gloria-hallelujah": "^4.5.6",
     "@fontsource/nunito": "^4.5.8",
     "@fontsource/syne-mono": "^4.5.4",
-    "localforage": "^1.10.0"
+    "localforage": "^1.10.0",
+    "textfit": "^2.4.0"
   }
 }

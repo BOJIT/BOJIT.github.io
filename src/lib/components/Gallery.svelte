@@ -55,6 +55,7 @@
                 {#if t.type === "image"}
                 <div class="image-holder">
                     <img src={t.image} alt={t.caption}/>
+                    <h1>{t.caption}</h1>
                 </div>
                 {:else if t.type === "text"}
                 <div style:background-color={t.colour} class="text">
@@ -95,6 +96,22 @@
 
     .tile img {
         width: 100%;
+    }
+
+    .tile .image-holder {
+        position: relative;
+        transition: opacity 0.2s ease-in;
+        -moz-transition: opacity 0.2s ease-in;
+        -webkit-transition: opacity 0.2s ease-in;
+        -o-transition: opacity 0.2s ease-in;
+    }
+
+    .tile .image-holder:hover {
+        opacity: 0.5;
+    }
+
+    .tile .image-holder h1 {
+        position: absolute;
     }
 
     .tile .text {
