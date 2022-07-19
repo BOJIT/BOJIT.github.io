@@ -10,10 +10,7 @@
 
 <script lang='ts'>
     import { onMount } from "svelte";
-    import Saos from "saos";
-
     import Link from "$lib/components/Link.svelte";
-    import Colcade from "$lib/components/utils/colcade";
     import textFit from "$lib/components/utils/textFit";
 
     type Tile = {
@@ -23,75 +20,122 @@
         "image"?: string,
         "link"?: string,
         "colour"?: string,
+        "handle"?: HTMLElement,
     };
 
+    // Props
     export let columns = 3;
     export let tiles: Tile[] = [];
     export let gap = "1rem";
     export let animate = false;
+    export let preload = 2*columns;
 
-    let gallery: HTMLElement;
-    let colcade: any = null;
-
-    $: resizeHandler();
-
-    function resizeHandler() {
-        if(gallery) {
-            colcade?.reload();
-            textFit(gallery?.getElementsByClassName('textfit'), {multiline: true});
-
-            // Generate + Reset Pushes
-            const pushes = Array.from(gallery?.getElementsByClassName('push')) as any;
-            const tileMargin = parseInt(window.getComputedStyle(pushes[0]).getPropertyValue('margin-bottom'));
-
-            // Iterate through gallery to get push gap
-            let pHeights: number[] = [];
-            pushes.forEach((p: HTMLElement) => {
-                let col = p.parentElement;
-                col.appendChild(p); // Move to end of DOM
-
-                let tileheight = 0;
-                let tiles = Array.from(col.getElementsByClassName('tile'));
-                tiles.forEach((t: HTMLElement) => {
-                    tileheight += (t.offsetHeight + tileMargin);
-                });
-
-                pHeights.push(col.offsetHeight - tileheight);
-            });
-
-            // Compute push size
-            let minHeight = Math.min(...pHeights);
-            let pPush = pHeights.map((h) => {
-                h = h - minHeight;
-
-                if(h < tileMargin) {
-                    h = 0;
-                } else {
-                    h = h - tileMargin;
-                }
-
-                return h;
-            });
-
-            for(let i = 0; i < pushes.length; i++) {
-                pushes[i].style.height = `${pPush[i]}px`;
-            }
+    // Helpers
+    function extend(a: Object, b: Object) {
+        for(let prop in b) {
+            a[prop] = b[prop];
         }
+        return a;
     }
 
-    onMount(() => {
-        // Create masonry and assign handler to keep the size correct
-        colcade = new Colcade(gallery, {
-            columns: '.column',
-            items: '.tile'
+    function elementArray(parent: HTMLElement, q: string) {
+        return Array.from(parent.querySelectorAll(q));
+    }
+
+    function columnHeight(col: HTMLElement, q: string) {
+        let height: number = 0;
+        let subtiles = elementArray(col, q);
+
+        if(subtiles.length > 0) {
+            let margin = parseInt(window.getComputedStyle(subtiles[0]).getPropertyValue('margin-bottom'));
+
+            subtiles.forEach((s: HTMLElement) => {
+                height += (s.offsetHeight + margin);
+            });
+        }
+
+        return height;
+    }
+
+    function updatePushes(cols: Element[]) {
+        let pushData = cols.map((c: HTMLElement) => {
+            // Move push to end of column
+            let push = c.querySelector('.push') as HTMLElement;
+            c.appendChild(push);
+
+            // Calculate target height
+            let margin = parseInt(window.getComputedStyle(push).getPropertyValue('margin-bottom'));
+            let height = c.offsetHeight - columnHeight(c, '.tile');
+
+            return {
+                push,
+                margin,
+                height
+            }
         });
 
-        window.addEventListener("resize", resizeHandler);
-        resizeHandler();
+        // Compute push size and update DOM
+        let minHeight = Math.min(...pushData.map((p) => p.height));
+        pushData.forEach((p) => {
+            p.height = p.height - minHeight;
+
+            if(p.height < p.margin) {
+                p.height = 0;
+            } else {
+                p.height = p.height - p.margin;
+            }
+
+            p.push.style.height = `${p.height}px`;
+        });
+    }
+
+    // Layout engine
+    let gallery: HTMLElement;
+    let scratch: HTMLElement;
+    function layout() {
+        if(!gallery) return;
+
+        // Get visible columns
+        let cols = elementArray(gallery, '.column').filter((c: HTMLElement) => {
+            return c.offsetParent !== null;
+        })
+
+        // Move to scratch space for layuout
+        tiles.forEach((t) => {
+            scratch.appendChild(t.handle);
+        });
+
+        // Allocate to columns
+        tiles.forEach((t) => {
+            // TODO return if pending
+
+            let colHeight: number[] = cols.map((c: HTMLElement) => {
+                return columnHeight(c, '.tile');
+            });
+
+            const min = Math.min(...colHeight);
+            const target = colHeight.indexOf(min);
+
+            // Reassign parent node
+            cols[target].appendChild(t.handle);
+        });
+
+        // Create pushes
+        updatePushes(cols);
+
+        // Make text fit
+        textFit(gallery.getElementsByClassName('textfit'), {multiline: true});
+    }
+
+    // Call layout function at any key point
+    $: layout();
+    onMount(() => {
+        window.addEventListener("resize", layout);
+        layout();
 
         // HACK remove!
         setTimeout(() => {
-            resizeHandler();
+            layout();
         }, 500)
     });
 </script>
@@ -106,38 +150,45 @@
         </div>
     {/each}
 
-    {#each tiles as t}
-        <div class="tile" style:margin-bottom={gap}>
-            <Link href={t.link ? t.link : null}>
-                {#if t.type === "image"}
-                <div class="image-holder">
-                    <img src={t.image} alt={t.caption}/>
-                    <div class="textfit">{t.caption}</div>
-                </div>
-                {:else if t.type === "text"}
-                <div style:background-color={t.colour} class="text">
-                    <h2>{t.caption}</h2>
-                </div>
-                {:else if t.type === "link"}
-                <div style:background-color={t.colour} class="text">
-                    <h2>{t.caption}</h2>
-                    <hr>
-                    <h4>{t.subcaption}</h4>
-                </div>
-                {/if}
-            </Link>
-        </div>
-    {/each}
+    <div bind:this={scratch} class="scratch">
+        {#each tiles as t}
+            <div class="tile" style:margin-bottom={gap} bind:this={t.handle}>
+                <Link href={t.link ? t.link : null}>
+                    {#if t.type === "image"}
+                    <div class="image-holder">
+                        <img src={t.image} alt={t.caption}/>
+                        <div class="textfit">{t.caption}</div>
+                    </div>
+                    {:else if t.type === "text"}
+                    <div style:background-color={t.colour} class="text">
+                        <h2>{t.caption}</h2>
+                    </div>
+                    {:else if t.type === "link"}
+                    <div style:background-color={t.colour} class="text">
+                        <h2>{t.caption}</h2>
+                        <hr>
+                        <h4>{t.subcaption}</h4>
+                    </div>
+                    {/if}
+                </Link>
+            </div>
+        {/each}
+    </div>
 </div>
 
 
 <style>
+    /* General */
     .gallery {
         display: flex;
     }
 
     .column {
         flex-grow: 1;
+    }
+
+    .scratch {
+        display: none;
     }
 
     @media (max-width: 768px) {
@@ -271,6 +322,7 @@
         }
     }
 
+    /* Animation */
     @keyframes -global-float-up {
         0% {
         transform: translateY(500px);

@@ -18,7 +18,6 @@
     import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
     import Gallery from "$lib/components/Gallery.svelte";
     import ThemeSelector from "$lib/components/ThemeSelector.svelte";
-import Error from "./__error.svelte";
 
     const logo = `${import.meta.env.VITE_IMAGE_BASE}/general/BOJIT_circle.PNG`;
     const banner = `background-image: url("${import.meta.env.VITE_IMAGE_BASE}/general/home_banner_1080.JPG");`;
