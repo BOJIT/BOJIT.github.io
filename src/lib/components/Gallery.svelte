@@ -8,8 +8,6 @@
  *
 -->
 
-<!-- TODO implement animate on scroll! -->
-
 <script lang='ts'>
     import { onMount } from "svelte";
     import Link from "$lib/components/Link.svelte";
@@ -152,21 +150,21 @@
 
                 observer.observe(t);
             });
-
-            // HACK - ideally we don't want to wait until everything has loaded
-            const loadCheck = setInterval(() => {
-                let imgTiles = tiles.filter((t) => t.type === 'image');
-
-                let status = imgTiles.map((t) => {
-                    return t.handle.querySelector('img').complete;
-                });
-
-                if(status.every((s) => s === true)) {
-                    clearInterval(loadCheck);
-                    layout();
-                }
-            }, 50);
         }
+
+        // HACK - ideally we don't want to wait until everything has loaded
+        const loadCheck = setInterval(() => {
+            let imgTiles = tiles.filter((t) => t.type === 'image');
+
+            let status = imgTiles.map((t) => {
+                return t.handle.querySelector('img').complete;
+            });
+
+            if(status.every((s) => s === true)) {
+                clearInterval(loadCheck);
+                layout();
+            }
+        }, 50);
     });
 </script>
 
