@@ -8,6 +8,8 @@
  *
 -->
 
+<!-- TODO implement animate on scroll! -->
+
 <script lang='ts'>
     import { onMount } from "svelte";
     import Link from "$lib/components/Link.svelte";
@@ -21,7 +23,7 @@
         "link"?: string,
         "colour"?: string,
         "handle"?: HTMLElement, // Private
-        "observer"?: IntersectionObserver // Private
+        "loaded"?: boolean      // Private
     };
 
     // Props
@@ -30,7 +32,7 @@
     export let gap = "1rem";
     export let animate = false;
     export let animation = "float-up 0.7s cubic-bezier(0.35, 0.5, 0.65, 0.95) both";
-    export let preload = 2*columns;
+    // export let preload = 2*columns;
 
     // Helpers
     function elementArray(parent: HTMLElement, q: string) {
@@ -123,10 +125,15 @@
     }
 
     // Call layout function at any key point
+    function imageLoaded() {
+        let loaded = tiles.map((t) => t.loaded);
+        console.log(loaded);
+    }
+
     $: layout();
     onMount(() => {
+        // Create callback for image loading state
         window.addEventListener("resize", layout);
-        layout();
 
         // Add frame animation on scroll if desired
         if(animate) {
@@ -145,6 +152,20 @@
 
                 observer.observe(t);
             });
+
+            // HACK - ideally we don't want to wait until everything has loaded
+            const loadCheck = setInterval(() => {
+                let imgTiles = tiles.filter((t) => t.type === 'image');
+
+                let status = imgTiles.map((t) => {
+                    return t.handle.querySelector('img').complete;
+                });
+
+                if(status.every((s) => s === true)) {
+                    clearInterval(loadCheck);
+                    layout();
+                }
+            }, 50);
         }
     });
 </script>
@@ -165,7 +186,7 @@
                 <Link href={t.link ? t.link : null}>
                     {#if t.type === "image"}
                     <div class="image-holder">
-                        <img src={t.image} alt={t.caption}/>
+                        <img src={t.image} alt={t.caption} />
                         <div class="textfit">{t.caption}</div>
                     </div>
                     {:else if t.type === "text"}
