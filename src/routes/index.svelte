@@ -18,15 +18,35 @@
     import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
     import Gallery from "$lib/components/Gallery.svelte";
     import ThemeSelector from "$lib/components/ThemeSelector.svelte";
+import Error from "./__error.svelte";
 
     const logo = `${import.meta.env.VITE_IMAGE_BASE}/general/BOJIT_circle.PNG`;
     const banner = `background-image: url("${import.meta.env.VITE_IMAGE_BASE}/general/home_banner_1080.JPG");`;
 
+    const specialTiles = [
+        // About
+        {
+            type: "link",
+            caption: "About Me",
+            subcaption: "",
+            colour: "#00bcd4",
+            link: "/about/"
+        },
+        // Index
+        {
+            type: "text",
+            caption: "Index Page",
+            subcaption: "",
+            colour: "#009688",
+            link: "/index/"
+        }
+    ]
+
     $: tiles = posts.map((p) => ({
         type: p.meta.tile.type,
-        image: import.meta.env.VITE_IMAGE_BASE + p.meta.tile.image,
         caption: p.meta.title,
         subcaption: p.meta.date,
+        image: import.meta.env.VITE_IMAGE_BASE + p.meta.tile.image,
         colour: p.meta.tile.colour,
         link: p.path.slice(0, -".svelte".length)
     }));
@@ -45,7 +65,7 @@
 
 <!-- Main Navigation -->
 <div class="gallery">
-    <Gallery tiles={tiles}/>
+    <Gallery tiles={[...specialTiles.concat(tiles)]} columns={4} gap="0.5rem"/>
 </div>
 
 <Content>

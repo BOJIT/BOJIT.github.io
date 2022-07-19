@@ -17,53 +17,93 @@
 
     type Tile = {
         "type": "image" | "link" | "text",
-        "image": string,
         "caption": string,
         "subcaption"?: string
+        "image"?: string,
         "link"?: string,
         "colour"?: string,
     };
 
     export let columns = 3;
     export let tiles: Tile[] = [];
+    export let gap = "1rem";
 
     let gallery: HTMLElement;
     let colcade: any = null;
 
-    $: colcade?.reload();
-    $: textFit(gallery?.getElementsByClassName('textfit'), {multiline: true});
+    $: resizeHandler();
 
     function resizeHandler() {
-        colcade?.reload();
         if(gallery) {
+            colcade?.reload();
             textFit(gallery?.getElementsByClassName('textfit'), {multiline: true});
+
+            // Generate + Reset Pushes
+            const pushes = Array.from(gallery?.getElementsByClassName('push')) as any;
+            const tileMargin = parseInt(window.getComputedStyle(pushes[0]).getPropertyValue('margin-bottom'));
+
+            // Iterate through gallery to get push gap
+            let pHeights: number[] = [];
+            pushes.forEach((p: HTMLElement) => {
+                let col = p.parentElement;
+                col.appendChild(p); // Move to end of DOM
+
+                let tileheight = 0;
+                let tiles = Array.from(col.getElementsByClassName('tile'));
+                tiles.forEach((t: HTMLElement) => {
+                    tileheight += (t.offsetHeight + tileMargin);
+                });
+
+                pHeights.push(col.offsetHeight - tileheight);
+            });
+
+            // Compute push size
+            let minHeight = Math.min(...pHeights);
+            let pPush = pHeights.map((h) => {
+                h = h - minHeight;
+
+                if(h < tileMargin) {
+                    h = 0;
+                } else {
+                    h = h - tileMargin;
+                }
+
+                return h;
+            });
+
+            for(let i = 0; i < pushes.length; i++) {
+                pushes[i].style.height = `${pPush[i]}px`;
+            }
         }
     }
 
     onMount(() => {
+        // Create masonry and assign handler to keep the size correct
         colcade = new Colcade(gallery, {
             columns: '.column',
             items: '.tile'
         });
 
         window.addEventListener("resize", resizeHandler);
+        resizeHandler();
 
         // HACK remove!
         setTimeout(() => {
-            colcade.reload();
-            textFit(gallery?.getElementsByClassName('textfit'), {multiline: true});
-        }, 100)
+            resizeHandler();
+        }, 500)
     });
 </script>
 
 
-<div bind:this={gallery} class="gallery">
+<div bind:this={gallery} class="gallery" style:gap={gap}>
     {#each {length: columns} as _, i}
-        <div class="column" class:first={i == 0}></div>
+        <div class="column" class:first={i == 0}>
+            <div class="push" style:margin-bottom={gap}></div>
+        </div>
     {/each}
 
     {#each tiles as t}
-        <div class="tile">
+        <div class="tile" style:margin-bottom={gap}>
             <Link href={t.link ? t.link : null}>
                 {#if t.type === "image"}
                 <div class="image-holder">
@@ -90,7 +130,6 @@
 <style>
     .gallery {
         display: flex;
-        gap: 1rem;
     }
 
     .column {
@@ -101,10 +140,6 @@
         .column:not(.first) {
             display: none;
         }
-    }
-
-    .tile {
-        margin-bottom: 1rem;
     }
 
     /* Image Tiles */
@@ -199,15 +234,30 @@
         color: whitesmoke !important;
     }
 
-    .mode-dark .tile .text:hover {
+    :global(.mode-dark) .tile .text:hover {
         background-color:  whitesmoke !important;
     }
 
-    .mode-dark .tile .text:hover h2 {
+    :global(.mode-dark) .tile .text:hover h2 {
         color: black !important;
     }
 
-    .mode-dark .tile .text:hover hr {
+    :global(.mode-dark) .tile .text:hover hr {
         border-color: black !important;
+    }
+
+    /* Push block */
+    .push {
+        background-color: var(--color-gray-trans-dark);
+    }
+
+    :global(.mode-dark) .push {
+        background-color: var(--color-gray-trans-light);
+    }
+
+    @media (max-width: 768px) {
+        .push {
+            display: none;
+        }
     }
 </style>

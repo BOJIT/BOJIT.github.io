@@ -13,8 +13,6 @@ const defaultSettings = {
 function textFit(els, options) {
     if (!options) options = {};
 
-    console.log(els);
-
     // Extend options.
     let settings = {};
     for(let key in defaultSettings){
