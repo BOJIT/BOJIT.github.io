@@ -20,7 +20,8 @@
         "image"?: string,
         "link"?: string,
         "colour"?: string,
-        "handle"?: HTMLElement,
+        "handle"?: HTMLElement, // Private
+        "observer"?: IntersectionObserver // Private
     };
 
     // Props
@@ -28,16 +29,10 @@
     export let tiles: Tile[] = [];
     export let gap = "1rem";
     export let animate = false;
+    export let animation = "float-up 0.7s cubic-bezier(0.35, 0.5, 0.65, 0.95) both";
     export let preload = 2*columns;
 
     // Helpers
-    function extend(a: Object, b: Object) {
-        for(let prop in b) {
-            a[prop] = b[prop];
-        }
-        return a;
-    }
-
     function elementArray(parent: HTMLElement, q: string) {
         return Array.from(parent.querySelectorAll(q));
     }
@@ -133,10 +128,24 @@
         window.addEventListener("resize", layout);
         layout();
 
-        // HACK remove!
-        setTimeout(() => {
-            layout();
-        }, 500)
+        // Add frame animation on scroll if desired
+        if(animate) {
+            let targets = elementArray(gallery, '.animate');
+
+            targets.forEach((t: HTMLElement) => {
+                let observer = new IntersectionObserver((e) => {
+                    if(e[0].isIntersecting) {
+                        // Apply CSS animations
+                        t.style.visibility = 'visible';
+                        t.style.animation = animation;
+                        observer.unobserve(t);
+                        return;
+                    }
+                });
+
+                observer.observe(t);
+            });
+        }
     });
 </script>
 
@@ -144,7 +153,7 @@
 <div bind:this={gallery} class="gallery" style:gap={gap}>
     {#each {length: columns} as _, i}
         <div class="column" class:first={i == 0}>
-            <div class="push" style:margin-bottom={gap}>
+            <div class="push" style:margin-bottom={gap} class:animate>
                 <div class="push-tile"></div>
             </div>
         </div>
@@ -152,7 +161,7 @@
 
     <div bind:this={scratch} class="scratch">
         {#each tiles as t}
-            <div class="tile" style:margin-bottom={gap} bind:this={t.handle}>
+            <div class="tile" style:margin-bottom={gap} bind:this={t.handle} class:animate>
                 <Link href={t.link ? t.link : null}>
                     {#if t.type === "image"}
                     <div class="image-holder">
@@ -332,5 +341,13 @@
         transform: translateY(0) rotate(0deg);
         opacity: 1;
         }
+    }
+
+    .tile.animate {
+        visibility: hidden;
+    }
+
+    .push.animate {
+        visibility: hidden;
     }
 </style>

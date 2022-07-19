@@ -123,6 +123,18 @@
         margin-bottom: 1rem;
     }
 
+    @media (max-width: 500px) {
+        .socials {
+            gap: 1.5rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .socials {
+            gap: 0.8rem;
+        }
+    }
+
     .footer-action {
         width: 100%;
         position: absolute;
