@@ -1,4 +1,21 @@
+# Jekyll/gh-pages
 .vscode/*
 _site/*
 vendor/bundle/
 .bundle/
+
+# SvelteKit
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env.*
+!.env.example
+
+# VSCode
+.vscode/settings.json
+.vscode/javascript.code-snippets
+
+.vscode/svelte.code-snippets
+.vscode/cpp.code-snippets
