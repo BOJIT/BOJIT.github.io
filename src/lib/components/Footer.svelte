@@ -16,28 +16,34 @@
     type Social = {
         "icon": SvelteComponent,
         "link": string,
+        "label"?: string,
     }
 
     const socials: Social[] = [
         {
             "icon": LogoYoutube,
-            "link": "https://www.youtube.com/channel/UCR7zc0TblvkjPy9DhAWUkvA"
+            "link": "https://www.youtube.com/channel/UCR7zc0TblvkjPy9DhAWUkvA",
+            "label": "Link to YouTube Channel"
         },
         {
             "icon": LogoLinkedin,
-            "link": "https://www.linkedin.com/in/james-bennion-pedley-bab14a146/"
+            "link": "https://www.linkedin.com/in/james-bennion-pedley-bab14a146/",
+            "label": "Link to LinkedIn Page"
         },
         {
             "icon": LogoGithub,
-            "link": "https://github.com/BOJIT"
+            "link": "https://github.com/BOJIT",
+            "label": "Link to GitHub Profile"
         },
         {
             "icon": LogoFacebook,
-            "link": "https://www.facebook.com/James.BOJIT"
+            "link": "https://www.facebook.com/James.BOJIT",
+            "label": "Link to Facebook Profile"
         },
         {
             "icon": LogoSoundcloud,
-            "link": "https://soundcloud.com/james-bojit"
+            "link": "https://soundcloud.com/james-bojit",
+            "label": "Link to SoundCloud Profile"
         },
     ]
 
@@ -74,7 +80,7 @@
         <div class="socials">
             {#each socials as s}
                 <IconButton icon={s.icon} shape="circle" size="2.2em" href={s.link} newTab
-                    color={$Theme === 'light' ? "var(--color-dark-700)" : "#474c54"} />
+                    color={$Theme === 'light' ? "var(--color-dark-700)" : "#474c54"} label={s.label}/>
             {/each}
         </div>
         <h6>&copy; BOJIT {new Date().getFullYear()}</h6>

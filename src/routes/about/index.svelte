@@ -18,7 +18,7 @@
 
     let form = {
         name: null,
-        email: null,
+        reply_to: null,
         message: null,
     }
 
@@ -54,7 +54,7 @@
             invalid_name = true;
             success = false;
         }
-        if(!validate_string(form.email) || !validate_email(form.email)) {
+        if(!validate_string(form.reply_to) || !validate_email(form.reply_to)) {
             invalid_email = true;
             success = false;
         }
@@ -92,7 +92,7 @@
 
                 // Reset form
                 form.name = "";
-                form.email = "";
+                form.reply_to = "";
                 form.message = "";
             } else {
                 message.push({
@@ -108,6 +108,10 @@
 
 
 <svelte:window on:keydown={handleKeydown}/>
+
+<svelte:head>
+    <title>About Me</title>
+</svelte:head>
 
 <Header />
 
@@ -140,7 +144,7 @@
                 invalid_name = !validate_string(e.target.value);
             }}/>
 
-        <TextField label="Email" bind:value={form.email}
+        <TextField label="Email" bind:value={form.reply_to}
             error={invalid_email ? "Email address is invalid" : ""}
             type="email" on:input={(e) => {
             invalid_email = !validate_email(e.target.value);
