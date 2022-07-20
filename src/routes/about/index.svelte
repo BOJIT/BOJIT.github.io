@@ -9,7 +9,6 @@
     import Header from "$lib/components/Header.svelte";
     import CircleCaption from "$lib/components/CircleCaption.svelte";
     import NavButton from "$lib/components/NavButton.svelte";
-import { dataset_dev } from "svelte/internal";
 
     let active = false;
     let invalid_name = false;

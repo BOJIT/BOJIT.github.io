@@ -1,8 +1,0 @@
-#---------------------------- Service Definitions -----------------------------#
-
-# Add Disqus footer to select pages
-disqus: BOJIT-blog
-
-# Add Google Analytics
-google_analytics: UA-141105755-1
-
