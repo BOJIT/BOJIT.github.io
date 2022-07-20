@@ -25,9 +25,9 @@
     export let posts: any;
 
     // Components
+    import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
     import Header from "$lib/components/Header.svelte";
     import NavigationFooter from "$lib/components/NavigationFooter.svelte";
-    import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
 </script>
 
 <svelte:head>

@@ -2,12 +2,12 @@
     // Components
     import { message } from "@bojit/svelte-components/core/Notification/Notification.svelte";
     import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
+    import CircleCaption from "@bojit/svelte-components/layout/CircleCaption/CircleCaption.svelte";
     import Button from "@bojit/svelte-components/smelte/components/Button/Button.svelte";
     import Dialog from "@bojit/svelte-components/smelte/components/Dialog/Dialog.svelte";
     import TextField from "@bojit/svelte-components/smelte/components/TextField/TextField.svelte";
 
     import Header from "$lib/components/Header.svelte";
-    import CircleCaption from "$lib/components/CircleCaption.svelte";
     import NavButton from "$lib/components/NavButton.svelte";
 
     let active = false;

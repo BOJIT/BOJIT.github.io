@@ -73,7 +73,7 @@
     <div class="footer-action">
         <div class="socials">
             {#each socials as s}
-                <IconButton logo={s.icon} shape="circle" size="2.2em" href={s.link} newTab
+                <IconButton icon={s.icon} shape="circle" size="2.2em" href={s.link} newTab
                     color={$Theme === 'light' ? "var(--color-dark-700)" : "#474c54"} />
             {/each}
         </div>

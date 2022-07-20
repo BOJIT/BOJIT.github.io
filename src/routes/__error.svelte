@@ -15,8 +15,8 @@
 
     const img = import.meta.env.VITE_IMAGE_BASE + "/general/404.PNG";
 
+    import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
     import NavButton from "$lib/components/NavButton.svelte";
-import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
 </script>
 
 {#if status === 404}
