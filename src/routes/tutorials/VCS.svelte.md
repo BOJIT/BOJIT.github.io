@@ -20,7 +20,7 @@ tile:
 
 `VCS` *(Version Control System)* is a simple script that works with the `PlatformIO` build system to add useful metadata to the output binaries of embedded projects. The exact workings of the tool are documented on [GitHub](https://github.com/BOJIT/VCS), so I won't dive into detail here. This article focuses more on the internals of the library and some of the cool things you can do with the scripting engine.
 
-![VCS Tile Image]({import.meta.env.VITE_IMAGE_BASE}/tiles/2022-04-16-VCS.PNG)
+![VCS Tile]({import.meta.env.VITE_IMAGE_BASE}/tiles/2022-04-16-VCS.PNG)
 
 PlatformIO is built on `Python`. Any valid `Python` can be executed in the context of the build environment, and if you are somewhat familiar with the `SCons` build environment that `PlatformIO` uses, then you can pretty much mess with any part of the `C/C++` build process!
 
