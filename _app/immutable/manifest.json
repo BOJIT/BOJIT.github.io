@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-9588c372.js",
+    "file": "start-32254f0a.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -34,7 +34,8 @@
       "src/routes/projects/Router_Table.svelte.md",
       "src/routes/projects/Stepper_Driver.svelte.md",
       "src/routes/tutorials/Local_SSL.svelte.md",
-      "src/routes/tutorials/Touchdesigner_Image_DMX.svelte.md"
+      "src/routes/tutorials/Touchdesigner_Image_DMX.svelte.md",
+      "src/routes/tutorials/VCS.svelte.md"
     ]
   },
   "src/routes/__layout.svelte": {
@@ -374,7 +375,7 @@
     ]
   },
   "src/routes/projects/Stepper_Driver.svelte.md": {
-    "file": "pages/projects/Stepper_Driver.svelte.md-22f9e643.js",
+    "file": "pages/projects/Stepper_Driver.svelte.md-355f800f.js",
     "src": "src/routes/projects/Stepper_Driver.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -383,7 +384,7 @@
     ]
   },
   "src/routes/tutorials/Local_SSL.svelte.md": {
-    "file": "pages/tutorials/Local_SSL.svelte.md-dbba6264.js",
+    "file": "pages/tutorials/Local_SSL.svelte.md-39895a67.js",
     "src": "src/routes/tutorials/Local_SSL.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -391,6 +392,7 @@
       "_index-5dfa2933.js",
       "_Notification-7f4998ec.js",
       "_prism-a46989fb.js",
+      "_prism-bash-4c44f9e3.js",
       "_index-edf86401.js",
       "_ripple-59eba3d5.js"
     ],
@@ -405,6 +407,24 @@
     "isDynamicEntry": true,
     "imports": [
       "_index-5dfa2933.js"
+    ]
+  },
+  "src/routes/tutorials/VCS.svelte.md": {
+    "file": "pages/tutorials/VCS.svelte.md-dd072023.js",
+    "src": "src/routes/tutorials/VCS.svelte.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-5dfa2933.js",
+      "_prism-c-30ee303a.js",
+      "_prism-a46989fb.js",
+      "_prism-bash-4c44f9e3.js",
+      "_Notification-7f4998ec.js",
+      "_index-edf86401.js",
+      "_ripple-59eba3d5.js"
+    ],
+    "css": [
+      "assets/CopyButton.svelte_svelte_type_style_lang-d20dba86.css"
     ]
   },
   "_index-5dfa2933.js": {
@@ -523,5 +543,8 @@
     "css": [
       "assets/YouTube-4d7dbdff.css"
     ]
+  },
+  "_prism-bash-4c44f9e3.js": {
+    "file": "chunks/prism-bash-4c44f9e3.js"
   }
 }

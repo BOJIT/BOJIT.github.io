@@ -1,5 +1,5 @@
 const build = [
-  "/_app/immutable/start-9588c372.js",
+  "/_app/immutable/start-32254f0a.js",
   "/_app/immutable/pages/__layout.svelte-f5a1ebc7.js",
   "/_app/immutable/assets/pages/__layout.svelte-e9d28631.css",
   "/_app/immutable/assets/material-icons-base-400-normal-cc0462d5.woff2",
@@ -60,9 +60,10 @@ const build = [
   "/_app/immutable/pages/projects/Reflow_Oven.svelte.md-0b6277b0.js",
   "/_app/immutable/pages/projects/Router_Sled.svelte.md-3530018a.js",
   "/_app/immutable/pages/projects/Router_Table.svelte.md-11d01bff.js",
-  "/_app/immutable/pages/projects/Stepper_Driver.svelte.md-22f9e643.js",
-  "/_app/immutable/pages/tutorials/Local_SSL.svelte.md-dbba6264.js",
+  "/_app/immutable/pages/projects/Stepper_Driver.svelte.md-355f800f.js",
+  "/_app/immutable/pages/tutorials/Local_SSL.svelte.md-39895a67.js",
   "/_app/immutable/pages/tutorials/Touchdesigner_Image_DMX.svelte.md-d42f7be0.js",
+  "/_app/immutable/pages/tutorials/VCS.svelte.md-dd072023.js",
   "/_app/immutable/chunks/index-5dfa2933.js",
   "/_app/immutable/chunks/index-edf86401.js",
   "/_app/immutable/chunks/ripple-59eba3d5.js",
@@ -84,7 +85,8 @@ const build = [
   "/_app/immutable/assets/Gallery-6f0ef64f.css",
   "/_app/immutable/chunks/prism-c-30ee303a.js",
   "/_app/immutable/chunks/YouTube-3a9e792f.js",
-  "/_app/immutable/assets/YouTube-4d7dbdff.css"
+  "/_app/immutable/assets/YouTube-4d7dbdff.css",
+  "/_app/immutable/chunks/prism-bash-4c44f9e3.js"
 ];
 const files = [
   "/favicon/icon_x128.png",
@@ -103,7 +105,7 @@ const files = [
   "/favicon/maskable_icon_x96.png",
   "/manifest.json"
 ];
-const version = "1658322836900";
+const version = "1659107701266";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);
