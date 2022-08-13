@@ -1,11 +1,12 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-32254f0a.js",
+    "file": "start-3943d2ef.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_index-edf86401.js"
+      "_index-959e8fc0.js",
+      "_index-faaff173.js",
+      "_preload-helper-60cab3ee.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
@@ -19,38 +20,43 @@
       "src/routes/index/index.svelte",
       "src/routes/index.svelte",
       "src/routes/projects/Artnet_Node.svelte.md",
+      "src/routes/projects/BOJIT_V3.svelte.md",
       "src/routes/projects/DIY_E_Drums.svelte.md",
       "src/routes/projects/DIY_Guitar.svelte.md",
       "src/routes/projects/Greenpower.svelte.md",
       "src/routes/projects/Hackintosh.svelte.md",
+      "src/routes/projects/KinectIP.svelte.md",
       "src/routes/projects/Kinect_Interactive_Grid.svelte.md",
       "src/routes/projects/LED_Hammock_Room.svelte.md",
       "src/routes/projects/MIDI_Footswitch.svelte.md",
       "src/routes/projects/Macro_Pad.svelte.md",
       "src/routes/projects/MagicQ_Wing.svelte.md",
       "src/routes/projects/Pickup_Winder.svelte.md",
+      "src/routes/projects/Power_Window_Controller.svelte.md",
       "src/routes/projects/Reflow_Oven.svelte.md",
       "src/routes/projects/Router_Sled.svelte.md",
       "src/routes/projects/Router_Table.svelte.md",
       "src/routes/projects/Stepper_Driver.svelte.md",
+      "src/routes/projects/Van_Part_1.svelte.md",
+      "src/routes/projects/ploTTY.svelte.md",
       "src/routes/tutorials/Local_SSL.svelte.md",
       "src/routes/tutorials/Touchdesigner_Image_DMX.svelte.md",
       "src/routes/tutorials/VCS.svelte.md"
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-f5a1ebc7.js",
+    "file": "pages/__layout.svelte-3085e209.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_ripple-59eba3d5.js",
-      "_Notification-7f4998ec.js",
+      "_index-959e8fc0.js",
+      "_ripple-8363dcce.js",
+      "_Notification-45fcd0f6.js",
       "_prism-a46989fb.js",
-      "_IconButton-5dfdb110.js",
-      "_index-edf86401.js",
-      "_Link-92225e0d.js"
+      "_IconButton-6ef457ec.js",
+      "_index-faaff173.js",
+      "_Link-2422b5d4.js"
     ],
     "css": [
       "assets/pages/__layout.svelte-e9d28631.css"
@@ -88,367 +94,424 @@
     ]
   },
   "src/routes/__error.svelte": {
-    "file": "pages/__error.svelte-72e7b6d5.js",
+    "file": "pages/__error.svelte-70f4b542.js",
     "src": "src/routes/__error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_Content-e6d7cbfb.js",
-      "_NavButton-03483166.js"
+      "_index-959e8fc0.js",
+      "_Content-3a302487.js",
+      "_NavButton-325bacaf.js"
     ],
     "css": [
       "assets/pages/__error.svelte-0f11713c.css"
     ]
   },
   "src/routes/__layout-post@default.svelte": {
-    "file": "pages/__layout-post@default.svelte-54893499.js",
+    "file": "pages/__layout-post@default.svelte-e30337b8.js",
     "src": "src/routes/__layout-post@default.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_Content-e6d7cbfb.js",
-      "_Header-bb337661.js",
-      "_NavButton-03483166.js",
-      "_ripple-59eba3d5.js",
-      "_index-edf86401.js",
-      "_IconButton-5dfdb110.js",
-      "_Link-92225e0d.js",
-      "_ThemeSelector-a45fb36e.js"
+      "_index-959e8fc0.js",
+      "_Content-3a302487.js",
+      "_Header-ca30bc18.js",
+      "_NavButton-325bacaf.js",
+      "_ripple-8363dcce.js",
+      "_index-faaff173.js",
+      "_IconButton-6ef457ec.js",
+      "_Link-2422b5d4.js",
+      "_ThemeSelector-aa6a9a46.js"
     ],
     "css": [
       "assets/pages/__layout-post@default.svelte-a0f73b82.css"
     ]
   },
   "src/routes/galleries/__layout@post.svelte": {
-    "file": "pages/galleries/__layout@post.svelte-a28d34bd.js",
+    "file": "pages/galleries/__layout@post.svelte-0cff4709.js",
     "src": "src/routes/galleries/__layout@post.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/projects/__layout@post.svelte": {
-    "file": "pages/projects/__layout@post.svelte-b44a43ea.js",
+    "file": "pages/projects/__layout@post.svelte-7542c58a.js",
     "src": "src/routes/projects/__layout@post.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/tutorials/__layout@post.svelte": {
-    "file": "pages/tutorials/__layout@post.svelte-aea41c22.js",
+    "file": "pages/tutorials/__layout@post.svelte-67dd0f26.js",
     "src": "src/routes/tutorials/__layout@post.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/about/index.svelte": {
-    "file": "pages/about/index.svelte-da7cace5.js",
+    "file": "pages/about/index.svelte-ac6a59f2.js",
     "src": "src/routes/about/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_Notification-7f4998ec.js",
-      "_Content-e6d7cbfb.js",
-      "_ThemeSelector-a45fb36e.js",
-      "_ripple-59eba3d5.js",
-      "_Header-bb337661.js",
-      "_NavButton-03483166.js",
-      "_index-edf86401.js",
-      "_IconButton-5dfdb110.js",
-      "_Link-92225e0d.js"
+      "_index-959e8fc0.js",
+      "_Notification-45fcd0f6.js",
+      "_Content-3a302487.js",
+      "_ThemeSelector-aa6a9a46.js",
+      "_ripple-8363dcce.js",
+      "_Header-ca30bc18.js",
+      "_NavButton-325bacaf.js",
+      "_index-faaff173.js",
+      "_IconButton-6ef457ec.js",
+      "_Link-2422b5d4.js"
     ],
     "css": [
       "assets/pages/about/index.svelte-bb99c9e3.css"
     ]
   },
   "src/routes/galleries/Art_Coursework.svelte.md": {
-    "file": "pages/galleries/Art_Coursework.svelte.md-a710d7f4.js",
+    "file": "pages/galleries/Art_Coursework.svelte.md-be588e44.js",
     "src": "src/routes/galleries/Art_Coursework.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_Gallery-95c780ac.js",
-      "_Link-92225e0d.js"
+      "_index-959e8fc0.js",
+      "_Gallery-7c86ef03.js",
+      "_Link-2422b5d4.js"
     ]
   },
   "src/routes/index/index.svelte": {
-    "file": "pages/index/index.svelte-2b8e27ed.js",
+    "file": "pages/index/index.svelte-efe8d64c.js",
     "src": "src/routes/index/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_Header-bb337661.js",
-      "_NavButton-03483166.js",
-      "_Content-e6d7cbfb.js",
-      "_ripple-59eba3d5.js",
-      "_index-edf86401.js",
-      "_IconButton-5dfdb110.js",
-      "_Link-92225e0d.js",
-      "_ThemeSelector-a45fb36e.js"
+      "_index-959e8fc0.js",
+      "_Header-ca30bc18.js",
+      "_NavButton-325bacaf.js",
+      "_Content-3a302487.js",
+      "_ripple-8363dcce.js",
+      "_index-faaff173.js",
+      "_IconButton-6ef457ec.js",
+      "_Link-2422b5d4.js",
+      "_ThemeSelector-aa6a9a46.js"
     ],
     "css": [
       "assets/pages/index/index.svelte-149b1867.css"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-f924cfd8.js",
+    "file": "pages/index.svelte-aa575234.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_Content-e6d7cbfb.js",
-      "_Gallery-95c780ac.js",
-      "_ThemeSelector-a45fb36e.js",
-      "_Link-92225e0d.js",
-      "_ripple-59eba3d5.js",
-      "_index-edf86401.js",
-      "_IconButton-5dfdb110.js"
+      "_index-959e8fc0.js",
+      "_Content-3a302487.js",
+      "_Gallery-7c86ef03.js",
+      "_ThemeSelector-aa6a9a46.js",
+      "_Link-2422b5d4.js",
+      "_ripple-8363dcce.js",
+      "_index-faaff173.js",
+      "_IconButton-6ef457ec.js"
     ],
     "css": [
       "assets/pages/index.svelte-6b92f71d.css"
     ]
   },
   "src/routes/projects/Artnet_Node.svelte.md": {
-    "file": "pages/projects/Artnet_Node.svelte.md-f65da111.js",
+    "file": "pages/projects/Artnet_Node.svelte.md-faaae6e0.js",
     "src": "src/routes/projects/Artnet_Node.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_prism-c-30ee303a.js",
+      "_index-959e8fc0.js",
+      "_prism-c-a8466d46.js",
       "_prism-a46989fb.js",
-      "_Notification-7f4998ec.js",
-      "_index-edf86401.js",
-      "_ripple-59eba3d5.js"
+      "_Notification-45fcd0f6.js",
+      "_index-faaff173.js",
+      "_ripple-8363dcce.js"
     ],
     "css": [
       "assets/CopyButton.svelte_svelte_type_style_lang-d20dba86.css"
     ]
   },
+  "src/routes/projects/BOJIT_V3.svelte.md": {
+    "file": "pages/projects/BOJIT_V3.svelte.md-80a20922.js",
+    "src": "src/routes/projects/BOJIT_V3.svelte.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-959e8fc0.js",
+      "_preload-helper-60cab3ee.js",
+      "_Gallery-7c86ef03.js",
+      "_Link-2422b5d4.js"
+    ],
+    "dynamicImports": [
+      "node_modules/@bojit/svelte-components/widgets/CAD/model-viewer/model-viewer.min.js"
+    ],
+    "css": [
+      "assets/pages/projects/BOJIT_V3.svelte.md-26a38d62.css"
+    ]
+  },
   "src/routes/projects/DIY_E_Drums.svelte.md": {
-    "file": "pages/projects/DIY_E_Drums.svelte.md-b7b9f641.js",
+    "file": "pages/projects/DIY_E_Drums.svelte.md-b03a7df7.js",
     "src": "src/routes/projects/DIY_E_Drums.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_prism-c-30ee303a.js",
-      "_YouTube-3a9e792f.js",
+      "_index-959e8fc0.js",
+      "_prism-c-a8466d46.js",
+      "_YouTube-5bb2733c.js",
       "_prism-a46989fb.js",
-      "_Notification-7f4998ec.js",
-      "_index-edf86401.js",
-      "_ripple-59eba3d5.js"
+      "_Notification-45fcd0f6.js",
+      "_index-faaff173.js",
+      "_ripple-8363dcce.js"
     ],
     "css": [
       "assets/CopyButton.svelte_svelte_type_style_lang-d20dba86.css"
     ]
   },
   "src/routes/projects/DIY_Guitar.svelte.md": {
-    "file": "pages/projects/DIY_Guitar.svelte.md-59bb5724.js",
+    "file": "pages/projects/DIY_Guitar.svelte.md-bbc504c6.js",
     "src": "src/routes/projects/DIY_Guitar.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/projects/Greenpower.svelte.md": {
-    "file": "pages/projects/Greenpower.svelte.md-238ef97d.js",
+    "file": "pages/projects/Greenpower.svelte.md-d476edb6.js",
     "src": "src/routes/projects/Greenpower.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_YouTube-3a9e792f.js"
+      "_index-959e8fc0.js",
+      "_YouTube-5bb2733c.js"
     ]
   },
   "src/routes/projects/Hackintosh.svelte.md": {
-    "file": "pages/projects/Hackintosh.svelte.md-78b27dab.js",
+    "file": "pages/projects/Hackintosh.svelte.md-30fd4764.js",
     "src": "src/routes/projects/Hackintosh.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
+    ]
+  },
+  "src/routes/projects/KinectIP.svelte.md": {
+    "file": "pages/projects/KinectIP.svelte.md-5c79a3e3.js",
+    "src": "src/routes/projects/KinectIP.svelte.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/projects/Kinect_Interactive_Grid.svelte.md": {
-    "file": "pages/projects/Kinect_Interactive_Grid.svelte.md-2fcf731d.js",
+    "file": "pages/projects/Kinect_Interactive_Grid.svelte.md-68fcd1c8.js",
     "src": "src/routes/projects/Kinect_Interactive_Grid.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_YouTube-3a9e792f.js"
+      "_index-959e8fc0.js",
+      "_YouTube-5bb2733c.js"
     ]
   },
   "src/routes/projects/LED_Hammock_Room.svelte.md": {
-    "file": "pages/projects/LED_Hammock_Room.svelte.md-57b16c27.js",
+    "file": "pages/projects/LED_Hammock_Room.svelte.md-3971c548.js",
     "src": "src/routes/projects/LED_Hammock_Room.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_YouTube-3a9e792f.js"
+      "_index-959e8fc0.js",
+      "_YouTube-5bb2733c.js"
     ]
   },
   "src/routes/projects/MIDI_Footswitch.svelte.md": {
-    "file": "pages/projects/MIDI_Footswitch.svelte.md-8864fe90.js",
+    "file": "pages/projects/MIDI_Footswitch.svelte.md-2630c4fd.js",
     "src": "src/routes/projects/MIDI_Footswitch.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/projects/Macro_Pad.svelte.md": {
-    "file": "pages/projects/Macro_Pad.svelte.md-f166b19a.js",
+    "file": "pages/projects/Macro_Pad.svelte.md-875d9e2f.js",
     "src": "src/routes/projects/Macro_Pad.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_prism-c-30ee303a.js",
+      "_index-959e8fc0.js",
+      "_prism-c-a8466d46.js",
       "_prism-a46989fb.js",
-      "_Notification-7f4998ec.js",
-      "_index-edf86401.js",
-      "_ripple-59eba3d5.js"
+      "_Notification-45fcd0f6.js",
+      "_index-faaff173.js",
+      "_ripple-8363dcce.js"
     ],
     "css": [
       "assets/CopyButton.svelte_svelte_type_style_lang-d20dba86.css"
     ]
   },
   "src/routes/projects/MagicQ_Wing.svelte.md": {
-    "file": "pages/projects/MagicQ_Wing.svelte.md-1f31f7e0.js",
+    "file": "pages/projects/MagicQ_Wing.svelte.md-1be2766c.js",
     "src": "src/routes/projects/MagicQ_Wing.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/projects/Pickup_Winder.svelte.md": {
-    "file": "pages/projects/Pickup_Winder.svelte.md-816569e8.js",
+    "file": "pages/projects/Pickup_Winder.svelte.md-721c4757.js",
     "src": "src/routes/projects/Pickup_Winder.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
+    ]
+  },
+  "src/routes/projects/Power_Window_Controller.svelte.md": {
+    "file": "pages/projects/Power_Window_Controller.svelte.md-03eaba01.js",
+    "src": "src/routes/projects/Power_Window_Controller.svelte.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/projects/Reflow_Oven.svelte.md": {
-    "file": "pages/projects/Reflow_Oven.svelte.md-0b6277b0.js",
+    "file": "pages/projects/Reflow_Oven.svelte.md-356eaa78.js",
     "src": "src/routes/projects/Reflow_Oven.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/projects/Router_Sled.svelte.md": {
-    "file": "pages/projects/Router_Sled.svelte.md-3530018a.js",
+    "file": "pages/projects/Router_Sled.svelte.md-011dbdde.js",
     "src": "src/routes/projects/Router_Sled.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/projects/Router_Table.svelte.md": {
-    "file": "pages/projects/Router_Table.svelte.md-11d01bff.js",
+    "file": "pages/projects/Router_Table.svelte.md-1433db1c.js",
     "src": "src/routes/projects/Router_Table.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_YouTube-3a9e792f.js"
+      "_index-959e8fc0.js",
+      "_YouTube-5bb2733c.js"
     ]
   },
   "src/routes/projects/Stepper_Driver.svelte.md": {
-    "file": "pages/projects/Stepper_Driver.svelte.md-355f800f.js",
+    "file": "pages/projects/Stepper_Driver.svelte.md-873e94f6.js",
     "src": "src/routes/projects/Stepper_Driver.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
+    ]
+  },
+  "src/routes/projects/Van_Part_1.svelte.md": {
+    "file": "pages/projects/Van_Part_1.svelte.md-4e1745c4.js",
+    "src": "src/routes/projects/Van_Part_1.svelte.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-959e8fc0.js"
+    ]
+  },
+  "src/routes/projects/ploTTY.svelte.md": {
+    "file": "pages/projects/ploTTY.svelte.md-d331e92a.js",
+    "src": "src/routes/projects/ploTTY.svelte.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/tutorials/Local_SSL.svelte.md": {
-    "file": "pages/tutorials/Local_SSL.svelte.md-39895a67.js",
+    "file": "pages/tutorials/Local_SSL.svelte.md-66e60c45.js",
     "src": "src/routes/tutorials/Local_SSL.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_Notification-7f4998ec.js",
+      "_index-959e8fc0.js",
+      "_Notification-45fcd0f6.js",
       "_prism-a46989fb.js",
       "_prism-bash-4c44f9e3.js",
-      "_index-edf86401.js",
-      "_ripple-59eba3d5.js"
+      "_index-faaff173.js",
+      "_ripple-8363dcce.js"
     ],
     "css": [
       "assets/CopyButton.svelte_svelte_type_style_lang-d20dba86.css"
     ]
   },
   "src/routes/tutorials/Touchdesigner_Image_DMX.svelte.md": {
-    "file": "pages/tutorials/Touchdesigner_Image_DMX.svelte.md-d42f7be0.js",
+    "file": "pages/tutorials/Touchdesigner_Image_DMX.svelte.md-bdcdea69.js",
     "src": "src/routes/tutorials/Touchdesigner_Image_DMX.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
   "src/routes/tutorials/VCS.svelte.md": {
-    "file": "pages/tutorials/VCS.svelte.md-dd072023.js",
+    "file": "pages/tutorials/VCS.svelte.md-a14407c9.js",
     "src": "src/routes/tutorials/VCS.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5dfa2933.js",
-      "_prism-c-30ee303a.js",
+      "_index-959e8fc0.js",
+      "_prism-c-a8466d46.js",
       "_prism-a46989fb.js",
       "_prism-bash-4c44f9e3.js",
-      "_Notification-7f4998ec.js",
-      "_index-edf86401.js",
-      "_ripple-59eba3d5.js"
+      "_Notification-45fcd0f6.js",
+      "_index-faaff173.js",
+      "_ripple-8363dcce.js"
     ],
     "css": [
       "assets/CopyButton.svelte_svelte_type_style_lang-d20dba86.css"
     ]
   },
-  "_index-5dfa2933.js": {
-    "file": "chunks/index-5dfa2933.js"
+  "_index-959e8fc0.js": {
+    "file": "chunks/index-959e8fc0.js"
   },
-  "_index-edf86401.js": {
-    "file": "chunks/index-edf86401.js",
+  "_index-faaff173.js": {
+    "file": "chunks/index-faaff173.js",
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
-  "_ripple-59eba3d5.js": {
-    "file": "chunks/ripple-59eba3d5.js",
+  "_preload-helper-60cab3ee.js": {
+    "file": "chunks/preload-helper-60cab3ee.js"
+  },
+  "_ripple-8363dcce.js": {
+    "file": "chunks/ripple-8363dcce.js",
     "imports": [
-      "_index-edf86401.js",
-      "_index-5dfa2933.js"
+      "_index-faaff173.js",
+      "_index-959e8fc0.js"
     ]
   },
-  "_Notification-7f4998ec.js": {
-    "file": "chunks/Notification-7f4998ec.js",
+  "_Notification-45fcd0f6.js": {
+    "file": "chunks/Notification-45fcd0f6.js",
     "imports": [
-      "_index-5dfa2933.js",
-      "_index-edf86401.js",
-      "_ripple-59eba3d5.js"
+      "_index-959e8fc0.js",
+      "_index-faaff173.js",
+      "_ripple-8363dcce.js"
     ],
     "css": [
       "assets/Notification-a449c76c.css"
@@ -457,88 +520,88 @@
   "_prism-a46989fb.js": {
     "file": "chunks/prism-a46989fb.js"
   },
-  "_IconButton-5dfdb110.js": {
-    "file": "chunks/IconButton-5dfdb110.js",
+  "_IconButton-6ef457ec.js": {
+    "file": "chunks/IconButton-6ef457ec.js",
     "imports": [
-      "_index-5dfa2933.js",
-      "_ripple-59eba3d5.js",
-      "_Link-92225e0d.js"
+      "_index-959e8fc0.js",
+      "_ripple-8363dcce.js",
+      "_Link-2422b5d4.js"
     ],
     "css": [
       "assets/IconButton-daa2eb6b.css"
     ]
   },
-  "_Link-92225e0d.js": {
-    "file": "chunks/Link-92225e0d.js",
+  "_Link-2422b5d4.js": {
+    "file": "chunks/Link-2422b5d4.js",
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ]
   },
-  "_Content-e6d7cbfb.js": {
-    "file": "chunks/Content-e6d7cbfb.js",
+  "_Content-3a302487.js": {
+    "file": "chunks/Content-3a302487.js",
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ],
     "css": [
       "assets/Content-2c6882cc.css"
     ]
   },
-  "_NavButton-03483166.js": {
-    "file": "chunks/NavButton-03483166.js",
+  "_NavButton-325bacaf.js": {
+    "file": "chunks/NavButton-325bacaf.js",
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ],
     "css": [
       "assets/NavButton-0091e670.css"
     ]
   },
-  "_Header-bb337661.js": {
-    "file": "chunks/Header-bb337661.js",
+  "_Header-ca30bc18.js": {
+    "file": "chunks/Header-ca30bc18.js",
     "imports": [
-      "_index-5dfa2933.js",
-      "_ripple-59eba3d5.js",
-      "_IconButton-5dfdb110.js",
-      "_ThemeSelector-a45fb36e.js"
+      "_index-959e8fc0.js",
+      "_ripple-8363dcce.js",
+      "_IconButton-6ef457ec.js",
+      "_ThemeSelector-aa6a9a46.js"
     ],
     "css": [
       "assets/Header-99197cc5.css"
     ]
   },
-  "_ThemeSelector-a45fb36e.js": {
-    "file": "chunks/ThemeSelector-a45fb36e.js",
+  "_ThemeSelector-aa6a9a46.js": {
+    "file": "chunks/ThemeSelector-aa6a9a46.js",
     "imports": [
-      "_index-5dfa2933.js",
-      "_ripple-59eba3d5.js",
-      "_IconButton-5dfdb110.js"
+      "_index-959e8fc0.js",
+      "_ripple-8363dcce.js",
+      "_IconButton-6ef457ec.js"
     ],
     "css": [
       "assets/ThemeSelector-9f4cf020.css"
     ]
   },
-  "_Gallery-95c780ac.js": {
-    "file": "chunks/Gallery-95c780ac.js",
+  "_Gallery-7c86ef03.js": {
+    "file": "chunks/Gallery-7c86ef03.js",
     "imports": [
-      "_index-5dfa2933.js",
-      "_Link-92225e0d.js"
+      "_index-959e8fc0.js",
+      "_Link-2422b5d4.js"
     ],
     "css": [
       "assets/Gallery-6f0ef64f.css"
     ]
   },
-  "_prism-c-30ee303a.js": {
-    "file": "chunks/prism-c-30ee303a.js",
+  "_prism-c-a8466d46.js": {
+    "file": "chunks/prism-c-a8466d46.js",
     "imports": [
-      "_index-5dfa2933.js",
-      "_Notification-7f4998ec.js"
+      "_index-959e8fc0.js",
+      "_Notification-45fcd0f6.js"
     ],
     "css": [
       "assets/CopyButton.svelte_svelte_type_style_lang-d20dba86.css"
     ]
   },
-  "_YouTube-3a9e792f.js": {
-    "file": "chunks/YouTube-3a9e792f.js",
+  "_YouTube-5bb2733c.js": {
+    "file": "chunks/YouTube-5bb2733c.js",
     "imports": [
-      "_index-5dfa2933.js"
+      "_index-959e8fc0.js"
     ],
     "css": [
       "assets/YouTube-4d7dbdff.css"
@@ -546,5 +609,10 @@
   },
   "_prism-bash-4c44f9e3.js": {
     "file": "chunks/prism-bash-4c44f9e3.js"
+  },
+  "node_modules/@bojit/svelte-components/widgets/CAD/model-viewer/model-viewer.min.js": {
+    "file": "chunks/model-viewer.min-6e319cb0.js",
+    "src": "node_modules/@bojit/svelte-components/widgets/CAD/model-viewer/model-viewer.min.js",
+    "isDynamicEntry": true
   }
 }
