@@ -1,7 +1,8 @@
 ---
 title: KinectIP
 date: "24-07-2019"
-published: false
+published: true
+hidden: true
 
 tile:
   type: image

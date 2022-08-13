@@ -1,7 +1,8 @@
 ---
 title: Van Saga 1 - Raiders of the Lost Part
 date: "15-05-2022"
-published: false
+published: true
+hidden: true
 
 tile:
   type: image

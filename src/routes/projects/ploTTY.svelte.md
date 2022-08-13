@@ -1,7 +1,8 @@
 ---
 title: ploTTY - a Flow-Based Serial Plotter
 date: "17-08-2022"
-published: false
+published: true
+hidden: true
 
 tile:
   type: image

@@ -17,7 +17,7 @@ export const get = async () => {
     // If in production, filter out unpublished articles
     if(import.meta.env.PROD) {
         allPosts = allPosts.filter((p) => {
-            return p.meta.published === true;
+            return p.meta.hidden !== true;
         })
     }
 

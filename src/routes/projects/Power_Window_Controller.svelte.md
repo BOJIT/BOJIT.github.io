@@ -1,7 +1,8 @@
 ---
 title: DIY Power Window Controller
 date: "23-05-2022"
-published: false
+published: true
+hidden: true
 
 tile:
   type: image
