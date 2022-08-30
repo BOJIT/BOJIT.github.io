@@ -20,10 +20,11 @@
     }
 
     function calculateHeaderHeight() {
-        if(typeof window !== 'undefined') {
-            let ratio = headerImg.naturalWidth/headerImg.naturalHeight;
-            fill = (window.innerWidth > remToPx(height)*ratio);
-        }
+        if(typeof window === 'undefined') return;
+        if(headerImg.naturalWidth === null) return;
+
+        let ratio = headerImg.naturalWidth/headerImg.naturalHeight;
+        fill = (window.innerWidth > remToPx(height)*ratio);
     }
 
     onMount(() => {

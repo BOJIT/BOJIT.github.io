@@ -1,7 +1,7 @@
 {
   "name": "bojit-org",
   "private": true,
-  "version": "2.2.0",
+  "version": "2.2.1",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -25,7 +25,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@bojit/svelte-components": "^1.1.1",
+    "@bojit/svelte-components": "^1.1.2",
     "@fontsource/gloria-hallelujah": "^4.5.6",
     "@fontsource/nunito": "^4.5.8",
     "@fontsource/syne-mono": "^4.5.4",
