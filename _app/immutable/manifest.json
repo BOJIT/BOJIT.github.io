@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-0dc61a34.js",
+    "file": "start-3016a94d.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -384,7 +384,7 @@
     ]
   },
   "src/routes/projects/Power_Window_Controller.svelte.md": {
-    "file": "pages/projects/Power_Window_Controller.svelte.md-913d1595.js",
+    "file": "pages/projects/Power_Window_Controller.svelte.md-a13259cb.js",
     "src": "src/routes/projects/Power_Window_Controller.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -430,12 +430,16 @@
     ]
   },
   "src/routes/projects/Van_Part_1.svelte.md": {
-    "file": "pages/projects/Van_Part_1.svelte.md-a3995265.js",
+    "file": "pages/projects/Van_Part_1.svelte.md-8835a4d0.js",
     "src": "src/routes/projects/Van_Part_1.svelte.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-cabb4aca.js"
+      "_index-cabb4aca.js",
+      "_YouTube-ad190e20.js",
+      "_Gallery-6cc44305.js",
+      "_Link-f35c0e95.js",
+      "_ProgressCircular-effd01c6.js"
     ]
   },
   "src/routes/projects/ploTTY.svelte.md": {
