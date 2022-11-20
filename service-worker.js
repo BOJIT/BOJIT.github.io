@@ -1,5 +1,5 @@
 const build = [
-  "/_app/immutable/start-86b17769.js",
+  "/_app/immutable/start-88c260d6.js",
   "/_app/immutable/pages/__layout.svelte-5e821bd4.js",
   "/_app/immutable/assets/pages/__layout.svelte-5278c10f.css",
   "/_app/immutable/assets/material-icons-base-400-normal-cc0462d5.woff2",
@@ -38,7 +38,7 @@ const build = [
   "/_app/immutable/pages/galleries/__layout@post.svelte-22252cf1.js",
   "/_app/immutable/pages/projects/__layout@post.svelte-c992ea70.js",
   "/_app/immutable/pages/tutorials/__layout@post.svelte-f77ad242.js",
-  "/_app/immutable/pages/about/index.svelte-c16dd150.js",
+  "/_app/immutable/pages/about/index.svelte-632aac98.js",
   "/_app/immutable/assets/pages/about/index.svelte-bb99c9e3.css",
   "/_app/immutable/pages/galleries/Art_Coursework.svelte.md-aa8abba9.js",
   "/_app/immutable/pages/index/index.svelte-91c61ea3.js",
@@ -115,7 +115,7 @@ const files = [
   "/favicon/maskable_icon_x96.png",
   "/manifest.json"
 ];
-const version = "1668966672569";
+const version = "1668967034800";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);
