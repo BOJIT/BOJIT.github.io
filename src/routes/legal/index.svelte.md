@@ -25,9 +25,7 @@
 
 <p class="center">The boring bit...</p>
 
-<p class="center">
-In the sad state of affairs that is the internet, I have to have one of these pages.
-</p>
+<p class="center">In the sad state of affairs that is the internet, I have to have one of these pages.</p>
 
 
 ## Warranty

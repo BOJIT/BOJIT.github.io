@@ -1,5 +1,10 @@
 export const get = async () => {
-    const allPostFiles = import.meta.glob('./**.svelte.md')
+    const projects = import.meta.glob('./projects/**.svelte.md');
+    const tutorials = import.meta.glob('./tutorials/**.svelte.md');
+    const galleries = import.meta.glob('./galleries/**.svelte.md');
+
+    const allPostFiles = {...projects, ...tutorials, ...galleries};
+
     const iterablePostFiles = Object.entries(allPostFiles)
 
     let allPosts = await Promise.all(
