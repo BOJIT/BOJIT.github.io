@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-88c260d6.js",
+    "file": "start-33a1c98e.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -19,6 +19,7 @@
       "src/routes/galleries/Art_Coursework.svelte.md",
       "src/routes/index/index.svelte",
       "src/routes/index.svelte",
+      "src/routes/legal/index.svelte.md",
       "src/routes/projects/Artnet_Node.svelte.md",
       "src/routes/projects/BOJIT_V3.svelte.md",
       "src/routes/projects/DIY_E_Drums.svelte.md",
@@ -226,6 +227,25 @@
     ],
     "css": [
       "assets/pages/index.svelte-6b92f71d.css"
+    ]
+  },
+  "src/routes/legal/index.svelte.md": {
+    "file": "pages/legal/index.svelte.md-e5f39afb.js",
+    "src": "src/routes/legal/index.svelte.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-cabb4aca.js",
+      "_Content-6935ab8d.js",
+      "_Header-9ec81f20.js",
+      "_ripple-d87e32e1.js",
+      "_index-6a3c8aa1.js",
+      "_IconButton-f3863fad.js",
+      "_Link-f35c0e95.js",
+      "_ThemeSelector-bee6f894.js"
+    ],
+    "css": [
+      "assets/pages/legal/index.svelte.md-c85cd5f6.css"
     ]
   },
   "src/routes/projects/Artnet_Node.svelte.md": {
