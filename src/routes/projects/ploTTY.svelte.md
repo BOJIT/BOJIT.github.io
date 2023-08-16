@@ -1,5 +1,5 @@
 ---
-title: ploTTY - a Flow-Based Serial Plotter
+title: ploTTY
 date: "17-08-2022"
 published: true
 hidden: true
