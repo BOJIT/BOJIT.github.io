@@ -1,5 +1,5 @@
 const build = [
-  "/_app/immutable/start-48a17aa4.js",
+  "/_app/immutable/start-24699cfa.js",
   "/_app/immutable/pages/__layout.svelte-5e821bd4.js",
   "/_app/immutable/assets/pages/__layout.svelte-5278c10f.css",
   "/_app/immutable/assets/material-icons-base-400-normal-cc0462d5.woff2",
@@ -38,7 +38,7 @@ const build = [
   "/_app/immutable/pages/galleries/__layout@post.svelte-22252cf1.js",
   "/_app/immutable/pages/projects/__layout@post.svelte-c992ea70.js",
   "/_app/immutable/pages/tutorials/__layout@post.svelte-f77ad242.js",
-  "/_app/immutable/pages/about/index.svelte-257c5f8b.js",
+  "/_app/immutable/pages/about/index.svelte-357fc3fb.js",
   "/_app/immutable/assets/pages/about/index.svelte-bb99c9e3.css",
   "/_app/immutable/pages/galleries/Art_Coursework.svelte.md-aa8abba9.js",
   "/_app/immutable/pages/index/index.svelte-91c61ea3.js",
@@ -51,7 +51,7 @@ const build = [
   "/_app/immutable/assets/CopyButton.svelte_svelte_type_style_lang-d20dba86.css",
   "/_app/immutable/pages/projects/BOJIT_V3.svelte.md-409dd6cb.js",
   "/_app/immutable/assets/pages/projects/BOJIT_V3.svelte.md-26a38d62.css",
-  "/_app/immutable/pages/projects/Belvoir_Bar.svelte.md-e8765f16.js",
+  "/_app/immutable/pages/projects/Belvoir_Bar.svelte.md-ef8489d8.js",
   "/_app/immutable/pages/projects/DIY_E_Drums.svelte.md-df6813ba.js",
   "/_app/immutable/pages/projects/DIY_Guitar.svelte.md-70a11805.js",
   "/_app/immutable/pages/projects/Greenpower.svelte.md-6c74cb95.js",
@@ -118,7 +118,7 @@ const files = [
   "/favicon/maskable_icon_x96.png",
   "/manifest.json"
 ];
-const version = "1692216600798";
+const version = "1692449363505";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);
