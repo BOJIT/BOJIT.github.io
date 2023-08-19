@@ -139,7 +139,7 @@
             <NavButton
                 href={`${
                     import.meta.env.VITE_FILE_BASE
-                }/CV_James_Bennion-Pedley_02.09.19.pdf`}>DOWNLOAD CV</NavButton
+                }/CV_James_Bennion-Pedley_19.08.23.pdf`}>DOWNLOAD CV</NavButton
             >
         </div>
     </CircleCaption>
