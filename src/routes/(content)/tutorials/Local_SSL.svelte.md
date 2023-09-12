@@ -9,8 +9,6 @@ tile:
 ---
 
 <script>
-    import CopyButton from "@bojit/svelte-components/widgets/CodeEditor/CopyButton.svelte";
-
     import "prismjs/prism.js";
     import "prismjs/components/prism-bash.js";
 </script>

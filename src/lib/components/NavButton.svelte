@@ -1,33 +1,55 @@
+<!--
+ * @file NavButton.svelte
+ * @author James Bennion-Pedley
+ * @brief Generic styled link button
+ * @date 12/09/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+-->
+
 <script lang="ts">
-    import { createEventDispatcher } from 'svelte';
+    /*-------------------------------- Imports -------------------------------*/
+
+    import { createEventDispatcher } from "svelte";
+
+    /*--------------------------------- Props --------------------------------*/
 
     const dispatch = createEventDispatcher();
 
-    export let href = null;
+    export let href: string | null = null;
     export let newTab = false;
 </script>
 
 {#if href}
-<a {href} target={newTab ? "_blank" : ""}>
-    <button on:click={() => {dispatch('click');}}>
+    <a {href} target={newTab ? "_blank" : ""}>
+        <button
+            on:click={() => {
+                dispatch("click");
+            }}
+        >
+            <h2>
+                <slot />
+            </h2>
+        </button>
+    </a>
+{:else}
+    <button
+        on:click={() => {
+            dispatch("click");
+        }}
+    >
         <h2>
             <slot />
         </h2>
     </button>
-</a>
-{:else}
-<button on:click={() => {dispatch('click');}}>
-    <h2>
-        <slot />
-    </h2>
-</button>
 {/if}
 
 <style>
     button {
         width: 100%;
         text-decoration: none;
-        border: 1px solid  var(--color-gray-600);
+        border: 1px solid var(--color-gray-600);
         background-color: transparent;
         color: black;
         transition: background-color 0.2s ease-in, border-color 0.2s ease-in;

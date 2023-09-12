@@ -1,21 +1,34 @@
+<!--
+ * @file NavigationFooter.svelte
+ * @author James Bennion-Pedley
+ * @brief Set of navigation buttons attached to post footers
+ * @date 12/09/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+-->
+
 <script lang="ts">
-    import NavButton from "./NavButton.svelte";
+    /*-------------------------------- Imports -------------------------------*/
+
+    import { goto } from "$app/navigation";
+
+    import NavButton from "$lib/components/NavButton.svelte";
+
+    /*--------------------------------- Props --------------------------------*/
 
     export let posts: object[];
     export let post: object;
 
-    function gotoPage(idx) {
+    /*-------------------------------- Methods -------------------------------*/
+
+    function gotoPage(idx: number) {
         let url = posts[idx].path.slice(0, -".svelte".length);
-        window.location.href = "/" + url;
+        goto("/" + url);
     }
 
     function currentPost() {
-        return posts.map((p) => p.meta.title).findIndex(t => (t==post.title));
-    }
-
-    function previousPost() {
-        let url = posts[currentPost() + 1].path.slice(0, -".svelte".length);
-        window.location.href = "/" + url;
+        return posts.map((p) => p.meta.title).findIndex((t) => t == post.title);
     }
 
     function randomPost() {
@@ -25,21 +38,18 @@
 
         gotoPage(idx);
     }
-
-    function nextPost() {
-        let url = posts[currentPost() - 1].path.slice(0, -".svelte".length);
-        window.location.href = "/" + url;
-    }
 </script>
 
 <div class="nav">
-    {#if currentPost() != posts.length - 1 }
-        <NavButton on:click={() => gotoPage(currentPost() + 1)}>PREVIOUS</NavButton>
+    {#if currentPost() != posts.length - 1}
+        <NavButton on:click={() => gotoPage(currentPost() + 1)}
+            >PREVIOUS</NavButton
+        >
     {/if}
     <NavButton href="/index">INDEX</NavButton>
     <NavButton href="/">HOME</NavButton>
     <NavButton on:click={randomPost}>RANDOM</NavButton>
-    {#if currentPost() != 0 }
+    {#if currentPost() != 0}
         <NavButton on:click={() => gotoPage(currentPost() - 1)}>NEXT</NavButton>
     {/if}
 </div>

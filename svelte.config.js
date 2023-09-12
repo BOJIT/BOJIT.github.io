@@ -1,21 +1,39 @@
+/**
+ * @file svelte.config.ts
+ * @author James Bennion-Pedley
+ * @brief Site configuration
+ * @date 12/09/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
+/*-------------------------------- Imports -----------------------------------*/
+
 import adapter from "@sveltejs/adapter-static";
-import preprocess from "svelte-preprocess";
+import { vitePreprocess } from '@sveltejs/kit/vite';
+
+// Markdown Preprocessing
 import { mdsvex } from "mdsvex";
+import remarkCodeBox from "./src/lib/plugins/remarkCodeBox.js";
+
+/*--------------------------------- State ------------------------------------*/
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
     extensions: [".svelte", ".svelte.md"],
-    preprocess: [mdsvex({
+    preprocess: [
+        mdsvex({
             extensions: [".svelte.md"],
+            // remarkPlugins: [remarkCodeBox],
         }),
-        preprocess()
+        vitePreprocess(),
     ],
     kit: {
         adapter: adapter(),
-        prerender: {
-            default: true
-        },
-    },
+    }
 };
+
+/*-------------------------------- Exports -----------------------------------*/
 
 export default config;

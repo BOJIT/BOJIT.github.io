@@ -9,8 +9,6 @@ tile:
 ---
 
 <script>
-    import CopyButton from "@bojit/svelte-components/widgets/CodeEditor/CopyButton.svelte";
-
     import "prismjs/prism.js";
     import "prismjs/components/prism-c.js";
 </script>
@@ -29,8 +27,6 @@ It has been a while since I modified the *libDMX.cpp* library, but as far as I c
 syntax bugs elsewhere, you essentially have to convert this syntax:
 
 
-<CopyButton />
-
 ```c
 #if defined(USE_UART0)
 ISR(SIG_USART0_TRANS) {
@@ -40,8 +36,6 @@ ISR(SIG_USART0_TRANS) {
 ```
 
 ...into this syntax:
-
-<CopyButton />
 
 ```c
 #if defined(USE_UART0)

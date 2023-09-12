@@ -1,26 +1,29 @@
-<script context="module">
-    /**
-     * @type {import('@sveltejs/kit').Load}
-     */
-    export async function load({ url, fetch }) {
-        const posts = await fetch(`/posts.json`).then(res => res.json());
-        return {
-            props: {
-                posts
-            }
-        };
-    }
-</script>
+<!--
+ * @file +page.svelte
+ * @author James Bennion-Pedley
+ * @brief Website Homepage
+ * @date 12/09/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+-->
 
 <script lang="ts">
-    export let posts: any;
+    /*-------------------------------- Imports -------------------------------*/
 
-    import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
-    import Gallery from "@bojit/svelte-components/widgets/Gallery/Gallery.svelte";
-    import ThemeSelector from "@bojit/svelte-components/widgets/ThemeSelector/ThemeSelector.svelte";
+    import type { PageData } from "./$types";
+
+    import { Content } from "@bojit/svelte-components/layout";
+    import { Gallery, ThemeSelector } from "@bojit/svelte-components/widgets";
+
+    /*--------------------------------- Props --------------------------------*/
+
+    export let data: PageData;
 
     const logo = `${import.meta.env.VITE_IMAGE_BASE}/general/BOJIT_circle.PNG`;
-    const banner = `background-image: url("${import.meta.env.VITE_IMAGE_BASE}/general/home_banner_1080.JPG");`;
+    const banner = `background-image: url("${
+        import.meta.env.VITE_IMAGE_BASE
+    }/general/home_banner_1080.JPG");`;
 
     const specialTiles = [
         // About
@@ -29,7 +32,7 @@
             caption: "About Me",
             subcaption: "",
             colour: "#00bcd4",
-            link: "/about/"
+            link: "/about/",
         },
         // Index
         {
@@ -37,20 +40,21 @@
             caption: "Index Page",
             subcaption: "",
             colour: "#009688",
-            link: "/index/"
-        }
-    ]
+            link: "/index/",
+        },
+    ];
 
-    $: tiles = posts.map((p) => ({
+    /*------------------------------- Lifecycle ------------------------------*/
+
+    $: tiles = data.posts.map((p) => ({
         type: p.meta.tile.type,
         caption: p.meta.title,
         subcaption: p.meta.date,
         image: import.meta.env.VITE_IMAGE_BASE + p.meta.tile.image,
         colour: p.meta.tile.colour,
-        link: p.path.slice(0, -".svelte".length)
+        link: p.path.slice(0, -".svelte".length),
     }));
 </script>
-
 
 <svelte:head>
     <title>BOJIT</title>
@@ -58,19 +62,18 @@
 
 <ThemeSelector />
 
-<div class="header" style={banner}->
-    <img class="logo" src={logo} alt="BOJIT Logo"/>
+<div class="header" style="{banner}-">
+    <img class="logo" src={logo} alt="BOJIT Logo" />
 </div>
 
 <!-- Main Navigation -->
 <div class="gallery">
-    <Gallery tiles={[...specialTiles.concat(tiles)]} animate={true}/>
+    <Gallery tiles={[...specialTiles.concat(tiles)]} animate={true} />
 </div>
 
 <Content>
-    <hr>
+    <hr />
 </Content>
-
 
 <style>
     .header {
@@ -105,7 +108,6 @@
         margin-top: 1rem;
     }
 
-
     /* Turn off parallax for mobile devices (too GPU intensive) */
     @media (max-width: 768px) {
         .header {
@@ -128,4 +130,3 @@
         }
     }
 </style>
-

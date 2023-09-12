@@ -9,7 +9,7 @@ tile:
 ---
 
 <script>
-    import YouTube from "@bojit/svelte-components/widgets/YouTube/YouTube.svelte";
+    import { YouTube } from "@bojit/svelte-components/widgets";
 </script>
 
 This post is a bit of a hodge-podge mix of projects, as I am trying to cover my activities over the last six years of involvement with the [Greenpower F24 Competition](https://www.greenpower.co.uk/). A lot has happened in that time, so the information here is a very small selection of what I have been doing for the competition while I have been involved.

@@ -1,20 +1,31 @@
+/**
+ * @file storage.ts
+ * @author James Bennion-Pedley
+ * @brief Basic API for localstorage state
+ * @date 12/09/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
+/*---------------------------------- Imports ---------------------------------*/
+
 import * as localForage from "localforage";
 
-/* Import inidividually keyed svelte stores */
 import Theme from "@bojit/svelte-components/theme";
+import { message } from "@bojit/svelte-components/core";
+
+/*----------------------------------- Props ----------------------------------*/
+
+/* Import inidividually keyed svelte stores */
 const mode = Theme.Mode;
 
-/* Components */
-import { message } from "@bojit/svelte-components/core/Notification/Notification.svelte";
-
-/*
-    Database Index
-*/
+/* Database Index */
 const stores = {
     mode: mode
 }
 
-/*----------------------------------------------------------------------------*/
+/*--------------------------------- Functions --------------------------------*/
 
 function downloadFile(blob: Blob, filename: string) {
     /* Create hidden download link and programatically click */
@@ -32,7 +43,7 @@ function uploadFile(callback: ((files: File[]) => void), ext: string, multiple?:
     const i = document.createElement('input');
     i.type = "file";
     i.accept = ext;
-    if(multiple) {
+    if (multiple) {
         i.multiple = true;
     }
     document.body.appendChild(i);
@@ -43,7 +54,7 @@ function uploadFile(callback: ((files: File[]) => void), ext: string, multiple?:
     document.body.onfocus = (() => {
         document.body.onfocus = null;
         window.setTimeout(() => {
-            if(i.files.length == 0) {
+            if (i.files.length == 0) {
                 callback([]);   // Pass no files to callback
                 i.remove();
             }
@@ -63,7 +74,7 @@ async function init() {
     for (const [key, store] of Object.entries(stores)) {
         /* Pull entry from local storage */
         let entry = await localForage.getItem(key);
-        if(entry != null) {
+        if (entry != null) {
             store.set(entry as any);
         }
 
@@ -76,9 +87,10 @@ async function init() {
 
 function clear() {
     localForage.clear();    // Clear local Storage
-    for (const [, store] of Object.entries(stores)) {
-        store.reset();      // Reset all stores
-    }
+    // TODO refactor this to more sane module
+    // for (const [, store] of Object.entries(stores)) {
+    //     store.reset();      // Reset all stores
+    // }
     message.push({
         "title": "Clear Data",
         "message": "All browser settings have been removed",
