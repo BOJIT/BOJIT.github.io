@@ -1,7 +1,20 @@
+<!--
+ * @file Footer.svelte
+ * @author James Bennion-Pedley
+ * @brief Website footer
+ * @date 12/09/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+-->
+
 <script lang="ts">
+    /*-------------------------------- Imports -------------------------------*/
+
     import { onMount, SvelteComponent } from "svelte";
-    import Theme from "@bojit/svelte-components/theme/theme";
-    import IconButton from "@bojit/svelte-components/form/IconButton/IconButton.svelte";
+
+    import { IconButton } from "@bojit/svelte-components/form";
+    import Theme from "@bojit/svelte-components/theme";
 
     // Icons
     import LogoYoutube from "@svicons/ionicons-solid/logo-youtube.svelte";
@@ -10,64 +23,72 @@
     import LogoFacebook from "@svicons/ionicons-solid/logo-facebook.svelte";
     import LogoSoundcloud from "@svicons/ionicons-solid/logo-soundcloud.svelte";
 
+    /*--------------------------------- Props --------------------------------*/
+
     const img = import.meta.env.VITE_IMAGE_BASE + "/general/footer.JPG";
     const height = 12; // rem
 
     type Social = {
-        "icon": SvelteComponent,
-        "link": string,
-        "label"?: string,
-    }
+        icon: typeof SvelteComponent;
+        link: string;
+        label?: string;
+    };
 
     const socials: Social[] = [
         {
-            "icon": LogoYoutube,
-            "link": "https://www.youtube.com/channel/UCR7zc0TblvkjPy9DhAWUkvA",
-            "label": "Link to YouTube Channel"
+            icon: LogoYoutube,
+            link: "https://www.youtube.com/channel/UCR7zc0TblvkjPy9DhAWUkvA",
+            label: "Link to YouTube Channel",
         },
         {
-            "icon": LogoLinkedin,
-            "link": "https://www.linkedin.com/in/james-bennion-pedley-bab14a146/",
-            "label": "Link to LinkedIn Page"
+            icon: LogoLinkedin,
+            link: "https://www.linkedin.com/in/james-bennion-pedley-bab14a146/",
+            label: "Link to LinkedIn Page",
         },
         {
-            "icon": LogoGithub,
-            "link": "https://github.com/BOJIT",
-            "label": "Link to GitHub Profile"
+            icon: LogoGithub,
+            link: "https://github.com/BOJIT",
+            label: "Link to GitHub Profile",
         },
         {
-            "icon": LogoFacebook,
-            "link": "https://www.facebook.com/James.BOJIT",
-            "label": "Link to Facebook Profile"
+            icon: LogoFacebook,
+            link: "https://www.facebook.com/James.BOJIT",
+            label: "Link to Facebook Profile",
         },
         {
-            "icon": LogoSoundcloud,
-            "link": "https://soundcloud.com/james-bojit",
-            "label": "Link to SoundCloud Profile"
+            icon: LogoSoundcloud,
+            link: "https://soundcloud.com/james-bojit",
+            label: "Link to SoundCloud Profile",
         },
-    ]
-
+    ];
 
     let footerImg: HTMLImageElement;
     let fill = false;
 
-    function remToPx(rem) {
-        return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    /*-------------------------------- Methods -------------------------------*/
+
+    function remToPx(rem: number) {
+        return (
+            rem *
+            parseFloat(getComputedStyle(document.documentElement).fontSize)
+        );
     }
 
     function calculateFooterHeight() {
-        if(typeof window !== 'undefined') {
-            let ratio = footerImg.naturalWidth/footerImg.naturalHeight;
-            fill = (window.innerWidth > remToPx(height)*ratio);
+        if (typeof window !== "undefined") {
+            let ratio = footerImg.naturalWidth / footerImg.naturalHeight;
+            fill = window.innerWidth > remToPx(height) * ratio;
         }
     }
 
+    /*------------------------------- Lifecycle ------------------------------*/
+
     onMount(() => {
-        window?.addEventListener('resize', calculateFooterHeight);
+        window?.addEventListener("resize", calculateFooterHeight);
 
         const loadCheck = setInterval(() => {
             // onLoad hook for image is unreliable with SSR
-            if(footerImg.complete) {
+            if (footerImg.complete) {
                 clearInterval(loadCheck);
                 calculateFooterHeight();
             }
@@ -79,13 +100,22 @@
     <div class="footer-action">
         <div class="socials">
             {#each socials as s}
-                <IconButton icon={s.icon} shape="circle" size="2.2em" href={s.link} newTab
-                    color={$Theme === 'light' ? "var(--color-dark-700)" : "#474c54"} label={s.label}/>
+                <IconButton
+                    icon={s.icon}
+                    shape="circle"
+                    size="2.2em"
+                    href={s.link}
+                    newTab
+                    color={$Theme === "light"
+                        ? "var(--color-dark-700)"
+                        : "#474c54"}
+                    label={s.label}
+                />
             {/each}
         </div>
         <h6>&copy; BOJIT {new Date().getFullYear()}</h6>
     </div>
-    <img bind:this={footerImg} src={img} alt="Page Footer">
+    <img bind:this={footerImg} src={img} alt="Page Footer" />
 </footer>
 
 <style>
@@ -123,7 +153,6 @@
 
     :global(.mode-dark) h6 {
         color: var(--color-gray-700);
-
     }
 
     .socials {

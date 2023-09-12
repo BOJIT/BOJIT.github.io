@@ -9,7 +9,7 @@ tile:
 ---
 
 <script>
-    import YouTube from "@bojit/svelte-components/widgets/YouTube/YouTube.svelte";
+    import { YouTube } from "@bojit/svelte-components/widgets";
 </script>
 
 Our student accommodation block has a completely empty room in one of the communal spaces. I think on the original site plans it was meant to be a bathroom, but when we moved in it was just an empty windowless box.

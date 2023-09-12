@@ -9,7 +9,7 @@ tile:
 ---
 
 <script>
-    import YouTube from "@bojit/svelte-components/widgets/YouTube/YouTube.svelte";
+    import { YouTube } from "@bojit/svelte-components/widgets";
 </script>
 
 This project and the accompanying [router sled]({import.meta.env.VITE_BASE_URL}/projects/Router_Sled) are part of the gearing up for the next guitar build. There are plenty of router table designs on the internet, so this article isn't intended as a how-to. This is more of a reflection on some of the design decisions I made, as well as some things that I would do differently next time.

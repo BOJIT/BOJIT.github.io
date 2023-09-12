@@ -9,8 +9,7 @@ tile:
 ---
 
 <script>
-    import CopyButton from "@bojit/svelte-components/widgets/CodeEditor/CopyButton.svelte";
-    import YouTube from "@bojit/svelte-components/widgets/YouTube/YouTube.svelte";
+    import { CopyButton, YouTube } from "@bojit/svelte-components/widgets";
 
     import "prismjs/prism.js";
     import "prismjs/components/prism-c.js";

@@ -9,9 +9,7 @@ tile:
 ---
 
 <script>
-    import YouTube from "@bojit/svelte-components/widgets/YouTube/YouTube.svelte";
-
-    import Gallery from "@bojit/svelte-components/widgets/Gallery/Gallery.svelte";
+    import { Gallery, YouTube } from "@bojit/svelte-components/widgets";
 
     let tiles = [
         {
