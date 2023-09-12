@@ -9,6 +9,7 @@ tile:
 ---
 
 <script>
+    import { Container } from "@bojit/svelte-components/layout";
     import { CAD, Gallery } from "@bojit/svelte-components/widgets";
 
     let tiles = [
@@ -103,8 +104,9 @@ With all of these issues in mind, I decided it was time for the next build! The 
 
 I rebuilt the old CAD from the GCSE project with a new refreshed design. If you have Javascript enabled, you can explore the CAD model below.
 
-<CAD geometry="https://cdn.bojit.org/files/glb/BOJIT_V3.glb"
-     aspect="16:10" />
+<Container aspect="16:10">
+    <CAD geometry="https://cdn.bojit.org/files/glb/BOJIT_V3.glb"/>
+</Container>
 
 A few key features of the new build include:
 
@@ -182,8 +184,9 @@ I wanted to install a B-Bender & tremolo bar system for my guitar, however my ma
 
 The CAD for the bridge is embedded below:
 
-<CAD geometry="https://cdn.bojit.org/files/glb/Tremolo_Bridge.glb"
-     aspect="16:10" />
+<Container aspect="16:10">
+    <CAD geometry="https://cdn.bojit.org/files/glb/Tremolo_Bridge.glb"/>
+</Container>
 
 I should caveat here that this design doesn't actually work on my guitar, as using it causes tuning stability issues. However, entertain me by allowing me to walk through the design...
 

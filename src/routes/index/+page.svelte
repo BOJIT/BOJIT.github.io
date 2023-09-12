@@ -21,8 +21,6 @@
 
     export let data: PageData;
 
-    console.log(data.posts);
-
     let categories: string[] = [
         ...new Set(data.posts.map((p) => p.path.split("/")[0])),
     ] as string[];
