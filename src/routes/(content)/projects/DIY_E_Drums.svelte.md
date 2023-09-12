@@ -43,8 +43,6 @@ The algorithm loops through each input, reading the analogue value to a variable
 
 The processing is split into two stages: the first stage is to check when the input exceeds a certain 'Threshold'. This threshold is globally defined and is set slightly higher than the noise floor of the piezos and any light crosstalk. Once a particular input exceeds this threshold, it is marked as 'ACTIVE', and the ```PAD_HOLDOFF[i]``` is set as the current timestamp [see code snippet below]. However, the pad can't be set high unless a certain 'Holdoff' period has elapsed. This is a global variable that defines the minimum time between two consecutive triggers. It should be set short enough to allow for fast drum rolls, but long enough to prevent the trigger 'bouncing'.
 
-<CopyButton />
-
 ```c
 if((sample > PAD_SAMPLE[i]) && (sample > THRESHOLD) &&
                             (time - PAD_HOLDOFF[i] > HOLDOFF)) {
@@ -54,8 +52,6 @@ if((sample > PAD_SAMPLE[i]) && (sample > THRESHOLD) &&
 ```
 
 Once the channel has been marked as active, we can't immediately send the MIDI note, as the sample that is measured when an input exceeds the 'Threshold' does not give us any real knowledge of the *velocity* of the drum strike. There are a multitude of methods of processing the input signal to derive a velocity, but the one I like the best is to wait until the most recent input sample is less than the previous sample (i.e. the first local peak has been reached). We then work out the velocity by multiplying the 12-bit anologue input value by 127 and divide through by the 'working range' of the ADC *(2^12 - Threshold)*. This method doesn't work that well for really soft notes, but it doesn't involve any averaging or arbitrary delays, so the pads feel really responsive! The fact that the code in its entirety is not much more than these two snippets makes it quite easy to make a drum set with lots of pads and very low latency.
-
-<CopyButton />
 
 ```c
 if((PAD_ACTIVE[i] == true) & (sample < PAD_SAMPLE[i])) {

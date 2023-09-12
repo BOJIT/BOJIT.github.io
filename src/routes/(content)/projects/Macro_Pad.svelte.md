@@ -9,8 +9,6 @@ tile:
 ---
 
 <script>
-    import { CopyButton } from "@bojit/svelte-components/widgets";
-
     import "prismjs/prism.js";
     import "prismjs/components/prism-c.js";
 </script>
@@ -42,8 +40,6 @@ It is also always worth reinforcing the solder joints that attach the USB connec
 The source code for this macro-pad is on [GitHub](https://github.com/BOJIT/Blue-Pill-Macro-Pad), and to simplify things as much as possible, the keycodes are hard-coded into the source. This does mean that to change the macros you do need to reprogram the BluePill, but for my use cases I don't forsee myself needing to change the macros very often.
 
 To simplify things when editing the keyboard layout, the HID keycodes are defined globally in a set of arrays as follows:
-
-<CopyButton />
 
 ```c
 int KeyMap[12] =            {KeyL1,    KeyL2,    KeyL3,    ...}

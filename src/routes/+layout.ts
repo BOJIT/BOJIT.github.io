@@ -25,4 +25,7 @@ const load: LayoutLoad = async ({ fetch, params }) => {
 
 /*-------------------------------- Exports -----------------------------------*/
 
+export const prerender = true;
+export const trailingSlash = 'always';
+
 export { load };

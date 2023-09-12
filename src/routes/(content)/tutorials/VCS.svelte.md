@@ -9,8 +9,6 @@ tile:
 ---
 
 <script>
-    import { CopyButton } from "@bojit/svelte-components/widgets";
-
     import "prismjs/prism.js";
     import "prismjs/components/prism-bash.js";
     import "prismjs/components/prism-c.js";
@@ -33,8 +31,6 @@ Below are a few examples of useful things that the PlatformIO scripting API can 
 The `SCons` build system allows the source and include paths to be edited programatically. I have used this in the past to configure libraries pulled directly from an upstream source. `FreeRTOS` is a good example of where this is useful. To use the library directly, you need to choose a target architecture `port.c` file, choose a memory management scheme, and configure some basic options.
 
 In the scripting API you have access to all of your platform build variables, so it makes easy to configure these options automatically based on your target environment. An example of that could be:
-
-<CopyButton />
 
 ```python
 # Get predefined C macro (could be defined by build system or .ini file)
@@ -61,8 +57,6 @@ A more complete example of this behaviour is shown in my `PlatformIO-FreeRTOS` [
 PlatformIO does have built-in support for fetching Git repositories, but this only works if that repository is in the default library format or contains a `library.json` file. With the advanced scripting engine you can fetch the library on-the-fly and modify it.
 
 I have used the `GitPython` package in the past. It allows you to fetch and manage Git repositories programatically. Two functions I use extensively are:
-
-<CopyButton />
 
 ```python
 def getRemoteTags(url):
@@ -93,8 +87,6 @@ There are a few parts of the scripting API that initially caught me out.
 
 The first of these is importing Third-Party `python` packages when in the build environment. Packages must be installed within PlatformIO's own python virtual environment: this can be done from within the build script with the following snippet:
 
-<CopyButton />
-
 ```python
 try:
     import example
@@ -109,8 +101,6 @@ The second 'Gotcha' is the understanding of build scope from within libraries.
 When using scripting from the main `platformio.ini` file, we are modifying the build environment of our main codebase: Aside from build_flags these changes do not propogate down to our libraries. Likewise, when calling build scripts from within `library.json`, we are modifying the build environment of that library, not the whole project.
 
 This can be a bit confusing when it comes to global config files. Projects such as `lwIP`, `freeRTOS` and `lvgl` use global config files that must be added to your project. However, by default, your project include paths are not passed to libraries when they are complied. A simple workaround is to use the scripting API to add the root include directory to your libary build:
-
-<CopyButton />
 
 ```python
 # This script snippet works from any build context!
@@ -127,8 +117,6 @@ The library doesn't really require any interaction: all you need to do to activa
 
 The library generates the following entry as a global C-struct
 
-<CopyButton />
-
 ```c
 const vcs_t vcs = {
     {0xFF, 0xFE, 0xFD, 0xFC},   /* frame_start */
@@ -143,8 +131,6 @@ const vcs_t vcs = {
 ```
 
 An example output for a typical compilation may look something like this:
-
-<CopyButton />
 
 ```json
 {
@@ -169,7 +155,6 @@ Instead, the library includes a simple python script that searches for a 'magic 
 
 simply get your binary file, download the script and run the following python command:
 
-<CopyButton />
 
 ```bash
 $ get_vcs.py ./PATH/TO-FIRMWARE.bin
