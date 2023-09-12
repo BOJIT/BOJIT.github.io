@@ -6,7 +6,7 @@ export async function get({ params }) {
     const tutorials = import.meta.glob('./tutorials/**.svelte.md');
     const galleries = import.meta.glob('./galleries/**.svelte.md');
 
-    const modules = {...projects, ...tutorials, ...galleries};
+    const modules = { ...projects, ...tutorials, ...galleries };
 
     let match;
     for (const [path, resolver] of Object.entries(modules)) {

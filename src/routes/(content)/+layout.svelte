@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
     /**
      * @type {import('@sveltejs/kit').Load}
      */
@@ -20,16 +20,31 @@
             },
         };
     }
-</script>
+</script> -->
+
+<!--
+ * @file +layout.svelte
+ * @author James Bennion-Pedley
+ * @brief Populates information for all content pages
+ * @date 12/09/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+-->
 
 <script lang="ts">
-    export let post: any;
-    export let posts: any;
+    /*-------------------------------- Imports -------------------------------*/
 
     // Components
-    import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
+    import { Content } from "@bojit/svelte-components/layout";
+
     import Header from "$lib/components/Header.svelte";
     import NavigationFooter from "$lib/components/NavigationFooter.svelte";
+
+    /*--------------------------------- Props --------------------------------*/
+
+    export let post: any;
+    export let posts: any;
 </script>
 
 <svelte:head>
@@ -55,20 +70,5 @@
     h3 {
         text-align: center;
         color: var(--color-gray-600);
-    }
-
-    /* TODO remove when updating SvelteKit */
-    /* Block Quotes Polyfill*/
-    :global(article) > :global(blockquote) {
-        border-left: 4px solid var(--color-primary-400);
-        padding: 1rem;
-        font-style: bold;
-        color: var(--color-primary-900);
-        background-color: var(--color-primary-trans-dark);
-    }
-
-    :global(.mode-dark) :global(article) > :global(blockquote) {
-        color: var(--color-primary-200);
-        background-color: var(--color-primary-trans-light);
     }
 </style>

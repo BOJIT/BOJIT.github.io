@@ -10,16 +10,29 @@
 
 /*-------------------------------- Imports -----------------------------------*/
 
+import type { RequestHandler } from '@sveltejs/kit';
+
 import { json } from '@sveltejs/kit';
 
-/*--------------------------------- State ------------------------------------*/
+/*--------------------------------- Types ------------------------------------*/
+
+type PostEntry = {
+    meta: {
+        date: string,
+        hidden?: boolean,
+        published?: boolean,
+        title: string,
+        tile: {
+            type: "image" | "link" | "text",
+            image: string,
+        },
+    },
+    path: string,
+};
 
 /*------------------------------- Functions ----------------------------------*/
 
-/*-------------------------------- Exports -----------------------------------*/
-
-/** @type RequestHandler */
-export async function GET({ url }) {
+const GET: RequestHandler = async ({ url }) => {
     let allPostFiles = {};
 
     // This is done at compile time
@@ -31,10 +44,11 @@ export async function GET({ url }) {
 
     console.log(iterablePostFiles);
 
-    let allPosts = await Promise.all(
+    let allPosts: PostEntry[] = await Promise.all(
         iterablePostFiles.map(async ([path, resolver]) => {
-            const { metadata } = await resolver()
-            const postPath = path.slice(2, -3)
+            const { metadata } = await resolver();
+            console.log(path);
+            const postPath = path.slice("../(content)/".length, -".md".length)
 
             return {
                 meta: metadata,
@@ -52,11 +66,16 @@ export async function GET({ url }) {
 
     const sortedPosts = allPosts.sort((a, b) => {
         let a_split = a.meta.date.split("-");
-        let a_date = new Date(a_split[2], a_split[1] - 1, a_split[0]);
+        let a_date = new Date(Number(a_split[2]), Number(a_split[1]) - 1, Number(a_split[0]));
         let b_split = b.meta.date.split("-");
-        let b_date = new Date(b_split[2], b_split[1] - 1, b_split[0]);
+        let b_date = new Date(Number(b_split[2]), Number(b_split[1]) - 1, Number(b_split[0]));
         return b_date.getTime() - a_date.getTime()
     })
 
     return json(sortedPosts);
 }
+
+/*-------------------------------- Exports -----------------------------------*/
+
+export { GET };
+export type { PostEntry };

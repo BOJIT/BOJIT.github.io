@@ -8,17 +8,6 @@
  *
 -->
 
-<script context="module">
-    export function load({ error, status }) {
-        return {
-            props: {
-                title: `${status}: ${error.message}`,
-                status: status,
-            },
-        };
-    }
-</script>
-
 <script lang="ts">
     /*-------------------------------- Imports -------------------------------*/
 
@@ -26,24 +15,23 @@
 
     import NavButton from "$lib/components/NavButton.svelte";
 
-    /*--------------------------------- Props --------------------------------*/
+    import { page } from "$app/stores";
 
-    export let title: string;
-    export let status: number;
+    /*--------------------------------- Props --------------------------------*/
 
     const img = import.meta.env.VITE_IMAGE_BASE + "/general/404.PNG";
 </script>
 
-{#if status === 404}
-    <Content>
+<Content>
+    {#if $page.status === 404}
         <h1>Page Can't be Found!</h1>
         <p class="img-holder"><img src={img} alt="404 Page" /></p>
         <NavButton href="/index">Here's the Site Index</NavButton>
         <hr />
-    </Content>
-{:else}
-    <h1>{title}</h1>
-{/if}
+    {:else}
+        <h1>{$page.error?.message} ({$page.status})</h1>
+    {/if}
+</Content>
 
 <style>
     h1 {

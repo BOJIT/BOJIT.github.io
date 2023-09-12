@@ -11,7 +11,7 @@
 <script lang='ts'>
     /*-------------------------------- Imports -------------------------------*/
 
-    import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
+    import { Content } from "@bojit/svelte-components/layout";
 
     import Header from "$lib/components/Header.svelte";
 </script>

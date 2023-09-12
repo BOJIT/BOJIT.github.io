@@ -8,29 +8,17 @@
  *
 -->
 
-<script context="module">
-    /**
-     * @type {import('@sveltejs/kit').Load}
-     */
-    export async function load({ url, fetch }) {
-        const posts = await fetch(`/posts.json`).then((res) => res.json());
-        return {
-            props: {
-                posts,
-            },
-        };
-    }
-</script>
-
 <script lang="ts">
     /*-------------------------------- Imports -------------------------------*/
+
+    import type { PageData } from "./$types";
 
     import { Content } from "@bojit/svelte-components/layout";
     import { Gallery, ThemeSelector } from "@bojit/svelte-components/widgets";
 
     /*--------------------------------- Props --------------------------------*/
 
-    export let posts: any;
+    export let data: PageData;
 
     const logo = `${import.meta.env.VITE_IMAGE_BASE}/general/BOJIT_circle.PNG`;
     const banner = `background-image: url("${
@@ -58,7 +46,7 @@
 
     /*------------------------------- Lifecycle ------------------------------*/
 
-    $: tiles = posts.map((p) => ({
+    $: tiles = data.posts.map((p) => ({
         type: p.meta.tile.type,
         caption: p.meta.title,
         subcaption: p.meta.date,
