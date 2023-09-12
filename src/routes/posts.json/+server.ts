@@ -24,7 +24,7 @@ type PostEntry = {
         title: string,
         tile: {
             type: "image" | "link" | "text",
-            image: string,
+            image?: string,
         },
     },
     path: string,
@@ -33,21 +33,13 @@ type PostEntry = {
 /*------------------------------- Functions ----------------------------------*/
 
 const GET: RequestHandler = async ({ url }) => {
-    let allPostFiles = {};
-
     // This is done at compile time
-    allPostFiles = { ...allPostFiles, ...import.meta.glob('../**/projects/**.svelte.md') };
-    allPostFiles = { ...allPostFiles, ...import.meta.glob('../**/tutorials/**.svelte.md') };
-    allPostFiles = { ...allPostFiles, ...import.meta.glob('../**/galleries/**.svelte.md') };
-
+    const allPostFiles = import.meta.glob('../*content*/**/**.svelte.md');
     const iterablePostFiles = Object.entries(allPostFiles)
-
-    console.log(iterablePostFiles);
 
     let allPosts: PostEntry[] = await Promise.all(
         iterablePostFiles.map(async ([path, resolver]) => {
             const { metadata } = await resolver();
-            console.log(path);
             const postPath = path.slice("../(content)/".length, -".md".length)
 
             return {

@@ -9,7 +9,7 @@ tile:
 ---
 
 <script>
-    import { CopyButton } from "@bojit/svelte-components/widgets";
+    // import { CopyButton } from "@bojit/svelte-components/widgets";
 
     import "prismjs/prism.js";
     import "prismjs/components/prism-bash.js";
