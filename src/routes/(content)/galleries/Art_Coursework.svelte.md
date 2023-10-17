@@ -9,7 +9,7 @@ tile:
 ---
 
 <script>
-    import Gallery from "@bojit/svelte-components/widgets/Gallery/Gallery.svelte";
+    import { Gallery } from "@bojit/svelte-components/widgets";
 
     let tiles = [
         {

@@ -1,14 +1,24 @@
+<!--
+ * @file +page.svelte
+ * @author James Bennion-Pedley
+ * @brief About Me Page
+ * @date 12/09/2023
+ *
+ * @copyright Copyright (c) 2023
+ *
+-->
+
 <script lang="ts">
-    // Components
-    import { message } from "@bojit/svelte-components/core/Notification/Notification.svelte";
-    import Content from "@bojit/svelte-components/layout/Content/Content.svelte";
-    import CircleCaption from "@bojit/svelte-components/layout/CircleCaption/CircleCaption.svelte";
-    import Button from "@bojit/svelte-components/smelte/components/Button/Button.svelte";
-    import Dialog from "@bojit/svelte-components/smelte/components/Dialog/Dialog.svelte";
-    import TextField from "@bojit/svelte-components/smelte/components/TextField/TextField.svelte";
+    /*-------------------------------- Imports -------------------------------*/
+
+    import { message } from "@bojit/svelte-components/core";
+    import { Content, CircleCaption } from "@bojit/svelte-components/layout";
+    import { Button, Dialog, TextField } from "@bojit/svelte-components/smelte";
 
     import Header from "$lib/components/Header.svelte";
     import NavButton from "$lib/components/NavButton.svelte";
+
+    /*--------------------------------- Props --------------------------------*/
 
     let active = false;
     let invalid_name = false;
@@ -22,13 +32,15 @@
         message: null,
     };
 
-    function validate_email(email: string) {
+    /*-------------------------------- Methods -------------------------------*/
+
+    function validateEmail(email: string) {
         var re =
             /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
 
-    function validate_string(s: string) {
+    function validateString(s: string) {
         return s !== null && s !== "";
     }
 
@@ -51,15 +63,15 @@
         let success = true;
 
         // Basic form validation
-        if (!validate_string(form.name)) {
+        if (!validateString(form.name)) {
             invalid_name = true;
             success = false;
         }
-        if (!validate_string(form.reply_to) || !validate_email(form.reply_to)) {
+        if (!validateString(form.reply_to) || !validateEmail(form.reply_to)) {
             invalid_email = true;
             success = false;
         }
-        if (!validate_string(form.message)) {
+        if (!validateString(form.message)) {
             invalid_message = true;
             success = false;
         }
@@ -161,7 +173,7 @@
             bind:value={form.name}
             error={invalid_name ? "Name cannot be empty" : ""}
             on:input={(e) => {
-                invalid_name = !validate_string(e.target.value);
+                invalid_name = !validateString(e.target.value);
             }}
         />
 
@@ -171,7 +183,7 @@
             error={invalid_email ? "Email address is invalid" : ""}
             type="email"
             on:input={(e) => {
-                invalid_email = !validate_email(e.target.value);
+                invalid_email = !validateEmail(e.target.value);
             }}
         />
 
@@ -181,7 +193,7 @@
             bind:value={form.message}
             error={invalid_message ? "Message cannot be empty" : ""}
             on:input={(e) => {
-                invalid_message = !validate_string(e.target.value);
+                invalid_message = !validateString(e.target.value);
             }}
         />
     </form>
