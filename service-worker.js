@@ -1,5 +1,5 @@
 const a = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), u = [
-  a + "/_app/immutable/entry/app.143d4ad0.js",
+  a + "/_app/immutable/entry/app.6f962ebc.js",
   a + "/_app/immutable/assets/0.71d60f11.css",
   a + "/_app/immutable/nodes/0.b5b733a5.js",
   a + "/_app/immutable/assets/gloria-hallelujah-latin-400-normal.90b0ef8d.woff2",
@@ -14,11 +14,11 @@ const a = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), u
   a + "/_app/immutable/assets/syne-mono-all-400-normal.15a54862.woff",
   a + "/_app/immutable/assets/syne-mono-latin-400-normal.a649ccac.woff2",
   a + "/_app/immutable/assets/1.1c9a2c5f.css",
-  a + "/_app/immutable/nodes/1.f2932905.js",
+  a + "/_app/immutable/nodes/1.e4419513.js",
   a + "/_app/immutable/assets/2.3721f265.css",
   a + "/_app/immutable/nodes/2.673e0473.js",
   a + "/_app/immutable/assets/3.a2fafbbe.css",
-  a + "/_app/immutable/nodes/3.aed2b697.js",
+  a + "/_app/immutable/nodes/3.e74999a0.js",
   a + "/_app/immutable/assets/4.00f48c71.css",
   a + "/_app/immutable/nodes/4.6bc9f14a.js",
   a + "/_app/immutable/assets/5.1a111da1.css",
@@ -65,9 +65,9 @@ const a = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), u
   a + "/_app/immutable/chunks/prism-bash.575d1a7e.js",
   a + "/_app/immutable/chunks/prism-c.baf0302e.js",
   a + "/_app/immutable/chunks/scheduler.4ddb5076.js",
-  a + "/_app/immutable/chunks/singletons.fc7aeccb.js",
+  a + "/_app/immutable/chunks/singletons.e1cc8183.js",
   a + "/_app/immutable/chunks/model-viewer.min.3cb507ab.js",
-  a + "/_app/immutable/entry/start.0e1cf83b.js",
+  a + "/_app/immutable/entry/start.715b06b9.js",
   a + "/_app/immutable/chunks/Art_Coursework.svelte.ed77af65.js",
   a + "/_app/immutable/chunks/Artnet_Node.svelte.50f3bd02.js",
   a + "/_app/immutable/chunks/BOJIT_V3.svelte.40b9e056.js",
@@ -93,7 +93,7 @@ const a = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), u
   a + "/_app/immutable/chunks/Local_SSL.svelte.d2c6c0cb.js",
   a + "/_app/immutable/chunks/Touchdesigner_Image_DMX.svelte.0fa05e55.js",
   a + "/_app/immutable/chunks/VCS.svelte.c625893e.js"
-], f = [
+], b = [
   a + "/favicon/icon_x128.png",
   a + "/favicon/icon_x192.png",
   a + "/favicon/icon_x384.png",
@@ -108,10 +108,11 @@ const a = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), u
   a + "/favicon/maskable_icon_x512.png",
   a + "/favicon/maskable_icon_x72.png",
   a + "/favicon/maskable_icon_x96.png",
-  a + "/manifest.json"
-], c = "1694555239654", m = self, i = `cache${c}`, p = u.concat(f), _ = new Set(p);
+  a + "/manifest.json",
+  a + "/robots.txt"
+], c = "1697559527765", m = self, i = `cache${c}`, o = u.concat(b), _ = new Set(o);
 m.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(i).then((s) => s.addAll(p)).then(() => {
+  e.waitUntil(caches.open(i).then((s) => s.addAll(o)).then(() => {
     m.skipWaiting();
   }));
 });
@@ -122,7 +123,7 @@ m.addEventListener("activate", (e) => {
     m.clients.claim();
   }));
 });
-async function b(e) {
+async function f(e) {
   const s = await caches.open(`offline${c}`);
   try {
     const t = await fetch(e);
@@ -137,6 +138,6 @@ async function b(e) {
 m.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET" || e.request.headers.has("range"))
     return;
-  const s = new URL(e.request.url), t = s.protocol.startsWith("http"), l = s.hostname === self.location.hostname && s.port !== self.location.port, n = s.host === self.location.host && _.has(s.pathname), o = e.request.cache === "only-if-cached" && !n;
-  t && !l && !o && e.respondWith((async () => n && await caches.match(e.request) || b(e.request))());
+  const s = new URL(e.request.url), t = s.protocol.startsWith("http"), l = s.hostname === self.location.hostname && s.port !== self.location.port, n = s.host === self.location.host && _.has(s.pathname), p = e.request.cache === "only-if-cached" && !n;
+  t && !l && !p && e.respondWith((async () => n && await caches.match(e.request) || f(e.request))());
 });
