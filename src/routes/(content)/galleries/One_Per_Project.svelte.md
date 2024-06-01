@@ -1,11 +1,11 @@
 ---
 title: "One-Per-Project"
-date: "01-06-2024"
-published: false
+date: "02-06-2024"
+published: true
 
 tile:
   type: image
-  image: /tiles/2017-05-15-Art_Coursework.JPG
+  image: /tiles/2024-06-02-One_Per_Project.JPG
 ---
 
 <script>
@@ -315,7 +315,10 @@ tile:
     ];
 </script>
 
-TODO
-SW and Digital Art not Shown Here
+I've been meaning to create this page for a while... Over the last few years I've worked on various projects that have reached different levels of time commitment, levels of completion and abandonment. I try to document most of my bigger projects as articles on this site, but there's various things I've worked on that don't justify a full article. There's also things that I never got working, but would be nice to keep a record of.
 
-<Gallery tiles={[...tiles]} animate={true}/>
+This page aims to try and collate a list of all the things I've built in the past: at least all of the things I can still find pictures of!
+
+> Note that most of my software projects don't make for nice thumbnails. If you're interested in what software thingymajigs I'm building, check out my [GitHub!](https://github.com/BOJIT)
+
+<Gallery tiles={[...tiles]} animate={true} columns={3}/>
