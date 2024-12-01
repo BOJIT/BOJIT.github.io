@@ -1,11 +1,11 @@
 {
     "name": "bojit-org",
-    "version": "3.0.6",
+    "version": "3.0.7",
     "private": true,
     "scripts": {
         "dev": "vite dev",
         "build": "vite build",
-        "preview": "vite preview",
+        "preview": "vite preview --host",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
     },
