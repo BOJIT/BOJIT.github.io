@@ -9,6 +9,11 @@ tile:
   image: /tiles/2019-07-24-KinectIP.PNG
 ---
 
+<script>
+    import { Container } from "@bojit/svelte-components/layout";
+    import { CAD } from "@bojit/svelte-components/widgets";
+</script>
+
 > I only remembered about this project 4 years later when clearing through some old boxes, so apologies if details are a bit patchy.
 
 <br>
@@ -23,11 +28,11 @@ For this project, the ideal candiate at the time was a _Rock64_ SBC. This projec
 
 ![System.PNG]({import.meta.env.VITE_IMAGE_BASE}/posts/KinectIP-System.PNG)
 
-The Official Kinect SDK is Windows-only, however there is a neat project called [libreenect2](https://github.com/OpenKinect/libfreenect2) that handles a lot of the gnarly Linux driver logic and lets us extract depth data from the Kinect. The idea was to create some simple glue logic that would convert the frames into separate NDI streams. I also added a little web-based config panel (back in the days where I still thought PHP was the best thing since sliced bread!)
+The Official Kinect SDK is Windows-only, however there is a neat project called [libfreenect2](https://github.com/OpenKinect/libfreenect2) that handles a lot of the gnarly Linux driver logic and lets us extract depth data from the Kinect. The idea was to create some simple glue logic that would convert the frames into separate NDI streams. I also added a little web-based config panel (back in the days where I still thought PHP was the best thing since sliced bread!)
 
 As with all projects, a lot of nasty issues ended up surfacing during development. For a start, the codebase for the Kinect SDK is very large, so to do any meaningful development I had to set up a cross-compiler. At the time I used Windows and seem to recall the development setup being a massive pain in the neck!
 
-Moreover, it turns out that having this 'headless' Linux machine doing the conversions was causing its own problems. A lot of the Kinect SDK utilises GPU processing heavily. I was emulating the display using `xvfb`, however it turns out that a load of graphics acceleration libraries don't work with virtual framebuffers. All of this nightmare was on a board with *virtually no documentation...*.
+Moreover, it turns out that having this 'headless' Linux machine doing the conversions was causing its own problems. A lot of the Kinect SDK utilises GPU processing heavily. I was emulating the display using `xvfb`, however it turns out that a load of graphics acceleration libraries don't work with virtual framebuffers. All of this nightmare was on a board with _virtually no documentation..._.
 
 My first successful 'frame' of streamed data is shown below: I think at the point I got this working, it was past 3AM...
 
@@ -38,6 +43,12 @@ At last some success!
 My original plan for this project was to make a run of ten Kinect 'adapters' to sell to a local AV company that I had done some work for in the past. In order to do this I needed to come up with a slightly neater unit that I could assemble quickly. I designed an enclosure and kinect mount in Fusion 360 (see below), and made a 'shield' board for the Kinect/Rock64 SBC interfacing.
 
 ![Render.PNG]({import.meta.env.VITE_IMAGE_BASE}/posts/KinectIP-Render.PNG)
+
+---
+
+<Container aspect="16:10">
+    <CAD geometry="https://cdn.bojit.org/files/glb/kinectIP.glb"/>
+</Container>
 
 The PCB is a glorified breakout board, with a few buttons and a status LED. The Kinect has a proprietary USB connector that also supplies 12V to run the depth sensor. My plan with the PCB was to break out the spliced Kinect cable, then split this off into a power and data stream.
 
