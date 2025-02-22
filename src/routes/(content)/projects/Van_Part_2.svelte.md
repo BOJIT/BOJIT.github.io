@@ -12,19 +12,29 @@ tile:
 <script>
     import { Container } from "@bojit/svelte-components/layout";
     import { CAD, Gallery } from "@bojit/svelte-components/widgets";
-
-    let tiles = [
-
-    ];
 </script>
 
-TODO
+This is the second and unexpectedly final chapter in a van conversion series regrettably cut short...
+If you're following on from [Part 1](/projects/Van_Part_1), you'll remember that I got to the point that I had a drivable, but empty shell of a VW T4 campervan. While it is still usable for road trips in this form, it is sorely missing furniture and the insulation required to brave British winter camping trips...
 
-The second and unexpectedly final chapter in a series regrettably cut short...
+Unfortunately due to some unexpected mechanical surprises, I ended up cutting back some of my grander plans for this conversion. Nevertheless, hopefully you can enjoy coming on the repair and conversion journey with me!
 
-... meant to be covering the fit-out of a campervan interior, but with some unexpected surprises!
+While restoring the van, I spent a lot of time getting inspiration from [Pinterest](https://pin.it/7MA0evnHT). The VW T4 Short Wheel-Base is an interesting half-way house in terms of size. It's not quite big enough to stand up in, so using one for a full live-in van conversion is tricky. On the other hand, I didn't want to kit it out purely as a weekend trip van. In addition, I kind of wanted a desk setup so I could potentially use is as an on-the go work space or repair station.
 
-Step 1: Design
+Many of the T4 designs on the internet either revolve around a rock-and-roll bed, or a fixed full-width bed design. I wasn't particularly enamoured with either of these options. There were two things I really wanted from the layout of the van:
+
+- *A path from the front to the back of the van*. This is pretty useful when parked in tight spots, or if you want to put a bike in the back of the car. This ruled out a fixed bed setup.
+- *An island kitchen next to the sliding door*. A lot of T4 conversions put the kitchen in the corner behind the driver's seat, opposite the sliding door. From a conversion point of view, this is very convenient, but it means that you have to cook while sitting down, plus venting of steam/smoke is harder. A friend of mine put their cooking setup in front of the sliding door of their conversion and the experience of cooking with a view and fresh air is delightful!
+
+<br/>
+The design I went for in the end was a lengthways seat that pulls out to become a double bed. The seats can also lift up to act as storage space for bedding.
+In addition, I added a fold-down desk setup that could house a pin-board / monitor setup, while also doubling as a cupboard to store valuables in when leaving the van unattended.
+
+A nice hardwood recessed stovetop and porcelain sink were probably not the most practical choice, but they look very pretty and I had some nice live-edge walnut slabs in my wood stock that were perfectly sized for this application.
+
+Below you can see the van interior in desk _(left)_ and bed _(right)_ configuration.
+
+If your browser supports it, you should also see an interactive model of the fit-out in a T4 shell. Contact me for Fusion 360 CAD files if you are interested on doing a similar conversion design. It should fit any SWB T4 model, but bear in mind I never fully kitted out my van, so double check any dimensions before copying!
 
 ![Van_Part_2-Configurations.PNG]({import.meta.env.VITE_IMAGE_BASE}/posts/Van_Part_2-Configurations.PNG)
 
@@ -34,11 +44,16 @@ Step 1: Design
     <CAD geometry="https://cdn.bojit.org/files/glb/VW_T4.glb"/>
 </Container>
 
-Animal Sanctuary...
+With a rough design planned out, it was time to start the conversion! Step 1 was dealing with some problems on the roof. The previous owner had drilled a load of holes in the roof for mounting a deck, and had never properly sealed them. As a result, I had to find a way of preventing further water leaks and rust spreading from these openings.
+
+Around this time, I managed to get hold of a free solar panel that was been stripped from a local animal sanctuary (home of the [Famed Malmesbury Police Emus](https://www.independent.co.uk/news/uk/crime/man-attacked-emus-crash-malmesbury-b2132378.html)).
+Unable to turn down such an opportunity, I decided to design a solar panel mount and roof rack set around the existing holes in the roof. While I don't really have that much use for roof racks, it seemed a good way to deal with the unsightly holes while getting some practical value out of them.
 
 ![Van_Part_2-Solar_Panel.JPG]({import.meta.env.VITE_IMAGE_BASE}/posts/Van_Part_2-Solar_Panel.JPG)
 
-Loads of holes in the roof already that needed patching
+I chose to go with box aluminium and pop rivets for my roof rack construction. While a tad more time consuming than going with some welded box sections, it looks quite neat, plus has the added advantage of not needing to bother my friend with a TIG welder (who had already volunteered far too many hours in helping get this box of rust up and running in the first place!).
+
+In the end, construction of all the struct ended up being quite a time-consuming affair. This wasn't helped by the fact that the holes in the roof weren't drilled at equal spacings, meaning each rack spoke needed to be a bespoke fit to the corresponding mounting points. The parts are mounted with rubber gaskets, solving the original leaking problem.
 
 <Gallery columns={3} tiles={
     [
@@ -234,6 +249,8 @@ Incidents. 20 year old vehicle!
 - Rusted Exhaust Snapping
 - Every bolt in suspension seized
 
+Shortcuts taken by previous owner... e.g. window seals, ceiling bolts, etc... Caused more trouble than getting an unmodified panel van.
+
 <Gallery columns={3} tiles={
     [
         {
@@ -269,9 +286,9 @@ Incidents. 20 year old vehicle!
     ]
 } />
 
-Reflect on importance of not spending so much time planning that the vehicle disintegrates!
+Reflect on importance of not spending so much time planning that the vehicle disintegrates! Moving abroad, so hand forced.
 
-While interior looked lovely when I sold it, I only really got 4-5 usable trips out of the vehicle.
+While interior looked lovely when I sold it, I only really got 4-5 usable trips out of the vehicle. Looks like it's still got a valid MOT, so someone's hopefully getting good use out of it!
 
 Realised also like camping outdoors!
 

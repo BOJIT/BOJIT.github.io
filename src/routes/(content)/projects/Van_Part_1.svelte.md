@@ -185,6 +185,6 @@ But finally, after many weeks of restoration and troubleshooting, the van scrape
 
 ![Van_Part_1-Shell.JPG]({import.meta.env.VITE_IMAGE_BASE}/posts/Van_Part_1-Final.JPG)
 
-This is hopefully part one in a multi-part series. There are far too many details to cover on this website, but hopefully I'll be able to cover the highlights here! I'll place links to the next article here when they are ready. But in the meantime, here are a few more photos from the restoration!
+This is part one in a multi-part series. There are far too many details to cover on this website, but hopefully I'll be able to cover the highlights here! Read on about the interior conversion in [Part 2](/projects/Van_Part_2). In the meantime, here are a few more photos from the restoration!
 
 <Gallery tiles={[...tiles]}/>
