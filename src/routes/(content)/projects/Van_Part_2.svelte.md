@@ -2,7 +2,7 @@
 title: Van Saga 2 - The Corrosion Strikes Back
 date: "22-09-2023"
 published: true
-hidden: true
+hidden: false
 
 tile:
   type: image
@@ -80,7 +80,9 @@ In the end, construction of all the struct ended up being quite a time-consuming
     ]
 } />
 
-TODO
+Next up was ventilation. As I was planning on installing cooking equipment inside the van, I decided that having a forced convection system was a good idea. PC fans are ideal for this as they are quiet, cheap and easy to run off a simple 12V electrical system. The stock T4 has two flap vents in the rear of the van near the floor, which I used as air inlets. For the outlets I used some modified plumbers fittings to make mushroom vents in the ceiling of the van. Unfortunately I was quite tight on space to fit them around my over-sized solar panel, so had to get creative with some nylon blocks and bathroom sealant to truncate the edges of the vents!
+
+Behind the PC fans I also installed some retractable shutters that let me close the vents in the case that I want to do some extremely cold-weather camping!
 
 <Gallery columns={3} tiles={
     [
@@ -102,7 +104,9 @@ TODO
     ]
 } />
 
-Looking to insulate at lowest cost while still retaining warmth. Builder's merchant cellotex awkward to work with, but very effective for the cost!
+Now onto insulation. This is a [hotly contested](https://www.thevanconversion.com/post/van-insulation) subject in the world of van conversions, with lots of different options to choose from. In the end I decided to go with stock 25mm Cellotex from my local builder's merchant, with a small amount of polyester weave to fill in areas that are hard to fit flat sheets. The T4 is quite a boxy van, so using flat sheets is not too hard. On areas where there is a slight linear curve (e.g. the roof sections), I was able to get away with cutting thin relief cuts on the back, then using plywood ribs screwed into the cross-beams to keep the panels retained.
+
+Cellotex in my opinion is a good way to go, as it's relatively cheap (if you are friendly with your builder's merchant!), plus you get a vapour barrier across most of the surfaces with little extra effort. The downside is that it isn't exactly a pliable material, so is quite time-consuming to fit!
 
 <Gallery columns={4} tiles={
     [
@@ -129,9 +133,16 @@ Looking to insulate at lowest cost while still retaining warmth. Builder's merch
     ]
 } />
 
-Entirety of car burnt out and covered in smoke/stickiness. Need to cover all exposed metal.
+Before moving onto fitting some of the more fun furnishings, I had one extra problem to contend with. As mentioned in the last article, this van had actually been on fire at some point before I bought it. As a result all of the interior trim pieces were burnt beyond being usable. In addition, most of the exposed metal surfaces were covered in a layer of char / sticky gunk which was virtually impossible to remove.
+Getting replacement trim parts in my area ended up being very hit and miss: most of the parts listed are of very poor quality and quite expensive, not to mention usually a 2 hour drive away.
 
-Original trim parts all burnt out. Second hand parts generally in poor condition.
+Instead, I decided to make life far more difficult for myself and make replacement trim panels and carpeting for every exposed surface in the van.
+
+This turned out to take weeks of my spare time. All of the surfaces I was trying to cover were made up of complex curves, and without original parts to work from, I had to resort to lots of cardboard templating in order to get the new panels to fit neatly.
+
+Below you can see probably the most awkward part of this process: the seatbelt pillar covers. These parts were the worst damaged by the fire, so I wanted the replacement panels to go right up to the edge of the door seals. For a job like this, a router table is a godsend, as it let me quickly make mirror copies once I'd got he first part to fit correctly, plus makes rounding over the corners very quick!
+
+These panels were then installed into the van inner shell, and lots of metal tape was used to create a smooth surface to apply automotive carpet to. Dealing with automotive carpet was probably my least favourite part of the entire process, as getting the surfaces adhered with no wrinkles in the carpet is time consuming and ends up with your hands getting entirely gummed up with spray adhesive. I was very glad when this part of the build was over!
 
 <Gallery columns={3} tiles={
     [
@@ -153,8 +164,13 @@ Original trim parts all burnt out. Second hand parts generally in poor condition
     ]
 } />
 
-Details on blinds: far too much time spent on them, but results are pretty!
-Aim to trap as much heat as possible. Block convection losses.
+The back doors were a similar story. All the existing trim pieces were heavily fire damaged so I was virtually starting from scratch again. Once again, no end of sins can be hidden with automotive carpet!
+
+The T4 window areas actually have relatively deep recesses, so I thought that this was the ideal opportunity for some drawstring pleated blinds. These are fairly neat options for van conversions as they can be run in a recess to follow the slight curve of the windows. By having the edges of the blinds secured behind the trim, they don't rattle while driving along, plus it (probably) helps cut down on heat loss from the windows via convection. Below you can see a picture of the finished back doors, looking quite tidy with a new spray-painted door panel.
+
+In addition I wanted to have some form of insulation isolation between the front driver's cabin and the back of a vehicle. A T4 isn't really big enough to put in a fixed bulkhead between the front and back, but at the same time, the van's front cabin is the least insulated part of the vehicle and I wanted something a bit more insulating than a set of curtains between the front and back.
+
+What I settled on in the end was a spring-loaded curtain that pulls up from the floor to create a more rigid partition. I glued thermal insulation fabric to the back of this blind for good measure!
 
 <Gallery columns={3} tiles={
     [
@@ -191,9 +207,11 @@ Aim to trap as much heat as possible. Block convection losses.
     ]
 } />
 
-Electronics - fairly standard 12V system Simple solar split charger arrangement. Mention embedded plans. Never implemented
+The electrical installation of this van is nothing special. From the get-go I'd decided against having a mains inverter in the vehicle and instead went for a full 12V-only system. The wiring consists of a solar inverter, a leisure battery and a simple split charger tapped into the van's engine bay battery.
 
-Importance of planning cable routes _before_ internal fit-out.
+In addition, I had designed a full [distributed control system]({import.meta.env.VITE_FILE_BASE}/van-electrics.svg) for things like the fan control, lighting, etc. Each board had an RS485 connection for inter-board comms, allowing me to control any parameter from any point. The main motivation for this was knowing that I would have forgotten to run at least _one_ cable when fitting the insulation, so at least with this scheme I could still have some freedom of running new fittings to the nearest board with an RS485 connection, then worry later about where the corresponding controls would be. I never finished building these control boards, but I have some PCB files available if you are interested in building your own.
+
+If you are doing your own conversion, I can't stress enough the importance of planning cable routes _before_ starting the internal fit-out. Trying to route cables afterwards using pull wires and welding rod is not a fun experience...
 
 <Gallery columns={2} tiles={
     [
@@ -210,9 +228,11 @@ Importance of planning cable routes _before_ internal fit-out.
     ]
 } />
 
-Underneath folding bed that never got built...
+Next up was the job of internal cladding and ceiling lights. This is a very well documented process online, so I won't go into detail here, but the one process I want to highlight is the wood finish.
 
-Cladding installation. Details, nice "rustic" sprayed finish... Don't like pure varnish look.
+A lot of van conversions will simply apply a layer of clear lacquer to the cladding slats, or even go with no finish at all. There's nothing wrong with this approach, but I've alway's felt that the result ends up looking like an alpine sauna. That's not really my vibe, so I decided to try to create a "weathered" look.
+
+To do this, I first fitted the entire roof to get all the cut outs in the right place. Then I took out all of the panels and air-sprayed them with a mix of 70% [satin varnish](https://www.wickes.co.uk/Ronseal-Interior-Satin-Varnish---Light-Oak---750ml/p/117955) and thinner. After sanding this back a little, I finished off with a coat of transparent lacquer. The result is a reasonably nice looking finish which should hold up reasonably well to moisture inside the van.
 
 <Gallery columns={4} tiles={
     [
@@ -223,33 +243,34 @@ Cladding installation. Details, nice "rustic" sprayed finish... Don't like pure 
         },
         {
             type: 'image',
-            caption: 'Sub-Frame "Patching" and Wheel Arches',
+            caption: 'Finished Cladding Installation',
             image: import.meta.env.VITE_IMAGE_BASE + '/posts/Van_Part_2-Cladding_2.JPG'
         },
         {
             type: 'image',
-            caption: 'Window Cut-Outs and Trimming',
+            caption: 'Some (temporary) tacky RGB!',
             image: import.meta.env.VITE_IMAGE_BASE + '/posts/Van_Part_2-Cladding_3.JPG'
         },
         {
             type: 'image',
-            caption: 'Makeshift "Clamp" while Installing Curved Top Cellotex Retainers',
+            caption: 'Fabric front head liner',
             image: import.meta.env.VITE_IMAGE_BASE + '/posts/Van_Part_2-Cladding_4.JPG'
         },
     ]
 } />
 
+So far all looking quite promising! However I'm sad to say that this was as far as I got with the conversion in the time that I owned the van. The reason for this was that it turns out that restoring this 20 year old van ended up the equivalent of trying to perform a grand designs conversion on a house that was built on a sand dune.
+The combination of a fairly rusty specimen and an incredibly inept previous owner meant that things were continually going wrong with the vehicle while I undertook the conversion. Below are just a few of the incidents that occurred in the first 2 years of ownership:
 
-Incidents. 20 year old vehicle!
+- The primary gearstick linkage failed while driving down a hill, giving me only even-numbered gears to get home.
+- The sliding door fell off while driving
+- The exhaust rusted through and snapped
+- Every single suspension fitting had disintegrated, and changing them required a lot of battling with rusted fittings.
+- The front wheel bearings needed replacement
 
-- Gear linkage failed on hill
-- General deteriation / panels coming loose. Only even numbered gears...
-- Door fell off
-- Engine fell out with no phone signal...
-- Rusted Exhaust Snapping
-- Every bolt in suspension seized
+All of this culminated in the grand catastrophe of the engine falling out while driving in Snowdonia (conveniently in an area with no signal). On inspection afterwards, it turned out that the previous owner who had done the engine swap had not tapped the mount holes to full depth, eventually causing the threads to pull out and my engine to drop about a foot.
 
-Shortcuts taken by previous owner... e.g. window seals, ceiling bolts, etc... Caused more trouble than getting an unmodified panel van.
+This combined with various shortcuts taken by the previous owner (improperly fitted window seals, badly installed panels, etc...) eventually drove me to the point of despair.
 
 <Gallery columns={3} tiles={
     [
@@ -286,12 +307,13 @@ Shortcuts taken by previous owner... e.g. window seals, ceiling bolts, etc... Ca
     ]
 } />
 
-Reflect on importance of not spending so much time planning that the vehicle disintegrates! Moving abroad, so hand forced.
+As it happens, I was about to take up a work contract in South East Asia, so as much as it saddened me, my most sensible move at this point was to sell the van before leaving.
 
-While interior looked lovely when I sold it, I only really got 4-5 usable trips out of the vehicle. Looks like it's still got a valid MOT, so someone's hopefully getting good use out of it!
+On reflection, it would have been far more sensible for me to have spent an extra £2000 on the base van, rather than trying to convert the cheapest specimen that I could find.
+While the interior looked lovely when I sold it, I only really got 4-5 long trips out of the vehicle in the entire time I owned it. At the time of publication it looks like the van has still got a valid MOT, so someone's hopefully getting better use out of it than I did.
 
-Realised also like camping outdoors!
+Another realisation I came to while doing the campervan conversion was that I actually really like camping outdoors! On most of the trips I went on I would have just as gladly camped outside rather than stayed in my van. Suffice to say I think that my next "campervan" setup will probably just be a Volvo with some camping equipment in the back...
 
-Next setup will probably just be a Volvo with some camping supplies in the back...
+Regardless, I hope you enjoyed coming on the journey of the conversion with me! I'll leave you with one final image of the van in all its glory just before we parted ways.
 
 ![Van_Part_2-Final.JPG]({import.meta.env.VITE_IMAGE_BASE}/posts/Van_Part_2-Final.JPG)
