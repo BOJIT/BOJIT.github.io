@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+        <title>BOJIT.org</title>
+        <subtitle>Projects, Tutorials and Ramblings of James Bennion-Pedley</subtitle>
+        <link href="https://bojit.org"/>
+        <link href="https://bojit.org/rss.xml" rel="self" type="application/rss+xml"/>
+        <id>https://bojit.org/rss.xml/</id>
+        <updated>2025-04-12T11:50:45.357Z</updated>
+        <author>
+            <name>James Bennion-Pedley</name>
+        </author>
+        <generator>JavaScript</generator>
+        <entry>
+            <title>One-Per-Project</title>
+            <link href="https://bojit.org/galleries/One_Per_Project"/>
+            <id>https://bojit.org/galleries/One_Per_Project</id>
+            <published>2024-06-02T00:00:00.000Z</published>
+            <updated>2024-06-02T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2024-06-02-One_Per_Project.JPG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>Van Saga 2 - The Corrosion Strikes Back</title>
+            <link href="https://bojit.org/projects/Van_Part_2"/>
+            <id>https://bojit.org/projects/Van_Part_2</id>
+            <published>2023-09-22T00:00:00.000Z</published>
+            <updated>2023-09-22T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2023-09-22-Van_Part_2.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>Belvoir Bar</title>
+            <link href="https://bojit.org/projects/Belvoir_Bar"/>
+            <id>https://bojit.org/projects/Belvoir_Bar</id>
+            <published>2023-04-16T00:00:00.000Z</published>
+            <updated>2023-04-16T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2023-04-16-Belvoir_Bar.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>DIY Power Window Controller</title>
+            <link href="https://bojit.org/projects/Power_Window_Controller"/>
+            <id>https://bojit.org/projects/Power_Window_Controller</id>
+            <published>2022-05-23T00:00:00.000Z</published>
+            <updated>2022-05-23T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2022-05-23-Power_Window_Controller.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>Van Saga 1 - Raiders of the Lost Part</title>
+            <link href="https://bojit.org/projects/Van_Part_1"/>
+            <id>https://bojit.org/projects/Van_Part_1</id>
+            <published>2022-05-15T00:00:00.000Z</published>
+            <updated>2022-05-15T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2022-05-15-Van_Part_1.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>VCS (PlatformIO Advanced Scripting)</title>
+            <link href="https://bojit.org/tutorials/VCS"/>
+            <id>https://bojit.org/tutorials/VCS</id>
+            <published>2022-04-16T00:00:00.000Z</published>
+            <updated>2022-04-16T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2022-04-16-VCS.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>SSL over a Local Network</title>
+            <link href="https://bojit.org/tutorials/Local_SSL"/>
+            <id>https://bojit.org/tutorials/Local_SSL</id>
+            <published>2021-08-22T00:00:00.000Z</published>
+            <updated>2021-08-22T00:00:00.000Z</updated>
+            <description>SSL over a Local Network</description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>BOJIT V3 - Guitar Build</title>
+            <link href="https://bojit.org/projects/BOJIT_V3"/>
+            <id>https://bojit.org/projects/BOJIT_V3</id>
+            <published>2021-06-25T00:00:00.000Z</published>
+            <updated>2021-06-25T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2021-06-25-BOJIT_V3.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>Compact Router Sled</title>
+            <link href="https://bojit.org/projects/Router_Sled"/>
+            <id>https://bojit.org/projects/Router_Sled</id>
+            <published>2021-05-03T00:00:00.000Z</published>
+            <updated>2021-05-03T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2021-05-03-Router_Sled.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
+            <title>DIY Router Table</title>
+            <link href="https://bojit.org/projects/Router_Table"/>
+            <id>https://bojit.org/projects/Router_Table</id>
+            <published>2021-04-17T00:00:00.000Z</published>
+            <updated>2021-04-17T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2021-04-17-Router_Table.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+    </feed>
