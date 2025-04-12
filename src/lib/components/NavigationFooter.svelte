@@ -11,9 +11,9 @@
 <script lang="ts">
     /*-------------------------------- Imports -------------------------------*/
 
-    import { goto } from "$app/navigation";
+    import { goto } from '$app/navigation';
 
-    import NavButton from "$lib/components/NavButton.svelte";
+    import NavButton from '$lib/components/NavButton.svelte';
 
     /*--------------------------------- Props --------------------------------*/
 
@@ -23,8 +23,8 @@
     /*-------------------------------- Methods -------------------------------*/
 
     function gotoPage(idx: number) {
-        let url = posts[idx].path.slice(0, -".svelte".length);
-        goto("/" + url);
+        let url = posts[idx].path;
+        goto('/' + url);
     }
 
     function currentPost() {
@@ -33,8 +33,7 @@
 
     function randomPost() {
         let idx = currentPost();
-        while (idx == currentPost())
-            idx = Math.floor(Math.random() * posts.length);
+        while (idx == currentPost()) idx = Math.floor(Math.random() * posts.length);
 
         gotoPage(idx);
     }
@@ -42,9 +41,7 @@
 
 <div class="nav">
     {#if currentPost() != posts.length - 1}
-        <NavButton on:click={() => gotoPage(currentPost() + 1)}
-            >PREVIOUS</NavButton
-        >
+        <NavButton on:click={() => gotoPage(currentPost() + 1)}>PREVIOUS</NavButton>
     {/if}
     <NavButton href="/index">INDEX</NavButton>
     <NavButton href="/">HOME</NavButton>

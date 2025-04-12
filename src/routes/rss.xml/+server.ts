@@ -19,7 +19,7 @@ export const prerender = true;
 const website = import.meta.env.VITE_BASE_URL;
 const feedTitle = 'BOJIT.org';
 const feedDescription = 'Projects, Tutorials and Ramblings of James Bennion-Pedley';
-const feedLink = `${website}/rss`;
+const feedLink = `${website}/rss.xml`;
 const feedUpdated = new Date(); // Set at compile time
 const entryCount = 10; // Only show 10 most recent articles
 

@@ -11,18 +11,18 @@
 <script lang="ts">
     /*-------------------------------- Imports -------------------------------*/
 
-    import type { PageData } from "./$types";
+    import type { PageData } from './$types';
 
-    import { Content } from "@bojit/svelte-components/layout";
-    import Header from "$lib/components/Header.svelte";
-    import NavButton from "$lib/components/NavButton.svelte";
+    import { Content } from '@bojit/svelte-components/layout';
+    import Header from '$lib/components/Header.svelte';
+    import NavButton from '$lib/components/NavButton.svelte';
 
     /*--------------------------------- Props --------------------------------*/
 
     export let data: PageData;
 
     let categories: string[] = [
-        ...new Set(data.posts.map((p) => p.path.split("/")[0])),
+        ...new Set(data.posts.map((p) => p.path.split('/')[0]))
     ] as string[];
 </script>
 
@@ -38,9 +38,7 @@
         <h3>{c.toUpperCase()}</h3>
         <hr />
         {#each data.posts.filter((p) => p.path.startsWith(c)) as p}
-            <NavButton href={`/${p.path.slice(0, -".svelte".length)}`}
-                >{p.meta.title.toUpperCase()}</NavButton
-            >
+            <NavButton href={`/${p.path}`}>{p.meta.title.toUpperCase()}</NavButton>
         {/each}
     {/each}
 

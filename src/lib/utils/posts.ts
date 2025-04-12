@@ -43,9 +43,6 @@ export async function getSortedPosts() {
             const { metadata } = await resolver();
             const postPath = path.slice("../../routes/(content)/".length, -".svelte.md".length)
 
-            console.log(path);
-            console.log(postPath);
-
             return {
                 meta: metadata,
                 path: postPath,

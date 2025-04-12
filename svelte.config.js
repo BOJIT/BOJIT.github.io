@@ -15,7 +15,7 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 
 // Markdown Preprocessing
 import { mdsvex } from "mdsvex";
-import remarkCodeBox from "./src/lib/plugins/remarkCodeBox.js";
+// import remarkCodeBox from "./src/lib/plugins/remarkCodeBox.js";
 
 /*--------------------------------- State ------------------------------------*/
 
