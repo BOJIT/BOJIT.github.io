@@ -11,10 +11,10 @@
 <script lang="ts">
     /*-------------------------------- Imports -------------------------------*/
 
-    import type { PageData } from "./$types";
+    import type { PageData } from './$types';
 
-    import { Content } from "@bojit/svelte-components/layout";
-    import { Gallery, ThemeSelector } from "@bojit/svelte-components/widgets";
+    import { Content } from '@bojit/svelte-components/layout';
+    import { Gallery, ThemeSelector } from '@bojit/svelte-components/widgets';
 
     /*--------------------------------- Props --------------------------------*/
 
@@ -28,20 +28,20 @@
     const specialTiles = [
         // About
         {
-            type: "link",
-            caption: "About Me",
-            subcaption: "",
-            colour: "#00bcd4",
-            link: "/about/",
+            type: 'link',
+            caption: 'About Me',
+            subcaption: '',
+            colour: '#00bcd4',
+            link: '/about/'
         },
         // Index
         {
-            type: "text",
-            caption: "Index Page",
-            subcaption: "",
-            colour: "#009688",
-            link: "/index/",
-        },
+            type: 'text',
+            caption: 'Index Page',
+            subcaption: '',
+            colour: '#009688',
+            link: '/index/'
+        }
     ];
 
     /*------------------------------- Lifecycle ------------------------------*/
@@ -52,7 +52,7 @@
         subcaption: p.meta.date,
         image: import.meta.env.VITE_IMAGE_BASE + p.meta.tile.image,
         colour: p.meta.tile.colour,
-        link: p.path.slice(0, -".svelte".length),
+        link: p.path
     }));
 </script>
 
