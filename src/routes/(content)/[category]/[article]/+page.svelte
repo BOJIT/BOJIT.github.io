@@ -11,12 +11,12 @@
 <script lang="ts">
     /*-------------------------------- Imports -------------------------------*/
 
-    import type { PageData } from "./$types";
+    import type { PageData } from './$types';
 
-    import { Content } from "@bojit/svelte-components/layout";
+    import { Content } from '@bojit/svelte-components/layout';
 
-    import Header from "$lib/components/Header.svelte";
-    import NavigationFooter from "$lib/components/NavigationFooter.svelte";
+    import Header from '$lib/components/Header.svelte';
+    import NavigationFooter from '$lib/components/NavigationFooter.svelte';
 
     /*--------------------------------- Props --------------------------------*/
 
@@ -25,6 +25,15 @@
 
 <svelte:head>
     <title>{data.metadata.title}</title>
+    <meta property="og:title" content={data.metadata.title} />
+    <meta property="og:type" content="article" />
+    <!-- Ensure that tile is thumbnail when sharing article -->
+    {#if data.metadata.tile.type === 'image'}
+        <meta
+            property="og:image"
+            content={`${import.meta.env.VITE_IMAGE_BASE}${data.metadata.tile.image}`}
+        />
+    {/if}
 </svelte:head>
 
 <Header />
