@@ -98,21 +98,19 @@ I jumped at the chance, and a couple of months later I was crossing the border o
 
 ## Part 2: Malaysia and the world of Manufacturing 🇲🇾
 
-My time in Malaysia definitely started at the deep end...
+My time in Malaysia definitely started at the deep end. One week after an initial visit across to my new team and having a quick induction, I was suddenly met with the news that one of the team's engineers had resigned, and was asked if I could take over some of the technical delivery work for that team for an upcoming project (which I had never worked on before!)
 
-> Started at the deep end... people left, taking over technical feature early on
+At this point my Malaysian work Visa was still being processed with a variety of complications, so I spent nearly 2 months getting a bus back and forth over the border, carrying prototype parts in a rucksack trying to support some of the project work without actually being there! However in Late September 2024 I finally managed to settle permanently in Malaysia to "start" my new role.
 
-> Visa issues, commuting back and forth over border with prototype parts...
-
-> Explain focus of team in MY, tolerance bounds, some of the challenges. Alex Khoo
+... But I'm getting ahead of myself. I should probably explain the team I joined and what they do. This team is officially called the "Mechatronics" division, but in reality it functions as more of a systems integration team. Many of Dyson's floor products have a variety of "smart" features inside them. Things like auto power modes for different cleaning scenarios, dust detection and size binning, filter lifespan indicators, etc. This small team (pictured below) managed by [Alex Khoo](https://www.linkedin.com/in/alextlkhoo/) were in charge of ensuring that these features worked reliably across all product tolerances and SKUs. In practice this meant getting involved with the features quite early on and working with a fair few different functions within the team (Hardware, Software, Design Engineering, Contract Manufacturers, Test Equipment Vendors, etc...).
 
 ![My Malaysia Team]({import.meta.env.VITE_IMAGE_BASE}/posts/Time_In_SEA-Malaysia_Team.JPG)
+
+> Describe role, some of the things we're responsible for. Much more cross-team than previous role. In charge of co-ordinating multiple teams (system integration role...)
 
 > Surprise at limited number of steps between me and the production line. Easier to change things than I thought. Comparison to other companies
 
 > Importance of robustness, getting things wrong gets very expensive quickly. 20k units a week...
-
-> Describe role, some of the things we're responsible for. Much more cross-team than previous role. In charge of co-ordinating multiple teams (system integration role...)
 
 <Gallery columns={3} tiles={
     [
