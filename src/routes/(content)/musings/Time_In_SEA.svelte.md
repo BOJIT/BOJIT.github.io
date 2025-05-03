@@ -106,11 +106,9 @@ At this point my Malaysian work Visa was still being processed with a variety of
 
 ![My Malaysia Team]({import.meta.env.VITE_IMAGE_BASE}/posts/Time_In_SEA-Malaysia_Team.JPG)
 
-> Describe role, some of the things we're responsible for. Much more cross-team than previous role. In charge of co-ordinating multiple teams (system integration role...)
+This role was quite different from the work I'd done before. While my new job was still a "technical" role, there was much more in the way of cross-team planning, dealing with friction between different functions, an in-general tasks that I'd categorise as "peacekeeping"/"people-problem" work.
 
-> Surprise at limited number of steps between me and the production line. Easier to change things than I thought. Comparison to other companies
-
-> Importance of robustness, getting things wrong gets very expensive quickly. 20k units a week...
+Outside of this project work, there was still a nice amount of gory technical engineering to be done in creating various bits of test/development equipment that the team distribute around the Malaysia office. The team had originally formed out of the remains of a team called _"Test Systems"_, which focused on making internal metrology tools (pressure loggers, motor control boxes, the like). While this work is probably the more "fun" part of the job, it unfortunately has to take a back seat to the more pressing development projects that have production deadlines!
 
 <Gallery columns={3} tiles={
     [
@@ -131,6 +129,15 @@ At this point my Malaysian work Visa was still being processed with a variety of
         },
     ]
 } />
+
+In all honesty, there were a few things that surprised me a lot when I started working in these downstream teams, especially given some of the preconceptions I had about production engineering from the UK.
+
+The first thing that shocked me was often how few steps there were to push certain changes into production. Naturally there are parts of our manufacturing supply chains that are very strictly controlled by review processes. Actions such as motor geometry changes or Battery Management System software releases have very lengthy approval processes, as changes here can have significant safety consequences.
+
+However, in many other parts
+of development I was frankly shocked at how easy it was to get certain changes pushed through. I assumed that something like a change to a tester station spec on our main production line would need to go through countless layers of bureaucracy to get rolled out. In actuality, often these changes could be implemented the same day simply by chatting to one engineer and sending off an email to one of our test vendors! This ability to get things done in such a short timeframe was actually quite gratifying!
+
+TODO flip side of this
 
 > Some reflection thoughts on processes
 
