@@ -212,19 +212,23 @@ Of course I shouldn't ignore the work culture differences. While even in Malaysi
 
 My time in Flex was a chaotic mix of hanging a laptop off the line trying to run MATLAB data analysis while also trying to explain tester modifications in a combination of broken English and Mandarin. One thing that was massively helpful here was an E-Ink tablet that I had recently impulse bought. With the language barrier often causing misunderstandings between us, I found that sketching graphs and diagrams was an excellent way to clear up ambiguity while wandering the factory floor.
 
-> Exhausted, left factories, went over to Shenzhen electronic markets
+Exhausted after my short stint in our factory, I returned back to Shenzhen to get on with the "holiday" portion of my trip!
 
-> Mecca for electronics enthusiasts! Can get just about anything and everything there.
+For those who don't know, Downtown Shenzhen is akin to a Mecca for electronics enthusiasts. Many of the weird and wonderful parts we're all used to ordering on AliExpress often originate from here, so naturally it's heaven for a hobby electronics enthusiast such as myself. There are many different markets where you can talk to suppliers over the counter to search for parts and capabilities that are surprisingly hard to find online.
 
-> Chinese new year not a good time to visit, mostly closed up.
+Unfortunately for me, I'd planned my trip to coincide with the week before Chinese New Year. This is about the only long break of the year that every Chinese employee gets, so naturally the markets had emptied out as vendors shut up shop to head back to their hometowns for the festivities. Even regardless, I managed to get some nice new soldering equipment and a few useful supplier WeChat contacts for some future projects.
 
-> Was sad to see unregulated counterfeits at market. Fake supersonic at every corner, sold for less than we can produce them for! Mostly still domestic market, but still ripping off people's careful design work.
+During these market explorations I did come across the one dark side that I saw of the Shenzhen manufacturing scene: _Counterfeit Goods_.
+
+Virtually every stall in the consumer products mall had some form of fake SuperSonic hair-dryer, advertised amusingly as a "leaf-less blower". The SuperSonic is a design that Dyson popularised back in 2016, and while I do think it's fair game nearly a decade later for SuperSonic-inspired products to be sold by competitors, it does hurt to see exact replicas being sold at costs lower than what it costs Dyson to _make_ a hairdryer, often lacking many of the safety features that our products incorporate.
+
+While I do think that over-restrictive patent laws can harm consumer choice at times, I do believe that having some level of intellectual property protection is important. Having seen first-hand the amount of effort that went into the development of our products, it is sad to see that work being under-cut by direct copies that don't contribute anything novel to the product space. Ultimately I think that many people in the west have a stigma towards Chinese manufacturing that doesn't reflect the immense skill and work ethic that has driven its success. However as part of celebrating this success I would love to see stronger enforcement of counterfeit goods as part of the CCP's long-term manufacturing policy.
 
 ![Shenzhen Counterfeit Goods]({import.meta.env.VITE_IMAGE_BASE}/posts/Time_In_SEA-Shenzhen_Knockoffs.JPG)
 
-> Time in Malaysia generally quite intense, still not escaped some of the projects when back in the UK.
+In general my time working in Malaysia was quite intense, however it has opened my eyes to the vast amount of work that is involved in getting a product from a reasonably mature design to something that can be produced and sold on mass.
 
-> Malaysia is a beautiful and not too touristy country. Lots of interesting little fishing villages to explore and local food to try (even if it doesn't agree with my stomach)
+In addition, I can't recommend Malaysia itself highly enough as a place to explore if you every find yourself working in this part of the world. The Malaysian landscape is charming and outside of the main cities it isn't particularly well-frequented by tourists. Spending weekends exploring small fishing villages and trying local dishes has been great fun. Honestly Malaysia's street food scene is incredible - I've had some of the nicest food I've eaten in my life here (albeit not all of it agreed with my stomach!)
 
 <Gallery columns={3} tiles={
     [
