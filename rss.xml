@@ -5,12 +5,23 @@
         <link href="https://bojit.org"/>
         <link href="https://bojit.org/rss.xml" rel="self" type="application/rss+xml"/>
         <id>https://bojit.org/rss.xml/</id>
-        <updated>2025-05-04T13:35:22.415Z</updated>
+        <updated>2025-05-04T13:36:17.355Z</updated>
         <author>
             <name>James Bennion-Pedley</name>
         </author>
         <generator>JavaScript</generator>
         <entry>
+            <title>Time in SEA</title>
+            <link href="https://bojit.org/musings/Time_In_SEA"/>
+            <id>https://bojit.org/musings/Time_In_SEA</id>
+            <published>2025-05-10T00:00:00.000Z</published>
+            <updated>2025-05-10T00:00:00.000Z</updated>
+            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2025-05-10-Time_In_SEA.PNG">]]></description>
+            <author>
+                <name>James Bennion-Pedley</name>
+            </author>
+        </entry>
+<entry>
             <title>One-Per-Project</title>
             <link href="https://bojit.org/galleries/One_Per_Project"/>
             <id>https://bojit.org/galleries/One_Per_Project</id>
@@ -105,17 +116,6 @@
             <published>2021-05-03T00:00:00.000Z</published>
             <updated>2021-05-03T00:00:00.000Z</updated>
             <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2021-05-03-Router_Sled.PNG">]]></description>
-            <author>
-                <name>James Bennion-Pedley</name>
-            </author>
-        </entry>
-<entry>
-            <title>DIY Router Table</title>
-            <link href="https://bojit.org/projects/Router_Table"/>
-            <id>https://bojit.org/projects/Router_Table</id>
-            <published>2021-04-17T00:00:00.000Z</published>
-            <updated>2021-04-17T00:00:00.000Z</updated>
-            <description><![CDATA[<img src="https://cdn.bojit.org/img/tiles/2021-04-17-Router_Table.PNG">]]></description>
             <author>
                 <name>James Bennion-Pedley</name>
             </author>
