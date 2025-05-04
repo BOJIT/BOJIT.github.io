@@ -66,7 +66,7 @@ That being said, you'd think that being on the cutting edge of embedded chips wo
 
 In general, I'd been spoilt on the quality of the open-source tooling and documentation from the likes of ST and NXP. Once you get in the world of obscure SoCs and Camera ISPs, the tooling gets very bad very quickly. In addition, most of the software and dev boards require NDAs before you can even get hold of them, which makes evaluating multiple suppliers very time-consuming.
 
-The one perk of all of this is that there are now a few kernel patches of mine that have made their way into vendor trees to fix various driver bugs. Nothing that will ever make it to upstream Linux, but hey, there's still some satisfaction to be had!
+The one upside of all of this is that there are now a few kernel patches of mine that have made their way into vendor trees to fix various driver bugs. Nothing that will ever make it to upstream Linux, but hey, there's still some satisfaction to be had from this!
 
 One of the big downsides of working upstream is that the vast majority of stuff that we work on never sees the light of day. A few small parts of my work relating to embedded SoC networking have made their way into a downstream product, but the sad reality of the job is that most of the work ends its life in an archive box in a dusty corner of the office.
 
@@ -102,13 +102,13 @@ My time in Malaysia definitely started at the deep end. One week after an initia
 
 At this point my Malaysian work Visa was still being processed with a variety of complications, so I spent nearly 2 months getting a bus back and forth over the border, carrying prototype parts in a rucksack trying to support some of the project work without actually being there! However in Late September 2024 I finally managed to settle permanently in Malaysia to "start" my new role.
 
-... But I'm getting ahead of myself. I should probably explain the team I joined and what they do. This team is officially called the "Mechatronics" division, but in reality it functions as more of a systems integration team. Many of Dyson's floor products have a variety of "smart" features inside them. Things like auto power modes for different cleaning scenarios, dust detection and size binning, filter lifespan indicators, etc. This small team (pictured below) managed by [Alex Khoo](https://www.linkedin.com/in/alextlkhoo/) were in charge of ensuring that these features worked reliably across all product tolerances and SKUs. In practice this meant getting involved with the features quite early on and working with a fair few different functions within the team (Hardware, Software, Design Engineering, Contract Manufacturers, Test Equipment Vendors, etc...).
+... But I'm getting ahead of myself. I should probably explain what the team I joined actually do. This team is officially called the "Mechatronics" division, but in reality it functions as more of a systems integration team. Many of Dyson's floor products have a variety of "smart" features inside them. Features such as auto power modes for different cleaning scenarios, dust detection and size binning, filter lifespan indicators, etc... This small team (pictured below) managed by [Alex Khoo](https://www.linkedin.com/in/alextlkhoo/) were in charge of ensuring that these features worked reliably across all product tolerances and SKUs. In practice this meant getting involved with the features quite early on and working with a fair few different functions within the team (Hardware, Software, Design Engineering, Contract Manufacturers, Test Equipment Vendors, etc...).
 
 ![My Malaysia Team]({import.meta.env.VITE_IMAGE_BASE}/posts/Time_In_SEA-Malaysia_Team.JPG)
 
-This role was quite different from the work I'd done before. While my new job was still a "technical" role, there was much more in the way of cross-team planning, dealing with friction between different functions, an in-general tasks that I'd categorise as "peacekeeping"/"people-problem" work.
+This role was quite different from the work I'd done before. While my new job was still a "technical" role, there was much more in the way of cross-team planning, dealing with friction between different functions, and in general tasks that I'd categorise as "peacekeeping" and "people-problem" resolution.
 
-Outside of this project work, there was still a nice amount of gory technical engineering to be done in creating various bits of test/development equipment that the team distribute around the Malaysia office. The team had originally formed out of the remains of a team called _"Test Systems"_, which focused on making internal metrology tools (pressure loggers, motor control boxes, the like). While this work is probably the more "fun" part of the job, it unfortunately has to take a back seat to the more pressing development projects that have production deadlines!
+Outside of this project work, there was still a nice amount of gory technical engineering to be done in creating various bits of test/development equipment that the team distribute around the Malaysia office. The team had originally formed out of the remains of a team called _"Test Systems"_, which focused on making internal metrology tools (pressure loggers, motor control boxes, etc.). While this work is probably the more "fun" part of the job, it unfortunately has to take a back seat to the more pressing development projects that have production deadlines!
 
 <Gallery columns={3} tiles={
     [
@@ -180,7 +180,7 @@ Probably the most stressful case of this was back in January, when we started re
 
 As it happened, I was visiting Shenzhen around the same time as a tourist wanting to see the famed [Huaqiangbei Electronics Markets](https://www.youtube.com/watch?app=desktop&v=leFuF-zoVzA&t=2s). Shenzhen is not too far from our CM in Zhuhai, so my team asked if I could go take a look in person at the tester issue.
 
-Ultimately of all the travels I've been fortunate enough to do while living out in South-East Aisa, this trip probably was the biggest culture-shock for me. From the obvious language barrier issues to trying to get around chinese industrial estates without the aid of Google and an English maps app, working with the Contract Manufacturer in Zhuhai turned out to be quite the experience!
+Ultimately of all the travels I've been fortunate enough to go on while living out in South-East Aisa, this trip probably was the biggest culture-shock for me. From the obvious language barrier issues to trying to get around Chinese industrial estates without the aid of Google and an English maps app, working with the Contract Manufacturer in Zhuhai turned out to be quite the experience!
 
 The first observation I had was the clear realisation of _why_ most companies set up manufacturing in China. Taking just this single Contract Manufacturer ([Flex Ltd.](https://flex.com/)) as case study, the scale of the operation is remarkable. Not only do the facilities have an impressive level of automation and good observability of their tooling & assembly lines, but the tight-knit nature of their supply chains explain why they can develop so quickly and cheaply.
 
@@ -206,7 +206,7 @@ The first observation I had was the clear realisation of _why_ most companies se
 
 In Dyson, especially in research, we have a tendency to try and own every part of our product assemblies. Everything from motor control software to tooling design is done in-house. This does have some advantages: we can often optimise a product to be at the very limit of performance that we can achieve in a consumer-grade product. The _trade-off_ is that we often take longer to develop products, as we have to gain the relevant expertise across all new disciplines.
 
-The Contract Manufacturers in China seem to operate very differently. They have a huge network of different suppliers in close proximity, so they can subcontract out large portions of the work to other manufacturers who have that specific domain expertise. The key to make this work is having clear specifications and interface documentation; something that Dyson is investing in heavily at the moment by incorporating more systems engineering within our development teams.
+The Contract Manufacturers in China seem to operate very differently. They have a huge network of different suppliers in close proximity, so they can subcontract out large portions of the work to other manufacturers who have that specific domain expertise. The key to make this work is having clear specifications and interface documentation; something that Dyson is investing in heavily at the moment by incorporating more Systems Engineering within our development teams.
 
 Of course I shouldn't ignore the work culture differences. While even in Malaysia the work pace is faster than what I experienced in the UK, it paled in comparison to the attitudes of the teams in Zhuhai. Engineers would regularly be working late into the night to fix production issues: Even in just the three days I spent there, I was frankly knackered by the pace of the work!
 
@@ -222,7 +222,7 @@ During these market explorations I did come across the one dark side that I saw 
 
 Virtually every stall in the consumer products mall had some form of fake SuperSonic hair-dryer, advertised amusingly as a "leaf-less blower". The SuperSonic is a design that Dyson popularised back in 2016, and while I do think it's fair game nearly a decade later for SuperSonic-inspired products to be sold by competitors, it does hurt to see exact replicas being sold at costs lower than what it costs Dyson to _make_ a hairdryer, often lacking many of the safety features that our products incorporate.
 
-While I do think that over-restrictive patent laws can harm consumer choice at times, I do believe that having some level of intellectual property protection is important. Having seen first-hand the amount of effort that went into the development of our products, it is sad to see that work being under-cut by direct copies that don't contribute anything novel to the product space. Ultimately I think that many people in the west have a stigma towards Chinese manufacturing that doesn't reflect the immense skill and work ethic that has driven its success. However as part of celebrating this success I would love to see stronger enforcement of counterfeit goods as part of the CCP's long-term manufacturing policy.
+While I do believe that over-restrictive patent laws can harm consumer choice at times, I think that having some level of intellectual property protection is important. Having seen first-hand the amount of effort that went into the development of our products, it is sad to see that work being under-cut by direct copies that don't contribute anything novel to the product space. Ultimately I think that many people in the west have a stigma towards Chinese manufacturing that doesn't reflect the immense skill and work ethic that has driven its success. However as part of celebrating this success I would love to see stronger enforcement of counterfeit goods as part of the CCP's long-term manufacturing strategy.
 
 ![Shenzhen Counterfeit Goods]({import.meta.env.VITE_IMAGE_BASE}/posts/Time_In_SEA-Shenzhen_Knockoffs.JPG)
 
@@ -247,9 +247,10 @@ In addition, I can't recommend Malaysia itself highly enough as a place to explo
 
 ## Conclusions
 
-> Takeaways from the year, things I'll miss. Things that I'll be glad to get back to.
+Ultimately my time spent out in South East Asia has been a real break from the kind of work I was used to in the UK. I've learned tonnes from being out here and reckon that I'll be coming back a better engineer.
 
-> Article without mentioning any specifics
+A final note I'd like to say is a massive thank you to all of the friends and colleagues who've helped me while I've been out here. Unfortunately, many of these talented individuals were laid off during the 2024 restructuring at Dyson.
+To all of those who are no longer here, people I've badgered on Teams for bizarre requests and interrupted their coffee breaks to ask for technical assistance, I hope to one day maybe work with you again!
 
 <br>
 
