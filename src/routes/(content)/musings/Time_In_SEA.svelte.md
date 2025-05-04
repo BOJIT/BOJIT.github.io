@@ -137,15 +137,9 @@ The first thing that shocked me was often how few steps there were to push certa
 However, in many other parts
 of development I was frankly shocked at how easy it was to get certain changes pushed through. I assumed that something like a change to a tester station spec on our main production line would need to go through countless layers of bureaucracy to get rolled out. In actuality, often these changes could be implemented the same day simply by chatting to one engineer and sending off an email to one of our test vendors! This ability to get things done in such a short timeframe was actually quite gratifying!
 
-TODO flip side of this
+The dark side of this is that other people also take advantage of this ability to move quickly, and suddenly you find yourself in a situation where major modifications to part tooling has been done mere weeks before start of production and no-one has thought to tell you about it...
 
-> Some reflection thoughts on processes
-
-> In research used to doing most stuff from first principles. Not used to just emailing vendors/suppliers and asking for stuff.
-
-> Not used to having last call/decision on certain things. Having clear lines of justification very important.
-
-> Surprising number of last minute changes. Tool mods, changes to tester setups. Need to be quite flexible to plans changing!
+This combination of fast pace and last minute changes does mean that often we need to make compromises when it comes to balancing a perfected design vs. delivering on time. Making these kinds of calls on technical decision felt quite daunting: usually in research we could often assume that "technical hitches" would all be ironed out later down the line, but when working right before production, that accountability for any problems post-launch falls on us. A big part of my job in Malaysia was ensuring that we had strong justifications for any of these technical compromises, along with test evidence to back up our judgement calls.
 
 <Gallery columns={3} tiles={
     [
@@ -182,11 +176,13 @@ TODO flip side of this
     ]
 } />
 
-> Early January, travelling to Shenzhen, opportunity to go to Zhuhai and visit CM. Issus needed sorting on tester stations.
+Probably the most stressful case of this was back in January, when we started realising that some of the testers for one of our upcoming projects were not giving us repeatable readings for part of a calibration procedure that we were performing. For this particular project, we were setting up the pilot production line in Zhuhai, China, rather than a Contract Manufacturer in Johor, Malaysia. This meant that most of the diagnosis of the issues had to be done remotely, which can be a trying process.
 
-> China (especially industrial china) quite a culture shock. Pace on the lines very fast, wished I spoke some mandarin!
+As it happened, I was visiting Shenzhen around the same time as a tourist wanting to see the famed [Huaqiangbei Electronics Markets](https://www.youtube.com/watch?app=desktop&v=leFuF-zoVzA&t=2s). Shenzhen is not too far from our CM in Zhuhai, so my team asked if I could go take a look in person at the tester issue.
 
-> Communication via E-ink tablet. Highly recommend to have!
+Ultimately of all the travels I've been fortunate enough to do while living out in South-East Aisa, this trip probably was the biggest culture-shock for me. From the obvious language barrier issues to trying to get around chinese industrial estates without the aid of Google and an English maps app, working with the Contract Manufacturer in Zhuhai turned out to be quite the experience!
+
+The first observation I had was the clear realisation of _why_ most companies set up manufacturing in China. Taking just this single Contract Manufacturer ([Flex Ltd.](https://flex.com/)) as case study, the scale of the operation is remarkable. Not only do the facilities have an impressive level of automation and good observability of their tooling & assembly lines, but the tight-knit nature of their supply chains explain why they can develop so quickly and cheaply.
 
 <Gallery columns={3} tiles={
     [
@@ -208,13 +204,19 @@ TODO flip side of this
     ]
 } />
 
+In Dyson, especially in research, we have a tendency to try and own every part of our product assemblies. Everything from motor control software to tooling design is done in-house. This does have some advantages: we can often optimise a product to be at the very limit of performance that we can achieve in a consumer-grade product. The _trade-off_ is that we often take longer to develop products, as we have to gain the relevant expertise across all new disciplines.
+
+The Contract Manufacturers in China seem to operate very differently. They have a huge network of different suppliers in close proximity, so they can subcontract out large portions of the work to other manufacturers who have that specific domain expertise. The key to make this work is having clear specifications and interface documentation; something that Dyson is investing in heavily at the moment by incorporating more systems engineering within our development teams.
+
+Of course I shouldn't ignore the work culture differences. While even in Malaysia the work pace is faster than what I experienced in the UK, it paled in comparison to the attitudes of the teams in Zhuhai. Engineers would regularly be working late into the night to fix production issues: Even in just the three days I spent there, I was frankly knackered by the pace of the work!
+
+My time in Flex was a chaotic mix of hanging a laptop off the line trying to run MATLAB data analysis while also trying to explain tester modifications in a combination of broken English and Mandarin. One thing that was massively helpful here was an E-Ink tablet that I had recently impulse bought. With the language barrier often causing misunderstandings between us, I found that sketching graphs and diagrams was an excellent way to clear up ambiguity while wandering the factory floor.
+
 > Exhausted, left factories, went over to Shenzhen electronic markets
 
 > Mecca for electronics enthusiasts! Can get just about anything and everything there.
 
 > Chinese new year not a good time to visit, mostly closed up.
-
-> Appreciation of why having manufacturing in China is helpful, even if not on cost. All suppliers nearby, making iterations much faster. Give example of tool mod turnaround times in Malaysia (let alone UK).
 
 > Was sad to see unregulated counterfeits at market. Fake supersonic at every corner, sold for less than we can produce them for! Mostly still domestic market, but still ripping off people's careful design work.
 
@@ -242,6 +244,8 @@ TODO flip side of this
 ## Conclusions
 
 > Takeaways from the year, things I'll miss. Things that I'll be glad to get back to.
+
+> Article without mentioning any specifics
 
 <br>
 
