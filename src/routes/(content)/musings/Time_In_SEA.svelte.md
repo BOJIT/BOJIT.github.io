@@ -2,7 +2,7 @@
 title: Time in SEA
 date: "10-05-2025"
 published: true
-hidden: true
+hidden: false
 
 tile:
   type: image
