@@ -11,12 +11,12 @@
 <script lang="ts">
     /*-------------------------------- Imports -------------------------------*/
 
-    import { message } from "@bojit/svelte-components/core";
-    import { Content, CircleCaption } from "@bojit/svelte-components/layout";
-    import { Button, Dialog, TextField } from "@bojit/svelte-components/smelte";
+    import { message } from '@bojit/svelte-components/core';
+    import { Content, CircleCaption } from '@bojit/svelte-components/layout';
+    import { Button, Dialog, TextField } from '@bojit/svelte-components/smelte';
 
-    import Header from "$lib/components/Header.svelte";
-    import NavButton from "$lib/components/NavButton.svelte";
+    import Header from '$lib/components/Header.svelte';
+    import NavButton from '$lib/components/NavButton.svelte';
 
     /*--------------------------------- Props --------------------------------*/
 
@@ -29,7 +29,7 @@
     let form = {
         name: null,
         reply_to: null,
-        message: null,
+        message: null
     };
 
     /*-------------------------------- Methods -------------------------------*/
@@ -41,16 +41,16 @@
     }
 
     function validateString(s: string) {
-        return s !== null && s !== "";
+        return s !== null && s !== '';
     }
 
     function handleKeydown(event: KeyboardEvent) {
-        if (event.key === "Escape") {
+        if (event.key === 'Escape') {
             if (active) {
                 event.preventDefault();
                 active = false;
             }
-        } else if (event.key === "Enter") {
+        } else if (event.key === 'Enter') {
             if (active) {
                 event.preventDefault();
                 submitForm();
@@ -86,8 +86,8 @@
         // Construct an HTTP request (old style, kept for compatibility)
         var xhr = new XMLHttpRequest();
         xhr.open(formHandle.method, formHandle.action, true);
-        xhr.setRequestHeader("Accept", "application/json; charset=utf-8");
-        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
         // Send the collected data as JSON
         xhr.send(JSON.stringify(form));
@@ -97,22 +97,22 @@
             if (response.target.status === 200) {
                 // The form submission was successful
                 message.push({
-                    type: "info",
-                    title: "Message Sent",
-                    message: "Thanks for getting in touch!",
-                    timeout: 5,
+                    type: 'info',
+                    title: 'Message Sent',
+                    message: 'Thanks for getting in touch!',
+                    timeout: 5
                 });
 
                 // Reset form
-                form.name = "";
-                form.reply_to = "";
-                form.message = "";
+                form.name = '';
+                form.reply_to = '';
+                form.message = '';
             } else {
                 message.push({
-                    type: "error",
-                    title: "Submission Error",
-                    message: "something went wrong: please try again later",
-                    timeout: 5,
+                    type: 'error',
+                    title: 'Submission Error',
+                    message: 'something went wrong: please try again later',
+                    timeout: 5
                 });
             }
         };
@@ -130,16 +130,13 @@
 <Content>
     <h1>About Me</h1>
     <hr />
-    <CircleCaption
-        img={`${import.meta.env.VITE_IMAGE_BASE}/general/profile_small.JPG`}
-    >
-        Hi, I am James Bennion-Pedley. I'm an Electronics and Software Hobbyist,
-        currently working as an embedded electronics engineer at <i>Dyson</i>.
-        When not working on my various DIY creations I like to go hiking and
-        play my various musical instruments! <br />This website shows a
-        selection of projects I have been working on, along with a few tutorials
-        as well. Many of the projects here are open-source, with source code and
-        schematics available on <a href="https://github.com/BOJIT">GitHub</a>.
+    <CircleCaption img={`${import.meta.env.VITE_IMAGE_BASE}/general/profile_small.JPG`}>
+        Hi, I am James Bennion-Pedley. I'm an Electronics and Software Hobbyist, currently working
+        as an embedded electronics engineer at <i>Dyson</i>. When not working on my various DIY
+        creations I like to go hiking and play my various musical instruments! <br />This website
+        shows a selection of projects I have been working on, along with a few tutorials as well.
+        Many of the projects here are open-source, with source code and schematics available on
+        <a href="https://github.com/BOJIT">GitHub</a>.
 
         <hr />
         <div class="buttons">
@@ -149,9 +146,8 @@
                 }}>CONTACT ME</NavButton
             >
             <NavButton
-                href={`${
-                    import.meta.env.VITE_FILE_BASE
-                }/CV_James_Bennion-Pedley_19.08.23.pdf`}>DOWNLOAD CV</NavButton
+                href={`${import.meta.env.VITE_FILE_BASE}/CV_James_Bennion-Pedley_21.06.25.pdf`}
+                >DOWNLOAD CV</NavButton
             >
         </div>
     </CircleCaption>
@@ -161,17 +157,13 @@
 <Dialog bind:value={active}>
     <h5 slot="title">Contact Me</h5>
 
-    <form
-        action={import.meta.env.VITE_CONTACT_FORM}
-        method="POST"
-        bind:this={formHandle}
-    >
+    <form action={import.meta.env.VITE_CONTACT_FORM} method="POST" bind:this={formHandle}>
         <div class="push" />
 
         <TextField
             label="Name"
             bind:value={form.name}
-            error={invalid_name ? "Name cannot be empty" : ""}
+            error={invalid_name ? 'Name cannot be empty' : ''}
             on:input={(e) => {
                 invalid_name = !validateString(e.target.value);
             }}
@@ -180,7 +172,7 @@
         <TextField
             label="Email"
             bind:value={form.reply_to}
-            error={invalid_email ? "Email address is invalid" : ""}
+            error={invalid_email ? 'Email address is invalid' : ''}
             type="email"
             on:input={(e) => {
                 invalid_email = !validateEmail(e.target.value);
@@ -191,7 +183,7 @@
             label="Message"
             textarea
             bind:value={form.message}
-            error={invalid_message ? "Message cannot be empty" : ""}
+            error={invalid_message ? 'Message cannot be empty' : ''}
             on:input={(e) => {
                 invalid_message = !validateString(e.target.value);
             }}
